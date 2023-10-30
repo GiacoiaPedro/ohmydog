@@ -2,6 +2,10 @@
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+ .navbar-nav 
+ {
+  background-color: red;
+ }
 .fa,
 .fas,
 .far,
@@ -76,7 +80,7 @@
   line-height: inherit; }
 
 .fa-border {
-  border: solid 0.08em #eee;
+  border: solid 0.08em #ffffff;
   border-radius: .1em;
   padding: .2em .25em .15em; }
 
