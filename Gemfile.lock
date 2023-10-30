@@ -139,7 +139,7 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.4-x86_64-linux)
+    nokogiri (1.15.4-x64-mingw32)
       racc (~> 1.4)
     psych (5.1.1.1)
       stringio
@@ -204,7 +204,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.7-x86_64-linux)
+    sqlite3 (1.6.7-x64-mingw32)
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     stringio (3.0.8)
@@ -216,6 +216,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -231,7 +233,7 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  x86_64-linux
+  x64-mingw32
 
 DEPENDENCIES
   bootsnap
