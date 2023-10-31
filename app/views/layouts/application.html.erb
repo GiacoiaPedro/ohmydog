@@ -34,19 +34,58 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i><img src="<%= asset_path('logo.png') %>"style="max-width: 100px; max-height: 100px;"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Usuario </div>
+                <div class="sidebar-brand-text mx-3">Oh My Dog </div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+            <!-- Botones -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Solicitar Turno</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('perro.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Perros Perdidos</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('perro.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Perros Encontrados</span>
+                </a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('adopcion.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Adopciones</span>
+                </a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('paseador.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Paseadores</span>
+                </a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('cuidador.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Cuidadores</span>
+                </a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="index.html" style="display: flex; align-items: center;">
+                <img src="<%= asset_path('cruza.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                <span>Cruza de Perros</span>
+                </a>
             </li>
 
             <!-- Divider -->
