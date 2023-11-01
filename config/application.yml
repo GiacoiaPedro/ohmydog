@@ -1,0 +1,5 @@
+#Variables de entorno nuevas.
+DATABASE_USERNAME: tomas
+DATABASE_PASSWORD: root
+DATABASE_HOST:  localhost
+DATABASE_NAME: db
