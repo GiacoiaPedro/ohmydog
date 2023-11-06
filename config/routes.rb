@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard/cruza_de_perros'
   get 'dashboard/paseadores'  
   get 'dashboard/iniciar_sesion'
+  get 'dashboard/mi_usuario'
 
   # Defines the root path route ("/")
    root "dashboard#index"
