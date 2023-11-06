@@ -54,6 +54,23 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0"> 
 
+            <!-- Nav Item - Usuarios Collapse Menu -->
+            <li class="nav-item">
+             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+              aria-expanded="true" aria-controls="collapsePages">
+             <img src="<%= asset_path('usuarios.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+             <span>Gestión de Usuarios</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="login.html">Registrar Usuario</a>
+                        <a class="collapse-item" href="register.html">Modificar Usuario</a>
+                        <a class="collapse-item" href="forgot-password.html">Crear perfil de perro</a>
+                        <a class="collapse-item" href="forgot-password.html">Eliminar usuario</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Botones -->
             <li class="nav-item">
              <a class="nav-link" href="/dashboard/solicitar_turno.html" style="display: flex; align-items: center;">
