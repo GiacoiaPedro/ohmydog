@@ -8,51 +8,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <!DOCTYPE html>
-<html>
-<head>
     <!-- Encabezado del documento -->
 </head>
 <body>
     <form action="/procesar" method="post" id="registroForm">
-      <div class="form-group">
-      <label for="nombre">Nombre</label>
-      <input type="email" class="form-control" id="nombre" placeholder="Ingrese su nombre.">
-      </div>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre." required>
+        </div>
+        
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese su apellido." required>
+        </div>
 
-      <div class="form-group">
-    <label for="apellido">Apellido</label>
-    <input type="email" class="form-control" id="apellido" placeholder="Ingrese su apellido.">
-  </div>
+        <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control">
+        </div>
 
-  <form action="/procesar" method="post">
-  <div class="form-group">
-    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control">
-  </div>
-</form>
+        <div class="form-group">
+            <label for "dni">DNI</label>
+            <input type="number" class="form-control" id="dni" name="dni" pattern="[0-9]{8}" maxlength="8" placeholder="Ingrese su DNI" required>
+        </div>
 
-
-  <div class="form-group">
-    <label for="dni">DNI</label>
-    <input type="text" class="form-control" id="dni" name="dni" pattern="[0-9]{8}" maxlength="8" placeholder="Ingrese su DNI" required>
-</div>
-
-  <form action="/procesar" method="post">
-  <div class="form-group">
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" class="form-control" placeholder="usuario@ejemplo.com">
-  </div>
-  </form>
+        <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="usuario@ejemplo.com">
+        </div>
 
         <div class="form-group">
             <label for="edad">Edad:</label>
-            <input type="integer" id="edad" name="edad" class="form-control" required>
+            <input type="number" id="edad" name="edad" class="form-control" required>
         </div>
 
-        <!-- Agrega más campos aquí -->
-
-        <button type="button" class="btn btn-primary mx-auto d-block" id="validarBoton">Registrar Usuario</button>
+        <button type="button" class="btn btn-primary mx-auto d-block" id="registrarBoton" disabled>Registrar Usuario</button>
     </form>
 
     <script>
@@ -61,35 +51,59 @@
             const campoEdad = document.getElementById('edad');
             const campoNombre = document.getElementById('nombre');
             const campoApellido = document.getElementById('apellido');
+            const campoDNI = document.getElementById('dni');
+            const campoEmail = document.getElementById('email');
+            const campoFecha = document.getElementById('fechaNacimiento');
 
-            const botonValidar = document.getElementById('validarBoton');
+            const botonRegistrar = document.getElementById('registrarBoton');
 
-            botonValidar.addEventListener('click', function () {
+            // Función para verificar si los campos obligatorios están llenos
+            function validarCamposObligatorios() {
+                return (
+                    campoNombre.value.trim() !== '' &&
+                    campoApellido.value.trim() !== '' &&
+                    campoDNI.value.trim() !== '' &&
+                    campoEdad.value.trim() !== '' &&
+                    campoEmail.value.trim() !== '' &&
+                    campoFecha.value.trim() !== ''
+                );
+            }
+
+            // Agregar eventos de escucha para los campos obligatorios
+            campoNombre.addEventListener('input', validarFormulario);
+            campoApellido.addEventListener('input', validarFormulario);
+            campoDNI.addEventListener('input', validarFormulario);
+            campoEdad.addEventListener('input', validarFormulario);
+            campoFecha.addEventListener('input', validarFormulario);
+            campoEmail.addEventListener('input', validarFormulario);
+
+
+            // Función para validar el formulario
+            function validarFormulario() {
+                if (validarCamposObligatorios()) {
+                    botonRegistrar.removeAttribute('disabled');
+                } else {
+                    botonRegistrar.setAttribute('disabled', 'true');
+                }
+            }
+
+            botonRegistrar.addEventListener('click', function () {
                 const edad = parseInt(campoEdad.value);
 
-                if (edad < 19) {
+                // Habria que agregar la funcion que busque en la BD que el DNI ya no esté registrado
+
+                if (edad < 18) {
                     alert('Debes ser mayor de 18 años para registrarte.');
                     return;
                 }
 
-                // Agrega más validaciones para otros campos aquí
-                if (campoNombre.value.trim() === '') {
-                    alert('El campo Nombre es obligatorio.');
-                    return;
-                }
-
-                if (campoApellido.value.trim() === '') {
-                    alert('El campo Apellido es obligatorio.');
-                    return;
-                }
-
-                // Si todas las validaciones pasan, envía el formulario
                 formulario.submit();
             });
         });
     </script>
 </body>
 </html>
+
 
 
 </form>
