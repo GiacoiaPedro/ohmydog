@@ -1,0 +1,63 @@
+<form>
+<div class="text-center">
+    <h1>Registro de perros</h1>
+</div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">DNI del dueño</label>
+    <input type="integer" class="form-control" id="exampleFormControlInput1" placeholder="EJ: 34543234">
+  </div>
+  <div class="form-group">
+  <label for="exampleFormControlInput1">Nombre del perro</label>
+  <input type="integer" class="form-control" id="exampleFormControlInput1" placeholder="EJ: Toby">
+</div>
+<div class="form-group">
+  <label for="exampleFormControlInput1">Edad (en meses)</label>
+  <input type="integer" class="form-control" id="exampleFormControlInput1" placeholder="EJ: 14">
+</div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Raza</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Labrador</option>
+      <option>Bulldog</option>
+      <option>Golden</option>
+      <option>Pastor Aleman</option>
+      <option>Caniche</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Sexo</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Macho</option>
+      <option>Hembra</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Color</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Negro</option>
+      <option>Blanco</option>
+      <option>Rayado</option>
+      <option>Gris</option>
+      <option>Marrón</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Historia médica</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+
+  <h5>Subir una imagen</h5>
+    <form action="procesar.php" method="post" enctype="multipart/form-data">
+        <label for="imagen">Selecciona una imagen:</label>
+        <input type="file" name="imagen" id="imagen" accept="image/*">
+        <br>
+        <input type="submit" value="Cargar Imagen">
+    </form>
+
+  <div>
+  <button type="submit" class="btn btn-primary mx-auto d-block">Registrar Usuario</button>
+  </div>
+
+</form>
