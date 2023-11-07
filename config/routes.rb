@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   get 'dashboard/mi_usuario'
   get 'dashboard/registrar_perro'
   get 'dashboard/registrar_usuario'
+  get 'dashboard/modificar_usuario'
+  get 'dashboard/eliminar_usuario'
+  get 'dashboard/turnos_confirmados'
+  get 'dashboard/turnos_pendientes'
 
   # Defines the root path route ("/")
    root "dashboard#index"

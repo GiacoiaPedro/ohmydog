@@ -29,7 +29,22 @@ class DashboardController < ApplicationController
   def iniciar_sesion
   end
 
-  def registrar_usuario
+  def mi_usuario
+  end
+
+  def registrar_perro
+  end
+
+  def modificar_usuario
+  end
+
+  def eliminar_usuario
+  end
+
+  def confirmar_turno
+  end
+
+  def turnos_confirmados
   end
 
 end

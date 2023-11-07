@@ -56,20 +56,33 @@
 
             <!-- Nav Item - Usuarios Collapse Menu -->
             <li class="nav-item">
-             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-              aria-expanded="true" aria-controls="collapsePages">
-             <img src="<%= asset_path('usuarios.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
-             <span>Gestión de Usuarios</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesUsuarios" aria-expanded="true" aria-controls="collapsePagesUsuarios">
+                    <img src="<%= asset_path('usuarios.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                    <span>Gestión de Usuarios</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePagesUsuarios" class="collapse" aria-labelledby="headingPagesUsuarios" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/dashboard/registrar_usuario.html">Registrar Usuario</a>
-                        <a class="collapse-item" href="register.html">Modificar Usuario</a>
+                        <a class="collapse-item" href="/dashboard/modificar_usuario.html">Modificar Usuario</a>
                         <a class="collapse-item" href="/dashboard/registrar_perro.html">Registrar perro</a>
-                        <a class="collapse-item" href="forgot-password.html">Eliminar usuario</a>
+                        <a class="collapse-item" href="/dashboard/eliminar_usuario.html">Eliminar usuario</a>
                     </div>
                 </div>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesTurnos" aria-expanded="true" aria-controls="collapsePagesTurnos">
+                    <img src="<%= asset_path('usuarios.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                    <span>Gestión de Turnos</span>
+                </a>
+                <div id="collapsePagesTurnos" class="collapse" aria-labelledby="headingPagesTurnos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/dashboard/turnos_pendientes.html">Turnos pendientes</a>
+                        <a class="collapse-item" href="/dashboard/turnos_confirmados.html">Turnos confirmados</a>
+                    </div>
+                </div>
+            </li>
+            
 
             <!-- Botones -->
             <li class="nav-item">
