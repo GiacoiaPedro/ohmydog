@@ -29,4 +29,7 @@ class DashboardController < ApplicationController
   def iniciar_sesion
   end
 
+  def registrar_usuario
+  end
+
 end

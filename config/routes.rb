@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'dashboard/iniciar_sesion'
   get 'dashboard/mi_usuario'
   get 'dashboard/registrar_perro'
+  get 'dashboard/registrar_usuario'
 
   # Defines the root path route ("/")
    root "dashboard#index"
