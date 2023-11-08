@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_01_223034) do
-  create_table "dogs", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "owner"
+ActiveRecord::Schema[7.1].define(version: 2023_11_08_001602) do
+  create_table "razas", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rols", force: :cascade do |t|
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_turnos", force: :cascade do |t|
+    t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,9 +33,20 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_223034) do
     t.integer "dni"
     t.string "nombre"
     t.string "apellido"
-    t.string "rol"
+    t.date "fecha_nacimiento"
+    t.string "mail"
+    t.string "telefono"
+    t.integer "rol_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rol_id"], name: "index_usuarios_on_rol_id"
+  end
+
+  create_table "vacunas", force: :cascade do |t|
+    t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "usuarios", "rols"
 end

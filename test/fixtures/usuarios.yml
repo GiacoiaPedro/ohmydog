@@ -4,10 +4,16 @@ one:
   dni: 1
   nombre: MyString
   apellido: MyString
-  rol: MyString
+  fecha_nacimiento: 2023-11-07
+  mail: MyString
+  telefono: MyString
+  rol: one
 
 two:
   dni: 1
   nombre: MyString
   apellido: MyString
-  rol: MyString
+  fecha_nacimiento: 2023-11-07
+  mail: MyString
+  telefono: MyString
+  rol: two
