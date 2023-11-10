@@ -37,10 +37,49 @@
   </head>
 
   <body id="page-top">
-  <%#Se pasan alerts del control a la vista %>
-  <%#Pasar al final de la vista%>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <!-- Contenedor de la alerta -->
+    <div id="custom-alert-container"></div>
+  
+    <%# Se pasan alerts del control a la vista %>
+    <%# Pasar al final de la vista %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  
+    <!-- Resto de tu contenido HTML -->
+  
+    <!-- Script para mostrar la alerta si hay un mensaje de alerta presente -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const alertMessage = "<%= j(alert) %>"; // j() es un método de Rails para escapar el contenido JS
+        const noticeMessage = "<%= j(notice) %>"; // j() es un método de Rails para escapar el contenido JS
+  
+        // Mostrar la alerta
+        function showAlert(message, type) {
+          const alertContainer = document.getElementById('custom-alert-container');
+  
+          if (message && alertContainer) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+            alertDiv.role = 'alert';
+            alertDiv.innerHTML = `
+              ${message}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            alertContainer.appendChild(alertDiv);
+          }
+        }
+  
+        // Mostrar la alerta de alert
+        showAlert(alertMessage, 'danger');
+  
+        // Mostrar la alerta de notice
+        showAlert(noticeMessage, 'success');
+      });
+    </script> 
+  
+    <!-- Agrega los scripts y estilos de Bootstrap si aún no lo has hecho -->
+  </body>
+  
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -134,20 +173,6 @@
                 </a>
             </li>
 
-            <% if user_signed_in? %>
-              <li>
-                 <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
-               <li>
-               <% else %>
-               <li>
-                 <%= link_to "inciar sesion", new_user_session_path %>
-               <li>
-               <li>
-                 <%= link_to "Crear cuenta", new_user_registration_path%>
-               <li>
-                 
-            <% end %>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -206,31 +231,41 @@
                                 src="/assets/usuarioGenerico.png">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/dashboard/iniciar_sesion.html">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Iniciar Sesión
-                                </a>
-                                <a class="dropdown-item" href="#">
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <% if user_signed_in? %>
+                                 <!-- Opciones para usuarios autenticados -->
+                                    <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Configuracion
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Mis Turnos     
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesión
-                                </a>
-                            </div>
-                        </li>
+                                        Configuración
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Mis Turnos
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="delete" data-confirm="¿Estás seguro?">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Cerrar Sesión
+                                    </a>
+                                    <% else %>
+                                    <!-- Opciones para usuarios no autenticados -->
+                                    <a class="dropdown-item" href="<%= new_user_session_path %>">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Iniciar Sesión
+                                    </a>
+                                    <a class="dropdown-item" href="<%= new_user_registration_path %>">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Configuración
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Mis Turnos
+                                    </a>
+                                    <% end %>
+                                </div>
+  
 
-                    </ul>
-
-                </nav>
+                             </nav>
                 <!-- End of Topbar -->
 
 
