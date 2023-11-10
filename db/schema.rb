@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_001602) do
     t.date "fecha_nacimiento"
     t.string "mail"
     t.string "telefono"
-    t.integer "rol_id", null: false
+    t.integer "rol_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rol_id"], name: "index_usuarios_on_rol_id"

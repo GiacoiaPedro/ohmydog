@@ -1,0 +1,105 @@
+<div class="text-center">
+  <h1>Registro de Usuarios</h1>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Encabezado del documento -->
+</head>
+<body>
+
+<%= form_with(model: @usuario, url: usuarios_path, local: true, html: { class: 'user-form' }) do |form| %>
+  <div class="form-group">
+    <%= form.label :dni, 'DNI', class: 'control-label' %>
+    <%= form.text_field :dni, class: 'form-control', placeholder: 'Ingrese DNI', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nombre, 'Nombre', class: 'control-label' %>
+    <%= form.text_field :nombre, class: 'form-control', placeholder: 'Ingrese nombre', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :apellido, 'Apellido', class: 'control-label' %>
+    <%= form.text_field :apellido, class: 'form-control', placeholder: 'Ingrese apellido', required: true %>
+  </div>
+
+ <div class="form-group">
+    <%= form.label :fecha_nacimiento, 'Fecha de Nacimiento', class: 'control-label' %>
+    <%= form.date_field :fecha_nacimiento, class: 'form-control', required: true %>
+    <small class="form-text text-muted" id="edadMensaje"></small>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :rol_id, 'Rol', class: 'control-label' %>
+    <%= form.select :rol_id, { 'admin' => 1, 'user' => 2 }, {}, class: 'form-control', placeholder: 'Seleccione Rol', required: true %>
+  </div>
+
+  <div class="text-center">
+    <%= form.submit 'Crear Usuario', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const formulario = document.querySelector('.user-form');
+    const campoNombre = formulario.querySelector('[name="usuario[nombre]"]');
+    const campoApellido = formulario.querySelector('[name="usuario[apellido]"]');
+    const campoDNI = formulario.querySelector('[name="usuario[dni]"]');
+    const campoEmail = formulario.querySelector('[name="usuario[mail]"]');
+    const campoFechaNacimiento = formulario.querySelector('[name="usuario[fecha_nacimiento]"]');
+    const botonRegistrar = formulario.querySelector('[type="submit"]');
+
+     // Función para verificar si los campos obligatorios están llenos
+    function validarCamposObligatorios() {
+        return (
+            campoNombre.value.trim() !== '' &&
+            campoApellido.value.trim() !== '' &&
+            campoDNI.value.trim() !== '' &&
+            campoEmail.value.trim() !== '' &&
+            campoFechaNacimiento.value.trim() !== ''
+        );
+    }
+
+    // Agregar eventos de escucha para los campos obligatorios
+    campoNombre.addEventListener('input', validarFormulario);
+    campoApellido.addEventListener('input', validarFormulario);
+    campoDNI.addEventListener('input', validarFormulario);
+    campoEmail.addEventListener('input', validarFormulario);
+    campoFechaNacimiento.addEventListener('input', validarFormulario);
+
+    // Función para validar el formulario
+    function validarFormulario() {
+        if (validarCamposObligatorios()) {
+            botonRegistrar.removeAttribute('disabled');
+        } else {
+            botonRegistrar.setAttribute('disabled', 'true');
+        }
+    }
+
+    botonRegistrar.addEventListener('click', function () {
+        if (!botonRegistrar.hasAttribute('disabled')) {
+            const edad = calcularEdad(campoFechaNacimiento.value);
+            if (edad >= 18) {
+                formulario.submit();
+            } else {
+                alert('Debes ser mayor de 18 años para registrarte.');
+            }
+        }
+    });
+
+    // Función para calcular la edad
+    function calcularEdad(fechaNacimiento) {
+        const hoy = new Date();
+        const fechaNac = new Date(fechaNacimiento);
+        let edad = hoy.getFullYear() - fechaNac.getFullYear();
+        const mes = hoy.getMonth() - fechaNac.getMonth();
+        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+            edad--;
+        }
+        return edad;
+    }
+});
+</script>
+
+</body>
+</html>
