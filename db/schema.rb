@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_09_223237) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_10_215022) do
   create_table "razas", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_09_223237) do
     t.integer "rol_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "habilitado", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"
