@@ -11,12 +11,28 @@
   <div class="field">
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre, class: "form-control" %>
-  </div> 
+  </div>
 
   <div class="field">
     <%= f.label :apellido %><br />
     <%= f.text_field :apellido, class: "form-control" %>
-  </div> 
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dni %><br />
+    <%= f.text_field :dni, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rol_id %><br />
+    <%= f.text_field :rol_id, class: "form-control" %>
+  </div>
+
 
   <div class="field">
     <%= f.label :password %>
@@ -34,7 +50,6 @@
   <div class="actions">
     <%= f.submit "Registrarse", class: "btn btn-primary" %>
   </div>
-  
 <% end %>
 
 <%= render "devise/shared/links" %>
