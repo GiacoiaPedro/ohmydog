@@ -138,6 +138,14 @@
               <li>
                  <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
                <li>
+               <% else %>
+               <li>
+                 <%= link_to "inciar sesion", new_user_session_path %>
+               <li>
+               <li>
+                 <%= link_to "Crear cuenta", new_user_registration_path%>
+               <li>
+                 
             <% end %>
 
             <!-- Divider -->
