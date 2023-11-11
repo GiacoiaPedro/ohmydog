@@ -1,34 +1,22 @@
-# frozen_string_literal: true
-
 class Users::PasswordsController < Devise::PasswordsController
-  # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def create
+    self.resource = resource_class.find_by_email(resource_params[:email])
 
-  # POST /resource/password
-  # def create
-  #   super
-  # end
+    if resource
+      # Generar automáticamente una nueva contraseña
+      new_password = generate_random_password
 
-  # GET /resource/password/edit?reset_password_token=abcdef
-  # def edit
-  #   super
-  # end
+      # Actualizar la contraseña del usuario
+      resource.update(password: new_password, password_confirmation: new_password)
 
-  # PUT /resource/password
-  # def update
-  #   super
-  # end
+      # Enviar un correo electrónico con la nueva contraseña
+      UserMailer.with(user: resource, password: new_password).reset_password.deliver_later
 
-  # protected
-
-  # def after_resetting_password_path_for(resource)
-  #   super(resource)
-  # end
-
-  # The path used after sending reset password instructions
-  # def after_sending_reset_password_instructions_path_for(resource_name)
-  #   super(resource_name)
-  # end
+      set_flash_message! :notice, :send_instructions
+      respond_with({}, location: after_sending_reset_password_instructions_path_for(resource_name))
+    else
+      set_flash_message! :alert, :email_not_found
+      respond_with({}, location: new_password_path(resource_name))
+    end
+  end
 end

@@ -41,4 +41,14 @@ es:
         invalid: "La contraseña actual es inválida"
       password_confirmation:
               confirmation: "No coincide con la contraseña"
+
+
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_strength: "La contraseña es debil, recomendamos usar numeros, mayusculas y minusculas, y carácteres especiales."
               

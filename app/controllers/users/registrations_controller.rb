@@ -2,6 +2,9 @@
 
 
   class Users::RegistrationsController < Devise::RegistrationsController
+
+    require 'securerandom'
+
     skip_before_action :require_no_authentication, only: [:new, :create]
     before_action :authenticate_user!
 
@@ -38,25 +41,35 @@
     
     def create
       build_resource(sign_up_params)
-  
-      resource.save
-
-      yield resource if block_given?
-      if resource.persisted?
+    
+      # Generar automáticamente la contraseña
+      generated_password = generate_random_password
+      resource.password = generated_password
+      resource.password_confirmation = generated_password
+    
+      if resource.save
+        yield resource if block_given?
+    
         set_flash_message! :notice, :signed_up
         clean_up_passwords resource
         set_minimum_password_length
         respond_with resource, location: after_sign_up_path_for(resource)
+    
+        # Enviar correo electrónico con la nueva contraseña
+        UserMailer.with(user: resource, password: generated_password).bienvenida.deliver_later
       else
         clean_up_passwords resource
         set_minimum_password_length
         respond_with resource
       end
-
-      if @user.save
-        UserMailer.with(user: @user).bienvenida.deliver_later
-      end
     end
+  
+    private
+  
+    def generate_random_password(length = 12)
+      SecureRandom.urlsafe_base64(length).tr('lIO0', 'sxyz')
+    end
+  end
 
 
 
@@ -74,4 +87,4 @@
     def password_params
       params.require(:user).permit(:current_password, :password, :password_confirmation)
     end
-  end
+
