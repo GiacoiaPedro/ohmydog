@@ -1,0 +1,29 @@
+<!-- app/views/dashboard/eliminar_usuario.html.erb -->
+
+<h1>Lista de Usuarios Habilitados</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.email %></td>
+        <td>
+  <%= form_tag(eliminar_usuario_path(usuario), method: :patch) do %>
+    <%= submit_tag 'Eliminar', class: 'btn btn-danger' %>
+  <% end %>
+</td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
