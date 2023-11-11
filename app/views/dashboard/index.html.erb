@@ -1,3 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Página de Inicio - Oh My Dog</title>
+    <style>
+        
 
-<h1>ohmydog</h1>
-<p>nuestra primer app</p>
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #fc904f;
+            color: #ffffff;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        main img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenido a la página de Oh My Dog</h1>
+    </header>
+
+    <main>
+        <img src="<%= asset_path('logo.png') %>" alt="Logo de Oh My Dog">
+
+        <div class="container-fluid">
+    <div class="row">
+
+        <!-- Tarjeta: Solicitar Turno -->
+        <div class="col-md-2">
+            <div class="card">
+                <a href="/dashboard/solicitar_turno.html">
+                    <img src="<%= asset_path('turno.png') %>" class="card-img-top" alt="Imagen de la opción">
+                    <div class="card-body">
+                        <h6 class="card-title">Solicitar Turno</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta: Perros Perdidos -->
+        <div class="col-md-2">
+            <div class="card">
+                <a href="/dashboard/perros_perdidos.html">
+                    <img src="<%= asset_path('perro.png') %>" class="card-img-top" alt="Imagen de la opción">
+                    <div class="card-body">
+                        <h6 class="card-title">Perros Perdidos</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta: Perros Encontrados -->
+        <div class="col-md-2">
+            <div class="card">
+                <a href="/dashboard/perros_encontrados.html">
+                    <img src="<%= asset_path('perro.png') %>" class="card-img-top" alt="Imagen de la opción">
+                    <div class="card-body">
+                        <h6 class="card-title">Perros Encontrados</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta: Adopciones -->
+        <div class="col-md-2">
+            <div class="card">
+                <a href="/dashboard/adopciones.html">
+                    <img src="<%= asset_path('adopcion.png') %>" class="card-img-top" alt="Imagen de la opción">
+                    <div class="card-body">
+                        <h6 class="card-title">Adopciones</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta: Paseadores -->
+        <div class="col-md-2">
+            <div class="card">
+                <a href="/dashboard/paseadores.html">
+                    <img src="<%= asset_path('paseador.png') %>" class="card-img-top" alt="Imagen de la opción">
+                    <div class="card-body">
+                        <h6 class="card-title">Paseadores</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta: Cuidadores -->
+        <div class="col-md-2">
+            <div class="card">
+                <a href="/dashboard/cuidadores.html">
+                    <img src="<%= asset_path('cuidador.png') %>" class="card-img-top" alt="Imagen de la opción">
+                    <div class="card-body">
+                        <h6 class="card-title">Cuidadores</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+    </main>
+
+</body>
+</html>

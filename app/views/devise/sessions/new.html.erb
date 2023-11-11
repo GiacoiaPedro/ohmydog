@@ -12,18 +12,24 @@
             <%= f.text_field :dni, autofocus: true, autocomplete: "dni", class: "form-control", pattern: "\\d*", inputmode: "numeric", title: "Ingrese solo números" %>
             </div>
 
-
             <div class="mb-3">
               <%= f.label :password, "Contraseña", class: "form-label" %>
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
             </div>
-
+            
             <div class="text-center">
               <%= f.submit "Ingresar", class: "btn btn-primary btn-block" %>
             </div>
           <% end %>
 
+          <br</br>
+
           <%= render "devise/shared/links" %>
+
+          <!-- Lema adicional -->
+          <p class="mt-4 text-center">
+            Si no contás con un usuario, acercate a la veterinaria para que te registremos :)
+          </p>
 
         </div>
       </div>
