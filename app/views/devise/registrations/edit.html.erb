@@ -26,22 +26,22 @@
 
   <!-- Campos de contraseña -->
   <div class="mb-3">
-    <%= f.label :password, "Contraseña", class: "form-label" %> <i>(dejar en blanco si no deseas cambiarla)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
-    <% if @minimum_password_length %>
-      <small><%= @minimum_password_length %> caracteres como mínimo</small>
-    <% end %>
-  </div>
+  <%= f.label :password, "Contraseña", class: "form-label" %> <i>(dejar en blanco si no deseas cambiarla)</i><br />
+  <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  <% if @minimum_password_length %>
+    <small><%= @minimum_password_length %> caracteres como mínimo</small>
+  <% end %>
+</div>
 
-  <div class="mb-3">
-    <%= f.label :password_confirmation, "Confirmar Contraseña", class: "form-label" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-  </div>
+<div class="mb-3">
+  <%= f.label :password_confirmation, "Confirmar Contraseña", class: "form-label" %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+</div>
 
-  <div class="mb-3">
-    <%= f.label :current_password, "Contraseña Actual", class: "form-label" %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
-  </div>
+<div class="mb-3">
+  <%= f.label :current_password, "Contraseña Actual", class: "form-label" %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i><br />
+  <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+</div>
 
   <div class="text-center">
     <%= f.submit "Actualizar", class: "btn btn-primary" %>
