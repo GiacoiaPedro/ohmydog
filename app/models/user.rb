@@ -7,5 +7,3 @@ class User < ApplicationRecord
   
   belongs_to :rol
 end
-
-#Linea   :trackable, authentication_keys: [:dni] agregada
