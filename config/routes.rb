@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'dashboard/turnos_confirmados'
   get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
+  get '/dashboard/eliminar_usuario', to: 'dashboard#eliminar_usuario'
+
 
   devise_scope :user do
     get 'users/edit_password', to: 'users/registrations#edit_password', as: 'edit_password_user'

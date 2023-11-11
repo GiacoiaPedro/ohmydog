@@ -10,6 +10,16 @@
       render :edit_password
     end
 
+    def update
+      @user = current_user
+      if @user.update_with_password(account_update_params)
+        bypass_sign_in(@user)
+        redirect_to root_path, notice: 'Perfil actualizado con éxito.'
+      else
+        render 'edit'
+      end
+    end
+
   
     def update_password
       @user = current_user
@@ -21,6 +31,11 @@
         
       end
     end
+
+    def eliminar_usuario
+      @usuarios = Usuario.all # o cualquier lógica para obtener usuarios
+    end
+    
     def create
       build_resource(sign_up_params)
   
@@ -51,9 +66,10 @@
     resource.update_with_password(params)
     end
 
-    def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: [:password, :password_confirmation, :current_password])
+    def account_update_params
+      params.require(:user).permit(:email, :nombre, :apellido, :telefono, :fecha_nacimiento, :current_password)
     end
+    
   
     def password_params
       params.require(:user).permit(:current_password, :password, :password_confirmation)
