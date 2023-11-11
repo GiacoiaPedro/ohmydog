@@ -37,48 +37,28 @@
   </head>
 
   <body id="page-top">
-    <!-- Contenedor de la alerta -->
-    <div id="custom-alert-container"></div>
-  
-    <%# Se pasan alerts del control a la vista %>
-    <%# Pasar al final de la vista %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  
-    <!-- Resto de tu contenido HTML -->
-  
-    <!-- Script para mostrar la alerta si hay un mensaje de alerta presente -->
+    <!-- Script para mostrar la alerta en una ventana emergente del navegador -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const alertMessage = "<%= j(alert) %>"; // j() es un método de Rails para escapar el contenido JS
         const noticeMessage = "<%= j(notice) %>"; // j() es un método de Rails para escapar el contenido JS
   
-        // Mostrar la alerta
-        function showAlert(message, type) {
-          const alertContainer = document.getElementById('custom-alert-container');
-  
-          if (message && alertContainer) {
-            const alertDiv = document.createElement('div');
-            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
-            alertDiv.role = 'alert';
-            alertDiv.innerHTML = `
-              ${message}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            `;
-            alertContainer.appendChild(alertDiv);
-          }
+        // Mostrar la alerta en una ventana emergente del navegador
+        if (alertMessage) {
+          alert(alertMessage);
+        } else if (noticeMessage) {
+          alert(noticeMessage);
         }
-  
-        // Mostrar la alerta de alert
-        showAlert(alertMessage, 'danger');
-  
-        // Mostrar la alerta de notice
-        showAlert(noticeMessage, 'success');
       });
-    </script> 
+    </script>
   
-    <!-- Agrega los scripts y estilos de Bootstrap si aún no lo has hecho -->
+    <!-- Resto de tu contenido HTML -->
   </body>
+  
+
+    <!-- Agrega los scripts y estilos de Bootstrap si aún no lo has hecho -->
+</body>
+
   
 
     <!-- Page Wrapper -->
@@ -106,9 +86,10 @@
                 <div id="collapsePagesUsuarios" class="collapse" aria-labelledby="headingPagesUsuarios" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/users/sign_up">Registrar Usuario</a>
-                        <a class="collapse-item" href="/users/edit">Modificar Usuario</a>
-                        <a class="collapse-item" href="/dashboard/registrar_perro.html">Registrar perro</a>
-                        <a class="collapse-item" href="/dashboard/eliminar_usuario.html">Eliminar usuario</a>
+                        <a class="collapse-item" href="/dashboard/eliminar_usuario.html">Eliminar Usuario</a>
+                        <a class="collapse-item" href="/dashboard/registrar_perro.html">Registrar Perro</a>
+                        <a class="collapse-item" href="/dashboard/eliminar_usuario.html">Eliminar Perro</a>
+                        
                     </div>
                 </div>
             </li>
@@ -234,15 +215,10 @@
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <% if user_signed_in? %>
                                  <!-- Opciones para usuarios autenticados -->
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="/users/edit">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Configuración
+                                        Mis Datos
                                     </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Mis Turnos
-                                    </a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="delete" data-confirm="¿Estás seguro?">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Cerrar Sesión
@@ -252,14 +228,6 @@
                                     <a class="dropdown-item" href="<%= new_user_session_path %>">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Iniciar Sesión
-                                    </a>
-                                    <a class="dropdown-item" href="<%= new_user_registration_path %>">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Configuración
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Mis Turnos
                                     </a>
                                     <% end %>
                                 </div>
