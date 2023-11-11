@@ -25,6 +25,7 @@
       build_resource(sign_up_params)
   
       resource.save
+
       yield resource if block_given?
       if resource.persisted?
         set_flash_message! :notice, :signed_up
@@ -35,6 +36,10 @@
         clean_up_passwords resource
         set_minimum_password_length
         respond_with resource
+      end
+
+      if @user.save
+        UserMailer.with(user: @user).bienvenida.deliver_later
       end
     end
 
