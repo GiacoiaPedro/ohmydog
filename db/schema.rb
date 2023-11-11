@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_10_215022) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_11_211227) do
+  create_table "historial_turnos", force: :cascade do |t|
+    t.date "fecha"
+    t.time "hora"
+    t.string "franja"
+    t.integer "tipo_turno_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tipo_turno_id"], name: "index_historial_turnos_on_tipo_turno_id"
+  end
+
+  create_table "historial_vacunas", force: :cascade do |t|
+    t.date "fecha"
+    t.integer "vacuna_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vacuna_id"], name: "index_historial_vacunas_on_vacuna_id"
+  end
+
+  create_table "perros", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "edad"
+    t.date "fecha_nacimiento"
+    t.string "sexo"
+    t.integer "historial_vacuna_id"
+    t.integer "historial_turno_id"
+    t.integer "raza_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["historial_turno_id"], name: "index_perros_on_historial_turno_id"
+    t.index ["historial_vacuna_id"], name: "index_perros_on_historial_vacuna_id"
+    t.index ["raza_id"], name: "index_perros_on_raza_id"
+    t.index ["user_id"], name: "index_perros_on_user_id"
+  end
+
   create_table "razas", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
@@ -62,5 +97,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_215022) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "historial_turnos", "tipo_turnos"
+  add_foreign_key "historial_vacunas", "vacunas"
+  add_foreign_key "perros", "historial_turnos"
+  add_foreign_key "perros", "historial_vacunas"
+  add_foreign_key "perros", "razas"
+  add_foreign_key "perros", "users"
   add_foreign_key "users", "rols"
 end

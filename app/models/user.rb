@@ -6,6 +6,7 @@ class User < ApplicationRecord
         :trackable, authentication_keys: [:dni]
   
   belongs_to :rol
+  has_many :perros
 end
 
 #Linea   :trackable, authentication_keys: [:dni] agregada
