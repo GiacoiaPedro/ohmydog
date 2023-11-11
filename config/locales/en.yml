@@ -29,3 +29,16 @@
 
 en:
   hello: "Hello world"
+# config/locales/es.yml
+# config/locales/es.yml
+
+es:
+  errors:
+    messages:
+      not_saved: "No se pudo guardar el registro"
+    attributes:
+      current_password:
+        invalid: "La contraseña actual es inválida"
+      password_confirmation:
+              confirmation: "No coincide con la contraseña"
+              
