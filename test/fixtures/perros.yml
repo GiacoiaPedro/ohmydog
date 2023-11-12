@@ -5,9 +5,6 @@ one:
   edad: 1
   fecha_nacimiento: 2023-11-11
   sexo: MyString
-  historial_vacunas: one
-  historial_turnos: one
-  raza: one
   user: one
 
 two:
@@ -15,7 +12,4 @@ two:
   edad: 1
   fecha_nacimiento: 2023-11-11
   sexo: MyString
-  historial_vacunas: two
-  historial_turnos: two
-  raza: two
   user: two
