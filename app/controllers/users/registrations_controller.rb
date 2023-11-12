@@ -35,9 +35,7 @@
       end
     end
 
-    def eliminar_usuario
-      @usuarios = Usuario.all # o cualquier lógica para obtener usuarios
-    end
+    
     
     def create
       build_resource(sign_up_params)

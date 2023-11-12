@@ -14,4 +14,15 @@ class User < ApplicationRecord
   end
 
   belongs_to :rol
+
+
+  validate :validate_fecha_nacimiento
+
+  def validate_fecha_nacimiento
+    if fecha_nacimiento.present? && fecha_nacimiento > 18.years.ago.to_date
+      errors.add(:fecha_nacimiento, ": Debes ser mayor a 18 años para registrarte")
+    end
+  end
+
+
 end

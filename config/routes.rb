@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -26,15 +27,20 @@ Rails.application.routes.draw do
   get 'dashboard/turnos_confirmados'
   get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
-  get '/dashboard/eliminar_usuario', to: 'dashboard#eliminar_usuario'
+  # config/routes.rb
 
+  # config/routes.rb
+
+  resources :usuarios, controller: 'dashboard', only: [] do
+    member do
+      patch :eliminar
+    end
+  end
 
   devise_scope :user do
     get 'users/edit_password', to: 'users/registrations#edit_password', as: 'edit_password_user'
     put 'users/update_password', to: 'users/registrations#update_password', as: 'update_password_user'
   end
 
-
-  # Defines the root path route ("/")
-   root "dashboard#index"
+  root "dashboard#index"
 end
