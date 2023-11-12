@@ -67,11 +67,6 @@
     def generate_random_password(length = 12)
       SecureRandom.urlsafe_base64(length).tr('lIO0', 'sxyz')
     end
-  end
-
-
-
-    private
 
     def update_resource(resource, params)
     resource.update_with_password(params)
@@ -85,4 +80,5 @@
     def password_params
       params.require(:user).permit(:current_password, :password, :password_confirmation)
     end
+  end
 
