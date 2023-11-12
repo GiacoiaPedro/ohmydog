@@ -41,10 +41,6 @@ Rails.application.routes.draw do
     get 'users/edit_password', to: 'users/registrations#edit_password', as: 'edit_password_user'
     put 'users/update_password', to: 'users/registrations#update_password', as: 'update_password_user'
   end
-<<<<<<< HEAD
-
-=======
->>>>>>> 57baa0d266d2856d7976f4bc86f2c3606faf97c1
 
   root "dashboard#index"
 end
