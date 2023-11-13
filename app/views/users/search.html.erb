@@ -1,0 +1,36 @@
+<!-- app/views/user_search/search.html.erb -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mb-4">Buscar Usuarios por DNI</h1>
+
+      <%= form_tag(user_search_search_path, method: :get, class: 'mb-3') do %>
+        <div class="input-group">
+          <%= text_field_tag 'dni', params[:dni], class: 'form-control', placeholder: 'Ingresar DNI' %>
+          <div class="input-group-append">
+            <%= submit_tag 'Buscar', class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @users.present? %>
+        <h2 class="mt-4">Resultados de la búsqueda:</h2>
+        <ul class="list-group">
+          <% @users.each do |user| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= "#{user.nombre} #{user.apellido} - DNI: #{user.dni}" %>
+              <div class="btn-group">
+                <%= link_to 'Perros', '#', class: 'btn btn-primary' %>
+                <%= link_to 'Turnos', '#', class: 'btn btn-primary' %>
+                <%= link_to 'Donaciones', '#', class: 'btn btn-primary' %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="mt-4">No se encontraron usuarios con ese DNI.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

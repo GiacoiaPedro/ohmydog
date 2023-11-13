@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_search/search'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   get 'dashboard/turnos_confirmados'
   get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
+  get '/users/search', to: 'user_search#search'
+
   # config/routes.rb
 
   # config/routes.rb
@@ -40,6 +43,12 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/edit_password', to: 'users/registrations#edit_password', as: 'edit_password_user'
     put 'users/update_password', to: 'users/registrations#update_password', as: 'update_password_user'
+  end
+
+  resources :user_search, only: [] do
+    collection do
+      get 'search'
+    end
   end
 
   root "dashboard#index"
