@@ -152,7 +152,7 @@
                 </button>
             </li>
 
-            
+            <% if user_signed_in? %>
             <li class="nav-item">
              <!-- <a class="nav-link" href="/dashboard/adopciones.html" style="display: flex; align-items: center;"> -->
                 <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
@@ -162,6 +162,7 @@
                 </a>
                 </button>
             </li>
+            <% end %>
 
 
             <li class="nav-item">
