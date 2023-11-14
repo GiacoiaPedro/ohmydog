@@ -30,12 +30,16 @@ Rails.application.routes.draw do
   get 'dashboard/turnos_confirmados'
   get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
+  get 'dashboard/mis_perros'
   get '/users/search', to: 'user_search#search'
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
 
 # En config/routes.rb
 resources :perros
 
+
+
+  get 'mis_perros', to: 'perros#mis_perros', as: 'mis_perros'
 
   # config/routes.rb
 

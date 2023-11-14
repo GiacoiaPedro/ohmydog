@@ -18,4 +18,17 @@ def eliminar
   redirect_to root_path, notice: 'Usuario deshabilitado exitosamente.'
 end
 
+def registrar_perro
+  dni = params[:dni_dueño] 
+  @user = User.find_by(dni: dni)
+
+  if @user
+    @perro = Perro.new
+    @perro.user = @user
+  else
+    flash[:alert] = 'User not found with the provided DNI'
+    redirect_to root_path
+  end
+end
+
 end

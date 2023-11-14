@@ -33,6 +33,9 @@ class PerrosController < ApplicationController
     end
   end
   
+  def mis_perros
+    @mis_perros = current_user.perros
+  end
 
   private
 
