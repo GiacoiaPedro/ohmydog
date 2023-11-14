@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'perros/new'
+  get 'perros/create'
   get 'user_search/search'
 
   devise_for :users, controllers: {
@@ -29,6 +31,11 @@ Rails.application.routes.draw do
   get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
   get '/users/search', to: 'user_search#search'
+  get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
+
+# En config/routes.rb
+resources :perros
+
 
   # config/routes.rb
 

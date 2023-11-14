@@ -3,7 +3,7 @@
 class UserSearchController < ApplicationController
   def search
     if params[:dni].present?
-      @users = User.where(dni: params[:dni])
+      @users = User.where(dni: params[:dni], habilitado: true)
     else
       @users = []
     end

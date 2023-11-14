@@ -1,0 +1,60 @@
+<!-- app/views/perros/registrar_perro.html.erb -->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Registrar un nuevo perro</h1>
+
+      <%= form_for @perro, html: { class: "form" } do |f| %>
+        <div class="form-group">
+          <%= f.label :nombre, class: "form-label" %>
+          <%= f.text_field :nombre, class: "form-control" %>
+
+          <!-- Muestra los errores asociados a nombre -->
+          <% if @perro.errors[:nombre].any? %>
+            <div class="alert alert-danger">
+              <%= @perro.errors[:nombre].join(', ') %>
+            </div>
+          <% end %>
+        </div>
+       <!-- Campo oculto para user_id -->
+        <%= f.hidden_field :edad %>
+
+        <div class="form-group">
+          <%= f.label :fecha_nacimiento, class: "form-label" %>
+          <%= f.date_field :fecha_nacimiento, class: "form-control", max: Date.today.strftime('%Y-%m-%d') %>
+        </div>
+
+        <div class="form-group">
+  <%= f.label :sexo, class: "form-label" %>
+  <%= f.select :sexo, ["Macho", "Hembra"], { prompt: "Seleccionar Sexo" }, { class: "form-control", required: true } %>
+  <% if @perro.errors[:sexo].any? %>
+    <div class="alert alert-danger">
+      <%= @perro.errors[:sexo].join(', ') %>
+    </div>
+  <% end %>
+</div>
+
+        <div class="form-group">
+        <%= f.label :dueño_dni, "DNI del dueño", class: "form-label" %>
+        <%= f.text_field :dueño_dni, class: "form-control" %>
+
+       <!-- Muestra los errores asociados a dueño_dni -->
+       <% if @perro.errors[:dueño_dni].any? %>
+       <div class="alert alert-danger">
+       <%= @perro.errors[:dueño_dni].join(', ') %>
+        </div>
+       <% end %>
+       </div>
+
+
+        <!-- Campo oculto para user_id -->
+        <%= f.hidden_field :user_id %>
+
+        <div class="text-center">
+          <%= f.submit "Registrar Perro", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
