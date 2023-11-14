@@ -1,0 +1,22 @@
+<!-- app/views/perros/mis_perros.html.erb -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mb-4">Mis Perros</h1>
+
+      <% if @mis_perros.present? %>
+        <ul class="list-group">
+          <% @mis_perros.each do |perro| %>
+            <li class="list-group-item">
+              <%= "Nombre: #{perro.nombre}, Edad: #{perro.edad}, Sexo: #{perro.sexo}" %>
+              <!-- Puedes agregar más detalles según tus necesidades -->
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="mt-4">No tienes perros registrados.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
