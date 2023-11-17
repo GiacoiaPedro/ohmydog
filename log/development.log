@@ -9575,3 +9575,173 @@ Migrating to CreateCampaigns (20231117205202)
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /home/tomas/Escritorio/ohmydog/config/environment.rb:5)
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /home/tomas/Escritorio/ohmydog/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2023-11-17 18:02:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 48.5ms | Allocations: 29584)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:81
+  Rendered layout layouts/application.html.erb (Duration: 186.4ms | Allocations: 342055)
+Completed 200 OK in 197ms (Views: 188.7ms | ActiveRecord: 0.7ms | Allocations: 351547)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2023-11-17 18:02:05 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2023-11-17 18:02:05 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:02:05 -0300
+Started GET "/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:02:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/perros/mis_perros.html" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+Processing by PerrosController#mis_perros as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:39:in `mis_perros'
+  Rendering layout layouts/application.html.erb
+  Rendering perros/mis_perros.html.erb within layouts/application
+  [1m[36mPerro Load (0.2ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/perros/mis_perros.html.erb:5
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/mis_perros.html.erb:38
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  Rendered perros/mis_perros.html.erb within layouts/application (Duration: 120.5ms | Allocations: 81241)
+  Rendered layout layouts/application.html.erb (Duration: 130.0ms | Allocations: 87586)
+Completed 200 OK in 146ms (Views: 129.8ms | ActiveRecord: 1.5ms | Allocations: 97340)
+
+
+Started GET "/perros/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+Started GET "/perros/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/perros/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:02:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+Started GET "/perros/registrar_perro" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+Processing by PerrosController#new as HTML
+  [1m[36mRaza Load (0.4ms)[0m  [1m[34mSELECT "razas".* FROM "razas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/perros_controller.rb:6:in `new'
+#<ActiveRecord::Relation [#<Raza id: 1, nombre: "Caniche", created_at: "2023-11-07 23:56:41.284942000 +0000", updated_at: "2023-11-07 23:56:41.284942000 +0000">, #<Raza id: 2, nombre: "Pitbull", created_at: "2023-11-07 23:57:00.447219000 +0000", updated_at: "2023-11-07 23:57:00.447219000 +0000">, #<Raza id: 3, nombre: "Pastor Aleman", created_at: "2023-11-07 23:58:58.250942000 +0000", updated_at: "2023-11-07 23:58:58.250942000 +0000">, #<Raza id: 4, nombre: "Golden", created_at: "2023-11-07 23:59:16.114101000 +0000", updated_at: "2023-11-07 23:59:16.114101000 +0000">, #<Raza id: 5, nombre: "Labrador", created_at: "2023-11-08 00:00:24.516255000 +0000", updated_at: "2023-11-08 00:00:24.516255000 +0000">, #<Raza id: 6, nombre: "Bulldog", created_at: "2023-11-08 00:00:47.036023000 +0000", updated_at: "2023-11-08 00:00:47.036023000 +0000">, #<Raza id: 7, nombre: "Salchicha", created_at: "2023-11-15 14:49:38.193334000 +0000", updated_at: "2023-11-15 14:49:38.193334000 +0000">, #<Raza id: 8, nombre: "Beagle", created_at: "2023-11-15 14:49:51.746007000 +0000", updated_at: "2023-11-15 14:49:51.746007000 +0000">, #<Raza id: 9, nombre: "Rottweiler", created_at: "2023-11-15 14:50:00.898595000 +0000", updated_at: "2023-11-15 14:50:00.898595000 +0000">, #<Raza id: 10, nombre: "Dogo", created_at: "2023-11-15 14:50:21.961877000 +0000", updated_at: "2023-11-15 14:50:21.961877000 +0000">, ...]>
+  Rendering layout layouts/application.html.erb
+  Rendering perros/registrar_perro.html.erb within layouts/application
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/registrar_perro.html.erb:38
+  Rendered perros/registrar_perro.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3847)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:81
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 11013)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 0.5ms | Allocations: 13129)
+
+
+Started GET "/perros/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+Started GET "/perros/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/perros/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:02:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+Started POST "/perros" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+Processing by PerrosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "perro"=>{"nombre"=>"mandy", "fecha_nacimiento"=>"1111-11-11", "sexo"=>"Macho", "raza_id"=>"14", "dueño_dni"=>"1234512345"}, "commit"=>"Registrar Perro"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/perros_controller.rb:21:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:21:in `create'
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:21:in `create'
+  [1m[36mPerro Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "perros" WHERE "perros"."nombre" = ? AND "perros"."user_id" = ? LIMIT ?[0m  [["nombre", "mandy"], ["user_id", 83], ["LIMIT", 1]]
+  ↳ app/models/perro.rb:14:in `nombre_unico_por_usuario'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/perros_controller.rb:21:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering perros/registrar_perro.html.erb within layouts/application
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/registrar_perro.html.erb:38
+  Rendered perros/registrar_perro.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2319)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:81
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 9471)
+Completed 200 OK in 29ms (Views: 14.3ms | ActiveRecord: 2.5ms | Allocations: 17395)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+Started GET "/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/js/sb-admin-2.min.js" for 127.0.0.1 at 2023-11-17 18:03:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  

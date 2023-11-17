@@ -3,7 +3,8 @@ class Campaign < ApplicationRecord
     mount_uploader :imagen, ImagenUploader
 end
 
-#La función mount_uploader es un método proporcionado por algunas gemas de manejo de imágenes en Rails, como CarrierWave o Shrine. Este método se utiliza para configurar el manejo 
+#La función mount_uploader es un método proporcionado por algunas gemas de manejo de imágenes en Rails,
+#como CarrierWave o Shrine. Este método se utiliza para configurar el manejo 
 #de archivos adjuntos, como imágenes, en tus modelos.
 
 #En el contexto de tu pregunta anterior,
