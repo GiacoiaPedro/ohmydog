@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card">
+        <div class="card-body p-4">
+
+          <h2 class="text-center mb-4">Registrarse</h2>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "user-form" }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="mb-3">
+              <%= f.label :nombre, class: "form-label" %>
+              <%= f.text_field :nombre, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :apellido, class: "form-label" %>
+              <%= f.text_field :apellido, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :email, class: "form-label" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :fecha_nacimiento, 'Fecha de Nacimiento', class: 'form-label' %>
+              <%= f.date_field :fecha_nacimiento, class: 'form-control', required: true %>
+              <small class="form-text text-muted" id="edadMensaje"></small>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :telefono, class: "form-label" %>
+              <%= f.text_field :telefono, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :dni, class: "form-label" %>
+              <%= f.text_field :dni, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :rol_id, 'Rol', class: 'form-label' %>
+              <%= f.select :rol_id, { 'admin' => 1, 'user' => 2 }, {}, class: 'form-control', placeholder: 'Seleccione Rol', required: true %>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit "Registrar Usuario", class: "btn btn-primary btn-block" %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

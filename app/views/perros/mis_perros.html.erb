@@ -1,0 +1,65 @@
+<!-- app/views/perros/mis_perros.html.erb -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Mis Perros</h2>
+
+  <% if @mis_perros.present? %>
+    <ul class="list-group">
+      <% @mis_perros.each do |perro| %>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="mb-1"><strong>Nombre:</strong> <%= perro.nombre %></h5>
+              <p class="mb-1"><strong>Fecha de nacimiento:</strong> <%= perro.fecha_nacimiento %></p>
+              <p class="mb-1"><strong>Sexo:</strong> <%= perro.sexo %></p>
+              <p class="mb-1"><strong>Raza:</strong> <%= perro.raza.nombre %></p>
+            </div>
+            <div>
+              <button class="btn btn-primary" onclick="toggleEditar('<%= perro.id %>')">Modificar</button>
+            </div>
+          </div>
+
+          <!-- Campos de edición (inicialmente ocultos) -->
+          <div id="editar_<%= perro.id %>" class="editar-campos" style="display: none;">
+            <%= form_for(perro, url: perro_path(perro), method: :put, html: { class: "editar-form" }) do |f| %>
+              <div class="form-group">
+                <%= f.label :nombre, "Nombre", class: "form-label" %>
+                <%= f.text_field :nombre, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :fecha_nacimiento, "Fecha de nacimiento", class: "form-label" %>
+                <%= f.date_field :fecha_nacimiento, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :sexo, "Sexo", class: "form-label" %>
+                <%= f.select :sexo, ['Macho', 'Hembra'], {}, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :raza_id, "Raza", class: "form-label" %>
+                <%= f.collection_select :raza_id, @razas, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control" %>
+              </div>
+              <button type="submit" class="btn btn-success">Guardar</button>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="mt-4 text-center">No tienes perros registrados.</p>
+  <% end %>
+</div>
+
+<!-- Debería ir al final del archivo justo antes de cerrar el body -->
+<script>
+  function toggleEditar(perroId) {
+    var campoEdicion = document.getElementById('editar_' + perroId);
+    
+    // Alterna entre mostrar y ocultar el campo de edición con animación de desvanecimiento
+    if (campoEdicion.style.display === 'none') {
+      campoEdicion.style.display = 'block';
+      campoEdicion.classList.add('fade-in');
+    } else {
+      campoEdicion.style.display = 'none';
+      campoEdicion.classList.remove('fade-in');
+    }
+  }
+</script>
