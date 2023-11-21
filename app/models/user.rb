@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   belongs_to :rol
-
+  has_many :perros
 
   validate :validate_fecha_nacimiento
 

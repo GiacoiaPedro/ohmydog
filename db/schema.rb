@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_17_205202) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_21_231541) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -21,14 +21,30 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_17_205202) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "conditions", force: :cascade do |t|
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deworms", force: :cascade do |t|
+    t.integer "cantidad"
+    t.string "texto"
+    t.integer "historial_turno_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["historial_turno_id"], name: "index_deworms_on_historial_turno_id"
+  end
+
   create_table "historial_turnos", force: :cascade do |t|
-    t.date "fecha"
-    t.time "hora"
     t.string "franja"
     t.integer "tipo_turno_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "perro_id"
+    t.datetime "fecha_y_hora"
+    t.integer "condition_id"
+    t.index ["condition_id"], name: "index_historial_turnos_on_condition_id"
     t.index ["perro_id"], name: "index_historial_turnos_on_perro_id"
     t.index ["tipo_turno_id"], name: "index_historial_turnos_on_tipo_turno_id"
   end
@@ -102,12 +118,25 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_17_205202) do
     t.index ["rol_id"], name: "index_users_on_rol_id"
   end
 
+  create_table "vaccines", force: :cascade do |t|
+    t.integer "vacuna_id"
+    t.integer "peso"
+    t.string "texto"
+    t.integer "historial_turno_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["historial_turno_id"], name: "index_vaccines_on_historial_turno_id"
+    t.index ["vacuna_id"], name: "index_vaccines_on_vacuna_id"
+  end
+
   create_table "vacunas", force: :cascade do |t|
     t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "deworms", "historial_turnos"
+  add_foreign_key "historial_turnos", "conditions"
   add_foreign_key "historial_turnos", "perros"
   add_foreign_key "historial_turnos", "tipo_turnos"
   add_foreign_key "historial_vacunas", "perros"
@@ -115,4 +144,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_17_205202) do
   add_foreign_key "perros", "razas"
   add_foreign_key "perros", "users"
   add_foreign_key "users", "rols"
+  add_foreign_key "vaccines", "historial_turnos"
+  add_foreign_key "vaccines", "vacunas"
 end

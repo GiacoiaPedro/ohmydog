@@ -1,0 +1,47 @@
+<div class="container mt-5">
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-5">
+<div class="card">
+<div class="card-body p-4">
+
+    <h2 class="text-center mb-4">Solicitud de turno</h2>
+
+        <%= form_for @turno , html: { class: "form" } do |f| %>
+
+            <div class="form-group">
+            <%= f.label :fecha_y_hora, class: "form-label" %>
+            <%= f.datetime_field :fecha_y_hora, class: "form-control" %>
+                <!--Forma de mostrar mensajes de error asociados con el campo-->
+                <%= f.object.errors.full_messages_for(:fecha_y_hora).join(', ') if f.object.errors[:fecha_y_hora].any? %>           
+            </div>
+
+            
+
+            <div class="form-group">
+                <%= f.label :franja, "Franja horaria", class: "form-label" %>
+                <%= f.select :franja, ["Mañana", "Tarde"], { prompt: "Seleccionar franja horaria" }, { class: "form-control", required: true } %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :tipo_turno_id, "Tipo de turno" %>
+                <%= f.collection_select :tipo_turno_id, TipoTurno.all, :id, :tipo, { prompt: "Seleccione una raza" }, class: "form-control" %>
+                <%= f.object.errors.full_messages_for(:tipo_turno_id).join(', ') if f.object.errors[:tipo_turno_id].any? %>            
+            </div>
+
+            <div class="form-group">
+                <%= f.label :perro, "Seleccionar Perro" %>
+                <%= f.collection_select :perro_id, current_user.perros, :id, :nombre, { prompt: "Seleccione un perro" }, class: "form-control" %>                <%= f.object.errors.full_messages_for(:perro_id).join(', ') if f.object.errors[:perro_id].any? %>
+            </div>
+
+
+
+            <div class="text-center">
+                <%= f.submit "Solicitar turno", class: "btn btn-primary" %>
+            </div>
+        <% end %>
+
+</div>
+</div>
+</div>
+</div>
+</div>

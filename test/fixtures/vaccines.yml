@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vacuna: one
+  peso: 1
+  texto: MyString
+  historial_turno: one
+
+two:
+  vacuna: two
+  peso: 1
+  texto: MyString
+  historial_turno: two

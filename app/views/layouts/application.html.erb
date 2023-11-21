@@ -97,8 +97,7 @@
 
          <% if user_signed_in? && current_user.rol_id == 1 %>
             <li class="nav-item">
-                <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesTurnos" aria-expanded="true" aria-controls="collapsePagesTurnos"> -->
-                    <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
+                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesTurnos" aria-expanded="true" aria-controls="collapsePagesTurnos">
 
                     <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                     <span>Gestión de Turnos</span>
@@ -109,7 +108,7 @@
                         <a class="collapse-item" href="/dashboard/turnos_confirmados.html">Turnos confirmados</a>
                     </div>
                 </div>
-                </button>
+               
                 
             </li>
             <% end %>
@@ -120,15 +119,16 @@
             <!-- Para habilitar los botones hay que descomentar la linea comentada
                  y eliminar las lines aque dicen button -->
 
-         <% if user_signed_in? %>
+           <% if user_signed_in? %>
             <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/solicitar_turno.html" style="display: flex; align-items: center;"> -->
-                <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
+            <a class="nav-link" href="<%= new_historial_turno_path %>" style="display: flex; align-items: center;"> 
+            <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+            <span>Solicitar Turno</span>
+          </a>
+          
 
-                <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
-                <span>Solicitar Turno</span>
-                </a>
-                </button>
+              
+ 
             </li>
              <% end %>
 
