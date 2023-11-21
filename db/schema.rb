@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_17_205202) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_18_022917) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_17_205202) do
     t.date "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "activa", default: true
   end
 
   create_table "historial_turnos", force: :cascade do |t|

@@ -1,0 +1,50 @@
+<!-- app/views/campaigns/index.html.erb -->
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Campañas de Donación</h1>
+
+  <%= link_to "Crear Campaña", new_campaign_path, class: "btn btn-primary mb-4" %>
+
+  <!-- Formulario de búsqueda -->
+  <%= form_tag(search_campaigns_path, method: :get, class: 'mb-4') do %>
+    <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Buscar campañas...' %>
+    <%= submit_tag 'Buscar', class: 'btn btn-primary mt-2' %>
+  <% end %>
+
+  <% if @campaigns.any? %>
+    <div class="row">
+      <% @campaigns.each_slice(2) do |campaigns_batch| %>
+        <% campaigns_batch.each do |campaign| %>
+          <div class="col-md-6 mb-4">
+            <div class="card position-relative">
+              <% if campaign.imagen? %>
+                <%= image_tag campaign.imagen.url, class: "card-img-top w-100" %>
+              <% else %>
+                <!-- Puedes agregar un marcador de posición aquí o dejarlo en blanco -->
+                <div class="placeholder-image"></div>
+              <% end %>
+              <div class="dropdown position-absolute" style="top: 5px; right: 5px;">
+                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <%= link_to "Editar", edit_campaign_path(campaign), class: "dropdown-item" %>
+                  <%= form_tag(campaign_path(campaign), method: :delete, class: 'campaign-form') do %>
+                    <%= submit_tag 'Eliminar', class: 'dropdown-item', data: { confirm: '¿Estás seguro de eliminar esta campaña?' } %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= campaign.nombre %></h5>
+                <p class="card-text"><%= campaign.descripcion %></p>
+                <p class="card-text"><strong>Monto: $<%= campaign.monto %></strong></p>
+                <%= link_to "Donar", "#", class: "btn btn-success btn-block" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No hay campañas disponibles en este momento.</p>
+  <% end %>
+</div>

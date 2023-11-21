@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  resources :campaigns, except: [:show] do
+    member do
+      delete :destroy
+    end
+    collection do
+      get :search
+    end
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -33,6 +41,8 @@ Rails.application.routes.draw do
   get '/perros/mis_perros'
   get '/users/search', to: 'user_search#search'
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
+  
+  
   get 'perros/editar_perro'
 
 # En config/routes.rb

@@ -1,12 +1,13 @@
 class Campaign < ApplicationRecord
 
     mount_uploader :imagen, ImagenUploader
+    validates :nombre, presence: true, uniqueness: { case_sensitive: false, message:': ya existe una campaña con ese nombre' }
+    validates :monto, presence: true, numericality: { greater_than_or_equal_to: 0, message: ': no puede ser menor a 0' }
+    validates :imagen, presence: true, unless: :imagen_existente?
+
+    def imagen_existente?
+        imagen.present? && imagen.file.exists?
+      end
+    
 end
 
-#La función mount_uploader es un método proporcionado por algunas gemas de manejo de imágenes en Rails,
-#como CarrierWave o Shrine. Este método se utiliza para configurar el manejo 
-#de archivos adjuntos, como imágenes, en tus modelos.
-
-#En el contexto de tu pregunta anterior,
-#relacionada con la adición de una columna para imágenes en un modelo User, mount_uploader se utilizaría para indicar a Rails cómo manejar la carga y el almacenamiento 
-#de imágenes en esa columna específica.

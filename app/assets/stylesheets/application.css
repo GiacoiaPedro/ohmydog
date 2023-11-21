@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+/* app/assets/stylesheets/application.css */
+
+/* Estilos para el botón de carga de imágenes */
+.image-upload-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Puedes ajustar el tamaño del texto según tus preferencias */
+    cursor: pointer;
+    opacity: 0;
+  }
+  
