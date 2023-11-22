@@ -18954,3 +18954,121 @@ ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor
   
 ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
   
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+Started GET "/historial_turnos/new" for ::1 at 2023-11-21 22:30:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:27
+  [1m[36mPerro Load (0.2ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:33
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 88.7ms | Allocations: 90074)
+  Rendered layout layouts/application.html.erb (Duration: 383.0ms | Allocations: 164936)
+Completed 200 OK in 876ms (Views: 543.7ms | ActiveRecord: 2.0ms | Allocations: 555201)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-21 22:30:05 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-21 22:30:05 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-21 22:30:05 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-21 22:30:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/dashboard/turnos_pendientes.html" for ::1 at 2023-11-21 22:30:07 -0300
+Processing by DashboardController#turnos_pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/turnos_pendientes.html.erb within layouts/application
+  Rendered dashboard/turnos_pendientes.html.erb within layouts/application (Duration: 0.8ms | Allocations: 546)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:81
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 8543)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.2ms | Allocations: 9032)
+
+
+Started GET "/dashboard/js/sb-admin-2.min.js" for ::1 at 2023-11-21 22:30:07 -0300
+Started GET "/dashboard/vendor/jquery/jquery.min.js" for ::1 at 2023-11-21 22:30:07 -0300
+Started GET "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-21 22:30:07 -0300
+Started GET "/dashboard/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-21 22:30:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/js/sb-admin-2.min.js"):
+  
+Started GET "/dashboard/turnos_confirmados.html" for ::1 at 2023-11-21 22:30:10 -0300
+Processing by DashboardController#turnos_confirmados as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/turnos_confirmados.html.erb within layouts/application
+  Rendered dashboard/turnos_confirmados.html.erb within layouts/application (Duration: 0.8ms | Allocations: 479)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:81
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 8076)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.1ms | Allocations: 8408)
+
+
+Started GET "/dashboard/js/sb-admin-2.min.js" for ::1 at 2023-11-21 22:30:10 -0300
+Started GET "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-21 22:30:10 -0300
+Started GET "/dashboard/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-21 22:30:10 -0300
+Started GET "/dashboard/vendor/jquery/jquery.min.js" for ::1 at 2023-11-21 22:30:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-21 22:30:12 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:27
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:33
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2380)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 9016)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.2ms | Allocations: 10311)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-21 22:30:12 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-21 22:30:12 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-21 22:30:12 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-21 22:30:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
