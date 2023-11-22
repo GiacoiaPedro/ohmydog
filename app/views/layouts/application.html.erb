@@ -95,11 +95,9 @@
             </li>
             <% end %>
 
-         <% if user_signed_in? && current_user.rol_id == 1 %>
+            <% if user_signed_in? && current_user.rol_id == 1 %>
             <li class="nav-item">
-                <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesTurnos" aria-expanded="true" aria-controls="collapsePagesTurnos"> -->
-                    <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesTurnos" aria-expanded="true" aria-controls="collapsePagesTurnos" style="display: flex; align-items: center; background: none; border: none;">
                     <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                     <span>Gestión de Turnos</span>
                 </a>
@@ -109,96 +107,79 @@
                         <a class="collapse-item" href="/dashboard/turnos_confirmados.html">Turnos confirmados</a>
                     </div>
                 </div>
-                </button>
-                
             </li>
-            <% end %>
-
+        <% end %>
+        
 
             <!-- Botones -->
 
             <!-- Para habilitar los botones hay que descomentar la linea comentada
                  y eliminar las lines aque dicen button -->
 
-         <% if user_signed_in? %>
-            <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/solicitar_turno.html" style="display: flex; align-items: center;"> -->
-                <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
 
+                 <style>
+                    .nav-link span,
+                    .nav-link img {
+                        margin-right: 5px; /* Puedes ajustar este valor según tu preferencia */
+                    }
+                </style>
+
+         <% if user_signed_in? %>
+         <li class="nav-item">
+            <a class="nav-link" href="/dashboard/solicitar_turno.html" style="display: flex; align-items: center; background: none; border: none;">
                 <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                 <span>Solicitar Turno</span>
-                </a>
-                </button>
-            </li>
-             <% end %>
-
-
-            <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/perros_perdidos.html" style="display: flex; align-items: center;"> -->
-                <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
+            </a>
+        </li>
+        <% end %>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/perros_perdidos.html" style="display: flex; align-items: center; background: none; border: none;">
                 <img src="<%= asset_path('perro.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                 <span>Perros Perdidos</span>
-                </a>
-                </button>
-            </li>
+            </a>
+        </li>
+        
 
-            <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/perros_encontrados.html" style="display: flex; align-items: center;"> -->
-                <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/perros_encontrados.html" style="display: flex; align-items: center;">
                 <img src="<%= asset_path('perro.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                 <span>Perros Encontrados</span>
-                </a>
-                </button>
-            </li>
-
-            <% if user_signed_in? %>
+            </a>
+        </li>
+        
+        <% if user_signed_in? %>
             <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/adopciones.html" style="display: flex; align-items: center;"> -->
-                <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
-                <img src="<%= asset_path('adopcion.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
-                <span>Adopciones</span>
+                <a class="nav-link" href="/dashboard/adopciones.html" style="display: flex; align-items: center;">
+                    <img src="<%= asset_path('adopcion.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                    <span>Adopciones</span>
                 </a>
-                </button>
             </li>
-            <% end %>
-
-
-            <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/paseadores.html" style="display: flex; align-items: center;"> -->
-                <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
+        <% end %>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/servicios/paseadores.html" style="display: flex; align-items: center;">
                 <img src="<%= asset_path('paseador.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                 <span>Paseadores</span>
-                </a>
-                </button>
-            </li>
-
-
-            <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/cuidadores.html" style="display: flex; align-items: center;"> -->
-             <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/servicios/cuidadores.html" style="display: flex; align-items: center;">
                 <img src="<%= asset_path('cuidador.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                 <span>Cuidadores</span>
-                </a>
-                </button>
-            </li>
-            
-            <% if user_signed_in? %>
+            </a>
+        </li>
+        
+        <% if user_signed_in? %>
             <li class="nav-item">
-             <!-- <a class="nav-link" href="/dashboard/cruza_de_perros.html" style="display: flex; align-items: center;"> -->
-              <button class="nav-link" disabled style="display: flex; align-items: center; background: none; border: none;"> 
-
-                <img src="<%= asset_path('cruza.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
-                <span>Cruza de Perros</span>
+                <a class="nav-link" href="/dashboard/cruza_de_perros.html" style="display: flex; align-items: center;">
+                    <img src="<%= asset_path('cruza.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                    <span>Cruza de Perros</span>
                 </a>
-                </button>
-
             </li>
-            <% end %>
+        <% end %>
+        
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">  

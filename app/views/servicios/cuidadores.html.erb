@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .card {
+            flex: 0 0 calc(45% - 20px);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column; /* Cambiado a columna para que el texto esté pegado a la izquierda */
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .card-description {
+            font-size: 14px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end; /* Alineado a la derecha */
+        }
+
+        .contact-button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .become-caretaker-button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">    
+        <div class="title">Listado de Cuidadores</div>
+
+        <% if user_signed_in? && current_user.rol_id == 1 %>
+            <div class="button-container">
+                <button class="become-caretaker-button" onclick="window.location.href='<%= cargar_cuidador_path %>'">Cargar Cuidador</button>
+            </div>
+        <% end %>
+
+        <div class="card-container">
+            <% @servicios.each do |servicio| %>
+                <% if servicio.tipo == "1" %>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
+                            <div class="card-description">Zona: <%= servicio.zona %></div>
+                            <div class="card-description">Disponibilidad: <%= servicio.horarios %></div>
+                        </div>
+                        <div class="button-container">
+                            <button class="contact-button">Contactar</button>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</body>
+
+</html>
