@@ -1,0 +1,43 @@
+<!-- app/views/tu_controlador/cargar_paseador.html.erb -->
+
+<div class="container">
+  <div class="title" style="font-size: 28px; margin-bottom: 20px; text-align: center;">Cargar Paseador</div>
+
+  <%= form_with(url: '/guardar_paseador', method: 'post', class: 'card paseador-form', html: { style: 'max-width: 500px; margin: 0 auto;' }) do |form| %>
+    <div class="card-body">
+      <div class="field">
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :apellido %>
+        <%= form.text_field :apellido, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :dni %>
+        <%= form.number_field :dni, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :zona %>
+        <%= form.text_field :zona, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :mail %>
+        <%= form.email_field :mail, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :horarios %>
+        <%= form.text_area :horarios, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="card-footer" style="text-align: center;">
+      <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

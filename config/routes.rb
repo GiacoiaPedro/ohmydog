@@ -19,11 +19,11 @@ Rails.application.routes.draw do
 
   get 'dashboard/perros_perdidos'
   get 'dashboard/solicitar_turno'
-  get 'dashboard/cuidadores'
+  get 'servicios/cuidadores'
   get 'dashboard/perros_encontrados'
   get 'dashboard/adopciones'
   get 'dashboard/cruza_de_perros'
-  get 'dashboard/paseadores'  
+  get 'servicios/paseadores'  
   get 'dashboard/iniciar_sesion'
   get 'dashboard/mi_usuario'
   get 'dashboard/registrar_perro'
@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   get '/users/search', to: 'user_search#search'
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
   get 'perros/editar_perro'
+  get 'cargar_cuidador', to: 'servicios#cargar_cuidador', as: :cargar_cuidador
+  get 'cargar_paseador', to: 'servicios#cargar_paseador', as: :cargar_paseador
+  post '/guardar_cuidador', to: 'servicios#guardar_cuidador'
+  post '/guardar_paseador', to: 'servicios#guardar_paseador'
 
 # En config/routes.rb
 resources :perros
