@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  resources :campaigns, except: [:show] do
+    member do
+      delete :destroy
+    end
+    collection do
+      get :search
+    end
+  end
 
 
     resources :historial_turnos
@@ -36,6 +44,8 @@ Rails.application.routes.draw do
   get '/perros/mis_perros'
   get '/users/search', to: 'user_search#search'
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
+  
+  
   get 'perros/editar_perro'
   get 'cargar_cuidador', to: 'servicios#cargar_cuidador', as: :cargar_cuidador
   get 'cargar_paseador', to: 'servicios#cargar_paseador', as: :cargar_paseador

@@ -1,0 +1,47 @@
+<!-- app/views/campaigns/new.html.erb -->
+<div class="container mt-5">
+  <h1 class="text-center">Crear Campaña</h1>
+
+  <%= form_with(model: @campaign, url: campaigns_path, local: true, html: { class: 'my-4' }) do |form| %>
+    <% if @campaign.errors.any? %>
+      <div id="error_explanation" class="text-center">
+        <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+        <ul>
+          <% @campaign.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :nombre, class: 'form-label' %>
+      <%= form.text_field :nombre, class: 'form-control', placeholder: 'Nombre de la campaña', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :descripcion, class: 'form-label' %>
+      <%= form.text_area :descripcion, class: 'form-control', placeholder: 'Descripción de la campaña', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :monto, class: 'form-label' %>
+      <%= form.number_field :monto, class: 'form-control', placeholder: 'Monto objetivo', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :imagen, class: 'form-label' %>
+      <%= form.file_field :imagen, class: 'form-control', accept: 'image/*', required: true %>
+    </div>
+
+      <div class="mb-3">
+      <%= form.label :fecha, class: 'form-label' %>
+      <%= form.date_field :fecha, class: 'form-control', required: true, min: Date.current + 1.day %>
+    </div>
+
+   <div class="text-center">
+      <%= form.submit "Publicar", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

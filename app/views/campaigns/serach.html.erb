@@ -1,0 +1,29 @@
+<!-- app/views/campaigns/search.html.erb -->
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Resultados de búsqueda</h1>
+
+  <% if @campaigns.any? %>
+    <div class="row">
+      <% @campaigns.each do |campaign| %>
+        <div class="col-md-6 mb-4">
+          <div class="card position-relative">
+            <% if campaign.imagen? %>
+              <%= image_tag campaign.imagen.url, class: "card-img-top w-100" %>
+            <% else %>
+              <!-- Puedes agregar un marcador de posición aquí o dejarlo en blanco -->
+              <div class="placeholder-image"></div>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= campaign.nombre %></h5>
+              <p class="card-text"><%= campaign.descripcion %></p>
+              <p class="card-text"><strong>Monto: $<%= campaign.monto %></strong></p>
+              <%= link_to "Donar", "#", class: "btn btn-success btn-block" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No se encontraron campañas que coincidan con la búsqueda.</p>
+  <% end %>
+</div>

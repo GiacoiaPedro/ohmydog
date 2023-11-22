@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_231541) do
     t.date "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "activa", default: true
   end
 
   create_table "conditions", force: :cascade do |t|
