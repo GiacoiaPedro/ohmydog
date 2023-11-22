@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.1].define(version: 2023_11_21_231541) do
-
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
