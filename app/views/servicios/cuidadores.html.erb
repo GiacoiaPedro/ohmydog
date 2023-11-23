@@ -2,8 +2,15 @@
 <html>
 <head>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         .container {
             text-align: center;
+            padding-bottom: 60px; /* Ajuste para dejar espacio para el footer */
         }
 
         .title {
@@ -35,7 +42,7 @@
         .card-content {
             flex: 1;
             display: flex;
-            flex-direction: column; /* Cambiado a columna para que el texto esté pegado a la izquierda */
+            flex-direction: column;
         }
 
         .card-title {
@@ -49,17 +56,10 @@
 
         .button-container {
             display: flex;
-            justify-content: flex-end; /* Alineado a la derecha */
+            justify-content: flex-end;
         }
 
-        .contact-button {
-            padding: 10px;
-            margin: 5px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
+        .contact-button,
         .become-caretaker-button {
             padding: 10px;
             margin: 5px;
@@ -67,22 +67,72 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        /* Footer styles */
+                .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+
+        #filtro-form button {
+        background-color: #fc904f; /* Color de fondo verde */
+        color: white; /* Texto blanco */
+        padding: 10px 20px; /* Espaciado interno */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cursor apuntador */
+    }
+
+    #filtro-form button:hover {
+        background-color: #bd622a; /* Cambio de color al pasar el ratón */
+    }
+
     </style>
 </head>
-<body>
-    <div class="container">    
-        <div class="title">Listado de Cuidadores</div>
 
-        <% if user_signed_in? && current_user.rol_id == 1 %>
-            <div class="button-container">
-                <button class="become-caretaker-button" onclick="window.location.href='<%= cargar_cuidador_path %>'">Cargar Cuidador</button>
-            </div>
-        <% end %>
-
-        <div class="card-container">
-            <% @servicios.each do |servicio| %>
-                <% if servicio.tipo == "1" %>
-                    <div class="card">
+    <body>
+        <div class="container">    
+            <div class="title">Listado de Cuidadores</div>
+    
+            <% if user_signed_in? && current_user.rol_id == 1 %>
+                <div class="button-container">
+                    <button class="become-caretaker-button" onclick="window.location.href='<%= cargar_cuidador_path %>'">Cargar Cuidador</button>
+                </div>
+            <% end %>
+    
+            <form id="filtro-form">
+                <label for="filtro-zona">Filtrar por Zona:</label>
+                <select id="filtro-zona" name="filtro-zona">
+                    <option value="">Todos</option>
+                    <option value="plaza-san-martin">Plaza San Martín</option>
+                    <option value="plaza-moreno">Plaza Moreno</option>
+                    <option value="plaza-azcuenaga">Plaza Azcuénaga</option>
+                    <option value="plaza-belgrano">Plaza Belgrano</option>
+                    <option value="parque-saavedra">Parque Saavedra</option>
+                    <option value="parque-castelli">Parque Castelli</option>
+                    <option value="Plaza-Malvinas-Argentinas">Plaza Malvinas Argentinas</option>
+                    <option value="plaza-rivadavia">Plaza Rivadavia</option>
+                    <option value="parque-vucetich">Parque Vucetich</option>
+                    <option value="plaza-rocha">Plaza Rocha</option>
+                    <option value="plaza-italia">Plaza Italia</option>
+                    <option value="plaza-matheu">Plaza Matheu</option>
+                    <option value="plaza-espana">Plaza España</option>
+                    <option value="plaza-sarmiento">Plaza Sarmiento</option>
+                    <option value="plaza-paso">Plaza Paso</option>
+                </select>
+                <button type="button" onclick="filtrarPorZona()">Filtrar</button>
+            </form>
+        
+            <% if @servicios.present? %>
+                <div class="card-container">
+                    <% @servicios.each do |servicio| %>
+                    <% if servicio.tipo == "1" %>
+                        <div class="card <%= servicio.zona.present? ? servicio.zona.parameterize : '' %>">
                         <div class="card-content">
                             <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
                             <div class="card-description">Zona: <%= servicio.zona %></div>
@@ -91,11 +141,29 @@
                         <div class="button-container">
                             <button class="contact-button">Contactar</button>
                         </div>
-                    </div>
+                        </div>
+                    <% end %>
+                    <% end %>
+                </div>
+                <% else %>
+                <p>No hay servicios disponibles.</p>
                 <% end %>
-            <% end %>
-        </div>
-    </div>
-</body>
+    
+                <script>
+                        function filtrarPorZona() {
+                        var zonaSeleccionada = document.getElementById('filtro-zona').value;
 
-</html>
+                        // Lógica de filtrado
+                        var cards = document.querySelectorAll('.card');
+                        cards.forEach(function (card) {
+                            // Verifica si la tarjeta tiene la clase de la zona seleccionada
+                            if (zonaSeleccionada === '' || card.classList.contains(zonaSeleccionada)) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+                </script>
+   
+    </html>

@@ -52,10 +52,13 @@ Rails.application.routes.draw do
   post '/guardar_cuidador', to: 'servicios#guardar_cuidador'
   post '/guardar_paseador', to: 'servicios#guardar_paseador'
 
-# En config/routes.rb
+
+
+  get '/paseadores', to: 'servicios#paseadores', as: 'paseadores'
+  get '/cuidadores', to: 'servicios#cuidadores', as: 'cuidadores'
+
+
 resources :perros
-
-
 
   get 'mis_perros', to: 'perros#mis_perros', as: 'mis_perros'
 

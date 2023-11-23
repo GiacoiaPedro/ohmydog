@@ -16,5 +16,8 @@ class Users::SessionsController < Devise::SessionsController
         @user = User.find(params[:user][:id])
     end
 
+
+    
+
 end
   

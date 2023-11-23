@@ -17,12 +17,12 @@
 
       <div class="field">
         <%= form.label :dni %>
-        <%= form.number_field :dni, class: 'form-control' %>
-      </div>
-
+        <%= form.text_field :dni, class: 'form-control', pattern: '\d*' %>
+    </div>
+    
       <div class="field">
         <%= form.label :zona %>
-        <%= form.text_field :zona, class: 'form-control' %>
+        <%= form.select :zona, options_for_select(['Plaza San Martín', 'Plaza Moreno', 'Plaza Azcuénaga', 'Plaza Belgrano', 'Parque Saavedra', 'Parque Castelli', 'Plaza Malvinas Argentinas', 'Plaza Rivadavia', 'Parque Vucetich', 'Plaza Rocha', 'Plaza Italia', 'Plaza Matheu', 'Plaza España', 'Plaza Sarmiento', 'Plaza Paso']) , {}, { class: 'form-control' } %>
       </div>
 
       <div class="field">
@@ -41,3 +41,6 @@
     </div>
   <% end %>
 </div>
+
+
+

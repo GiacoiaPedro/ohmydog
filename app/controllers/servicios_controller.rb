@@ -22,20 +22,20 @@ class ServiciosController < ApplicationController
       
         # Guardar el objeto en la base de datos
         if servicio.save
-          redirect_to root_path  # Puedes redirigir a donde desees después de guardar
           flash[:success] = "Cuidador guardado exitosamente"
+          redirect_to cuidadores_path
         else
-          render :guardar_cuidador  # Volver a la vista del formulario con un mensaje de error
           flash[:error] = "Error al guardar el cuidador"
+          render :guardar_cuidador
         end
       end
       
       def cuidadores
-        @servicios = Servicio.all 
+        @servicios = Servicio.where(tipo: "1")
       end
       
       def paseadores
-        @servicios = Servicio.all 
+        @servicios = Servicio.where(tipo: "2")
       end
       
       def guardar_paseador
@@ -59,11 +59,11 @@ class ServiciosController < ApplicationController
       
         # Guardar el objeto en la base de datos
         if servicio.save
-          redirect_to root_path  # Puedes redirigir a donde desees después de guardar
           flash[:success] = "Paseador guardado exitosamente"
+          redirect_to paseadores_path
         else
-          render :guardar_cuidador  # Volver a la vista del formulario con un mensaje de error
           flash[:error] = "Error al guardar el Paseador"
+          render :guardar_paseador
         end
       end
       
