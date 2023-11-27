@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :campaigns, except: [:show] do
     member do
       delete :destroy
+      post :pay
+      get :pay # Permite solicitudes GET para la acción pay
     end
     collection do
       get :search

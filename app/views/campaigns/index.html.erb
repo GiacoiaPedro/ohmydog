@@ -1,8 +1,9 @@
-<!-- app/views/campaigns/index.html.erb -->
 <div class="container text-center mt-5">
   <h1 class="mb-4">Campañas de Donación</h1>
 
-  <%= link_to "Crear Campaña", new_campaign_path, class: "btn btn-primary mb-4" %>
+  <% if current_user && current_user.rol_id == 1 %>
+    <%= link_to "Crear Campaña", new_campaign_path, class: "btn btn-primary mb-4" %>
+  <% end %>
 
   <!-- Formulario de búsqueda -->
   <%= form_tag(search_campaigns_path, method: :get, class: 'mb-4') do %>
@@ -22,22 +23,24 @@
                 <!-- Puedes agregar un marcador de posición aquí o dejarlo en blanco -->
                 <div class="placeholder-image"></div>
               <% end %>
-              <div class="dropdown position-absolute" style="top: 5px; right: 5px;">
-                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-v"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <%= link_to "Editar", edit_campaign_path(campaign), class: "dropdown-item" %>
-                  <%= form_tag(campaign_path(campaign), method: :delete, class: 'campaign-form') do %>
-                    <%= submit_tag 'Eliminar', class: 'dropdown-item', data: { confirm: '¿Estás seguro de eliminar esta campaña?' } %>
-                  <% end %>
+              <% if current_user && current_user.rol_id == 1 %>
+                <div class="dropdown position-absolute" style="top: 5px; right: 5px;">
+                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <%= link_to "Editar", edit_campaign_path(campaign), class: "dropdown-item" %>
+                    <%= form_tag(campaign_path(campaign), method: :delete, class: 'campaign-form') do %>
+                    <%= submit_tag 'Eliminar', class: 'dropdown-item', onclick: "return confirm('¿Estás seguro de eliminar esta campaña?');" %>
+                    <% end %>
+                  </div>
                 </div>
-              </div>
+              <% end %>
               <div class="card-body">
                 <h5 class="card-title"><%= campaign.nombre %></h5>
                 <p class="card-text"><%= campaign.descripcion %></p>
                 <p class="card-text"><strong>Monto: $<%= campaign.monto %></strong></p>
-                <%= link_to "Donar", "#", class: "btn btn-success btn-block" %>
+                <%= button_to "Donar", pay_campaign_path(campaign), method: :post, class: "btn btn-success btn-block" %>
               </div>
             </div>
           </div>

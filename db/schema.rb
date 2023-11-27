@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_21_231541) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_032701) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -94,6 +94,28 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_231541) do
     t.string "mail"
     t.string "tipo"
     t.string "horarios"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tarjeta", force: :cascade do |t|
+    t.integer "numero"
+    t.string "nombre"
+    t.integer "codigo"
+    t.integer "saldo"
+    t.date "vencimiento"
+    t.integer "dni"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tarjetas", force: :cascade do |t|
+    t.integer "numero"
+    t.string "nombre"
+    t.integer "codigo"
+    t.integer "monto"
+    t.date "vencimiento"
+    t.integer "dni"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
