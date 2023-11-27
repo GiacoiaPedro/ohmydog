@@ -1,5 +1,18 @@
 <!-- app/views/tu_controlador/cargar_paseador.html.erb -->
 
+
+
+<% if @errores.present? %>
+  <div class="alert alert-danger">
+    <p>Hubo errores al guardar el Paseador:</p>
+    <ul>
+      <% @errores.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="title" style="font-size: 28px; margin-bottom: 20px; text-align: center;">Cargar Paseador</div>
 
@@ -36,6 +49,8 @@
         <%= form.text_area :horarios, class: 'form-control' %>
       </div>
     </div>
+
+    <%= form.hidden_field :habilitado, value: 0 %>
 
     <div class="card-footer" style="text-align: center;">
       <%= form.submit 'Guardar', class: 'btn btn-primary' %>

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <%= csrf_meta_tags %>
     <style>
         body {
             margin: 0;
@@ -111,6 +112,14 @@
             cursor: pointer;
         }
 
+        .edit-button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         /* Footer styles */
         .footer {
             position: fixed;
@@ -134,6 +143,11 @@
             background-color: #bd622a; /* Cambio de color al pasar el ratón */
         }
 
+
+        .button-group {
+                display: flex;
+            }
+
         /* Animación de entrada */
         @keyframes slideIn {
             from {
@@ -153,10 +167,9 @@
         <div class="title">Listado de Paseadores</div>
 
         <% if user_signed_in? && current_user.rol_id == 1 %>
-        <div class="button-container">
-            <button class="become-paseador-button"
-                onclick="window.location.href='<%= cargar_paseador_path %>'">Cargar Paseador</button>
-        </div>
+            <div class="button-container">
+                <button class="become-paseador-button" onclick="window.location.href='<%= cargar_paseador_path %>'">Cargar Paseador</button>
+            </div>
         <% end %>
 
         <form id="filtro-form">
@@ -181,64 +194,76 @@
             </select>
             <button type="button" onclick="filtrarPorZona()">Filtrar</button>
         </form>
-        <% if @servicios.present? %>
-    <div class="card-container">
-        <% @servicios.each do |servicio| %>
-            <% if servicio.tipo == "2" %>
-                <div class="card <%= servicio.zona.present? ? servicio.zona.parameterize : '' %>">
-                    <div class="card-content">
-                        <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
-                        <div class="card-description">Zona: <%= servicio.zona %></div>
-                        <div class="card-description">Disponibilidad: <%= servicio.horarios %></div>
-                    </div>
-                    <div id="contact-form-<%= servicio.id %>">
-                        <form action="<%= url_for(action: 'enviar_correo') %>" method="post">
-                            <%= csrf_meta_tags %>
-                            <!-- Agrega el siguiente campo hidden para incluir el token CSRF -->
-                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                            
-                            <!-- Otros campos del formulario según tus necesidades -->
-                            <label for="user-email">Tu correo electrónico:</label>
-                            <% if user_signed_in? %>
-                                <!-- Si el usuario ha iniciado sesión, carga automáticamente su correo electrónico -->
-                                <input type="email" id="user-email-<%= servicio.id %>" name="user-email" value="<%= current_user.email %>" required>
-                            <% else %>
-                                <!-- Si el usuario no ha iniciado sesión, muestra un campo normal -->
-                                <input type="email" id="user-email-<%= servicio.id %>" name="user-email" required>
-                            <% end %>
 
-                            <!-- Campo oculto para el correo del paseador -->
-                            <input type="hidden" name="paseador-email" value="<%= servicio.mail %>">
-                    
-                            <!-- Otro campo oculto para el servicio ID -->
-                            <input type="hidden" name="servicio-id" value="<%= servicio.id %>">
-                    
-                            <button type="submit">Contactar</button>
-                        </form>
+        <% if @servicios.present? %>
+        <div class="card-container">
+            <% @servicios.each do |servicio| %>
+                <% if servicio.tipo == "2" && servicio.habilitado == 0 %>
+                    <div class="card <%= servicio.zona.present? ? servicio.zona.parameterize : '' %>">
+                        <div class="card-content">
+                            <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
+                            <div class="card-description">Zona: <%= servicio.zona %></div>
+                            <div class="card-description">Disponibilidad: <%= servicio.horarios %></div>
+                        </div>
+                        <div id="contact-form-<%= servicio.id %>" class="button-container">
+                            <form action="<%= enviar_correo_path %>" method="post">
+                                <%= csrf_meta_tags %>
+                                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                                <label for="user-email">Tu correo electrónico:</label>
+                                <% if user_signed_in? %>     
+                                    <input type="email" id="user-email-<%= servicio.id %>" name="user-email" value="<%= current_user.email %>" required>
+                                <% else %>
+                                    <input type="email" id="user-email-<%= servicio.id %>" name="user-email" required>
+                                <% end %>
+                                <input type="hidden" name="paseador-email" value="<%= servicio.mail %>">
+                                <input type="hidden" name="servicio-id" value="<%= servicio.id %>">
+                                <button type="submit" class="edit-button">Contactar</button>
+                            </form>
+                        </div>
+                        <% if user_signed_in? && current_user.rol_id == 1 %>
+                            <div class="button-group">
+                                <button type="button" class="edit-button" onclick="window.location.href='<%= edit_servicio_path(servicio) %>'">Editar</button>
+                                <%= form_for(servicio, method: :delete, url: servicio_path(servicio)) do |f| %>
+                                    <%= csrf_meta_tags %>
+                                    <%= f.hidden_field :authenticity_token, value: form_authenticity_token %>
+                                    <%= f.submit "Eliminar", class: "delete-button" %>
+                                <% end %>
+                            </div>
+                        <% end %>
                     </div>
-                </div>
+                <% end %>
             <% end %>
+        </div>
+        
+        
+        <% else %>
+        <p>No hay paseadores disponibles.</p>
         <% end %>
-    </div>
-<% else %>
-    <p>No hay servicios disponibles.</p>
-<% end %>
+
+        <div id="mensaje-servicios" class="mensaje-servicios"></div>
 
         <script>
-
             function filtrarPorZona() {
-                var zonaSeleccionada = document.getElementById('filtro-zona').value;
-
-                // Lógica de filtrado
-                var cards = document.querySelectorAll('.card');
-                cards.forEach(function (card) {
-                    // Verifica si la tarjeta tiene la clase de la zona seleccionada
-                    if (zonaSeleccionada === '' || card.classList.contains(zonaSeleccionada)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+              var zonaSeleccionada = document.getElementById('filtro-zona').value;
+              // Lógica de filtrado
+              var cards = document.querySelectorAll('.card');
+              var serviciosEncontrados = false;
+              cards.forEach(function (card) {
+                // Verifica si la tarjeta tiene la clase de la zona seleccionada
+                if (zonaSeleccionada === '' || card.classList.contains(zonaSeleccionada)) {
+                  card.style.display = 'flex';
+                  serviciosEncontrados = true;
+                } else {
+                  card.style.display = 'none';
+                }
+              });
+              // Muestra el mensaje si no se encuentran servicios
+              var mensajeServicios = document.getElementById('mensaje-servicios');
+              if (!serviciosEncontrados) {
+                mensajeServicios.textContent = "No hay servicios en esa zona";
+              } else {
+                mensajeServicios.textContent = ""; // Limpiar el mensaje si se encuentran servicios
+              }
             }
         </script>
     </body>

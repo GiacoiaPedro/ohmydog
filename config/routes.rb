@@ -51,12 +51,20 @@ Rails.application.routes.draw do
   post '/guardar_cuidador', to: 'servicios#guardar_cuidador'
   post '/guardar_paseador', to: 'servicios#guardar_paseador'
 
-  post '/enviar_correo', to: 'servicios#enviar_correo'
+  match '/enviar_correo', to: 'servicios#enviar_correo', via: [:post, :delete]
+
 
   get '/paseadores', to: 'servicios#paseadores', as: 'paseadores'
   get '/cuidadores', to: 'servicios#cuidadores', as: 'cuidadores'
 
 
+  resources :servicios, except: [:show] do
+    member do
+      get 'edit'   # Página de edición
+      patch 'actualizar_servicio'   # Acción de actualización
+      delete 'destroy'  # Nueva acción para eliminar
+    end
+  end
 resources :perros
 
   get 'mis_perros', to: 'perros#mis_perros', as: 'mis_perros'
@@ -83,4 +91,6 @@ resources :perros
   end
 
   root "dashboard#index"
+
+
 end

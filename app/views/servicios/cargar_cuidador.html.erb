@@ -1,5 +1,18 @@
 <!-- app/views/tu_controlador/cargar_cuidador.html.erb -->
 
+
+<% if @errores.present? %>
+  <div class="alert alert-danger">
+    <p>Hubo errores al guardar el cuidador:</p>
+    <ul>
+      <% @errores.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <div class="container">
   <div class="title" style="font-size: 28px; margin-bottom: 20px; text-align: center;">Cargar Cuidador</div>
 
