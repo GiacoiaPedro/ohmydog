@@ -66,7 +66,15 @@ class ServiciosController < ApplicationController
           render :guardar_paseador
         end
       end
-      
+    
 
+      def enviar_correo
+        @user_email = params['user-email']
+        @paseador_email = params['paseador-email']
+        UserMailer.contacto(@user_email, @paseador_email).deliver_now
+        redirect_back(fallback_location: root_path)
+      end
+      
+      
 
 end

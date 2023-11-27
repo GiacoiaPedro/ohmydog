@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
         body {
@@ -26,7 +27,6 @@
             margin-top: 10px;
             text-align: left;
         }
-
         .card {
             flex: 0 0 calc(45% - 20px);
             border: 1px solid #ddd;
@@ -37,12 +37,14 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative; /* Agregado para posicionar los botones */
         }
 
-        .card-content {
-            flex: 1;
+        .card-header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 10px;
         }
 
         .card-title {
@@ -54,9 +56,50 @@
             font-size: 14px;
         }
 
+        .options-button,
+        .contact-button,
+        .become-paseador-button,
+        .edit-button,
+        .delete-button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .options-container {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            display: none;
+            flex-direction: column;
+            z-index: 1; /* Coloca el contenedor de opciones encima de las tarjetas */
+            animation: slideIn 0.3s ease-out; /* Animación de entrada */
+        }
+
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
         .button-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between; /* Cambiado a space-between para separar los botones */
+        }
+
+        .options-button,
+        .delete-button,
+        .edit-button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .contact-button,
@@ -69,7 +112,7 @@
         }
 
         /* Footer styles */
-                .footer {
+        .footer {
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -78,92 +121,125 @@
             text-align: center;
         }
 
-
         #filtro-form button {
-        background-color: #fc904f; /* Color de fondo verde */
-        color: white; /* Texto blanco */
-        padding: 10px 20px; /* Espaciado interno */
-        border: none; /* Sin borde */
-        border-radius: 5px; /* Bordes redondeados */
-        cursor: pointer; /* Cursor apuntador */
-    }
+            background-color: #fc904f; /* Color de fondo verde */
+            color: white; /* Texto blanco */
+            padding: 10px 20px; /* Espaciado interno */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cursor apuntador */
+        }
 
-    #filtro-form button:hover {
-        background-color: #bd622a; /* Cambio de color al pasar el ratón */
-    }
+        #filtro-form button:hover {
+            background-color: #bd622a; /* Cambio de color al pasar el ratón */
+        }
 
+        /* Animación de entrada */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
-    <body>
-        <div class="container">    
-            <div class="title">Listado de Paseadores</div>
-    
-            <% if user_signed_in? && current_user.rol_id == 1 %>
-                <div class="button-container">
-                    <button class="become-paseador-button" onclick="window.location.href='<%= cargar_paseador_path %>'">Cargar Paseador</button>
+<body>
+    <div class="container">
+        <div class="title">Listado de Paseadores</div>
+
+        <% if user_signed_in? && current_user.rol_id == 1 %>
+        <div class="button-container">
+            <button class="become-paseador-button"
+                onclick="window.location.href='<%= cargar_paseador_path %>'">Cargar Paseador</button>
+        </div>
+        <% end %>
+
+        <form id="filtro-form">
+            <label for="filtro-zona">Filtrar por Zona:</label>
+            <select id="filtro-zona" name="filtro-zona">
+                <option value="">Todos</option>
+                <option value="plaza-san-martin">Plaza San Martín</option>
+                <option value="plaza-moreno">Plaza Moreno</option>
+                <option value="plaza-azcuenaga">Plaza Azcuénaga</option>
+                <option value="plaza-belgrano">Plaza Belgrano</option> 
+                <option value="parque-saavedra">Parque Saavedra</option>
+                <option value="parque-castelli">Parque Castelli</option>
+                <option value="Plaza-Malvinas-Argentinas">Plaza Malvinas Argentinas</option>
+                <option value="plaza-rivadavia">Plaza Rivadavia</option>
+                <option value="parque-vucetich">Parque Vucetich</option>
+                <option value="plaza-rocha">Plaza Rocha</option>
+                <option value="plaza-italia">Plaza Italia</option>
+                <option value="plaza-matheu">Plaza Matheu</option>
+                <option value="plaza-espana">Plaza España</option>
+                <option value="plaza-sarmiento">Plaza Sarmiento</option>
+                <option value="plaza-paso">Plaza Paso</option>
+            </select>
+            <button type="button" onclick="filtrarPorZona()">Filtrar</button>
+        </form>
+        <% if @servicios.present? %>
+    <div class="card-container">
+        <% @servicios.each do |servicio| %>
+            <% if servicio.tipo == "2" %>
+                <div class="card <%= servicio.zona.present? ? servicio.zona.parameterize : '' %>">
+                    <div class="card-content">
+                        <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
+                        <div class="card-description">Zona: <%= servicio.zona %></div>
+                        <div class="card-description">Disponibilidad: <%= servicio.horarios %></div>
+                    </div>
+                    <div id="contact-form-<%= servicio.id %>">
+                        <form action="<%= url_for(action: 'enviar_correo') %>" method="post">
+                            <%= csrf_meta_tags %>
+                            <!-- Agrega el siguiente campo hidden para incluir el token CSRF -->
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                            
+                            <!-- Otros campos del formulario según tus necesidades -->
+                            <label for="user-email">Tu correo electrónico:</label>
+                            <% if user_signed_in? %>
+                                <!-- Si el usuario ha iniciado sesión, carga automáticamente su correo electrónico -->
+                                <input type="email" id="user-email-<%= servicio.id %>" name="user-email" value="<%= current_user.email %>" required>
+                            <% else %>
+                                <!-- Si el usuario no ha iniciado sesión, muestra un campo normal -->
+                                <input type="email" id="user-email-<%= servicio.id %>" name="user-email" required>
+                            <% end %>
+
+                            <!-- Campo oculto para el correo del paseador -->
+                            <input type="hidden" name="paseador-email" value="<%= servicio.mail %>">
+                    
+                            <!-- Otro campo oculto para el servicio ID -->
+                            <input type="hidden" name="servicio-id" value="<%= servicio.id %>">
+                    
+                            <button type="submit">Contactar</button>
+                        </form>
+                    </div>
                 </div>
             <% end %>
-    
-            <form id="filtro-form">
-                <label for="filtro-zona">Filtrar por Zona:</label>
-                <select id="filtro-zona" name="filtro-zona">
-                    <option value="">Todos</option>
-                    <option value="plaza-san-martin">Plaza San Martín</option>
-                    <option value="plaza-moreno">Plaza Moreno</option>
-                    <option value="plaza-azcuenaga">Plaza Azcuénaga</option>
-                    <option value="plaza-belgrano">Plaza Belgrano</option>
-                    <option value="parque-saavedra">Parque Saavedra</option>
-                    <option value="parque-castelli">Parque Castelli</option>
-                    <option value="Plaza-Malvinas-Argentinas">Plaza Malvinas Argentinas</option>
-                    <option value="plaza-rivadavia">Plaza Rivadavia</option>
-                    <option value="parque-vucetich">Parque Vucetich</option>
-                    <option value="plaza-rocha">Plaza Rocha</option>
-                    <option value="plaza-italia">Plaza Italia</option>
-                    <option value="plaza-matheu">Plaza Matheu</option>
-                    <option value="plaza-espana">Plaza España</option>
-                    <option value="plaza-sarmiento">Plaza Sarmiento</option>
-                    <option value="plaza-paso">Plaza Paso</option>
-                </select>
-                <button type="button" onclick="filtrarPorZona()">Filtrar</button>
-            </form>
-        
-            <% if @servicios.present? %>
-            <div class="card-container">
-             <% @servicios.each do |servicio| %>
-                  <% if servicio.tipo == "2" %>
-                 <div class="card <%= servicio.zona.present? ? servicio.zona.parameterize : '' %>">
-                 <div class="card-content">
-                 <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
-            <div class="card-description">Zona: <%= servicio.zona %></div>
-                <div class="card-description">Disponibilidad: <%= servicio.horarios %></div>
-              </div>
-                   <div class="button-container">
-                 <button class="contact-button">Contactar</button>
-             </div>
-         </div>
-             <% end %>
-            <% end %>
-            </div>
-            <% else %>
-        <p>No hay servicios disponibles.</p>
-            <% end %>
-    
-            <script>
-                function filtrarPorZona() {
-                    var zonaSeleccionada = document.getElementById('filtro-zona').value;
-            
-                    // Lógica de filtrado
-                    var cards = document.querySelectorAll('.card');
-                    cards.forEach(function(card) {
-                        // Verifica si la tarjeta tiene la clase de la zona seleccionada
-                        if (zonaSeleccionada === '' || card.classList.contains(zonaSeleccionada)) {
-                            card.style.display = 'flex';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                }
-            </script>
-   
-    </html>
+        <% end %>
+    </div>
+<% else %>
+    <p>No hay servicios disponibles.</p>
+<% end %>
+
+        <script>
+
+            function filtrarPorZona() {
+                var zonaSeleccionada = document.getElementById('filtro-zona').value;
+
+                // Lógica de filtrado
+                var cards = document.querySelectorAll('.card');
+                cards.forEach(function (card) {
+                    // Verifica si la tarjeta tiene la clase de la zona seleccionada
+                    if (zonaSeleccionada === '' || card.classList.contains(zonaSeleccionada)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

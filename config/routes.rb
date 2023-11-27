@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-
     resources :historial_turnos
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -52,7 +51,7 @@ Rails.application.routes.draw do
   post '/guardar_cuidador', to: 'servicios#guardar_cuidador'
   post '/guardar_paseador', to: 'servicios#guardar_paseador'
 
-
+  post '/enviar_correo', to: 'servicios#enviar_correo'
 
   get '/paseadores', to: 'servicios#paseadores', as: 'paseadores'
   get '/cuidadores', to: 'servicios#cuidadores', as: 'cuidadores'
