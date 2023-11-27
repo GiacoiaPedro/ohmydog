@@ -1,29 +1,7 @@
-<<<<<<< HEAD
-# ohmydog
-proyecto ohmydog
-=======
-# README
+Pasos para ejecutar el programa:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Descargar: ruby 3.0.2p107 y rails 7.1.1.
+Ejecutar "bundle install" en consola para descargar todas las gemas usadas en el proyecto, tales como sqlite3 y devise.
+con "rails s" se inicia el servidor en: http://localhost:3000/ 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
->>>>>>> 6de50f7 (proyecto base ruby on rails)
+          
