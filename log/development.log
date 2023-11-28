@@ -42655,3 +42655,1105 @@ ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/
   
 ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
   
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 18:56:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.4ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 71.8ms | Allocations: 13665)
+  Rendered layout layouts/application.html.erb (Duration: 72.9ms | Allocations: 13786)
+Completed 500 Internal Server Error in 446ms (ActiveRecord: 1.3ms | Allocations: 34798)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: servicios.habilitado):
+    194:             <button type="button" onclick="filtrarPorZona()">Filtrar</button>
+    195:         </form>
+    196: 
+    197:         <% if @servicios.present? %>
+    198:         <div class="card-container">
+    199:             <% @servicios.each do |servicio| %>
+    200:                 <% if servicio.tipo == "1" && servicio.habilitado == 0 %>
+  
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 18:56:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.5ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 19.2ms | Allocations: 11989)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 12110)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 1.2ms | Allocations: 26682)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: servicios.habilitado):
+    194:             <button type="button" onclick="filtrarPorZona()">Filtrar</button>
+    195:         </form>
+    196: 
+    197:         <% if @servicios.present? %>
+    198:         <div class="card-container">
+    199:             <% @servicios.each do |servicio| %>
+    200:                 <% if servicio.tipo == "1" && servicio.habilitado == 0 %>
+  
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddHabilitadoToServicios (20231128215907)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "servicios" ADD "habilitado" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231128215907') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 18:59:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 16.7ms | Allocations: 9766)
+  Rendered layout layouts/application.html.erb (Duration: 351.5ms | Allocations: 63435)
+Completed 200 OK in 406ms (Views: 362.5ms | ActiveRecord: 0.8ms | Allocations: 78075)
+
+
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 18:59:45 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1792)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 6175)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.1ms | Allocations: 6690)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 18:59:45 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 18:59:45 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 18:59:45 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 18:59:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-28 18:59:47 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 31.9ms | Allocations: 2819)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 7352)
+Completed 200 OK in 412ms (Views: 70.5ms | ActiveRecord: 0.0ms | Allocations: 290721)
+
+
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-28 18:59:48 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 18:59:48 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 18:59:48 -0300
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 18:59:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/users/sign_in" for ::1 at 2023-11-28 18:59:54 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"dni"=>"1234512345", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 29], ["current_sign_in_at", "2023-11-28 21:59:55.129780"], ["last_sign_in_at", "2023-11-28 14:47:14.485085"], ["updated_at", "2023-11-28 21:59:55.130117"], ["id", 83]]
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 454ms (ActiveRecord: 2.0ms | Allocations: 10329)
+
+
+Started GET "/" for ::1 at 2023-11-28 18:59:55 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3954)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 11006)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.1ms | Allocations: 11638)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 18:59:55 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 18:59:55 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 18:59:55 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 18:59:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 18:59:57 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3106)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 10266)
+Completed 200 OK in 61ms (Views: 25.5ms | ActiveRecord: 0.1ms | Allocations: 10749)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 18:59:57 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 18:59:57 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 18:59:57 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 18:59:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 18:59:59 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1584)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 8743)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.1ms | Allocations: 9164)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:00:00 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.0ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1594)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8754)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.1ms | Allocations: 9199)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:00:01 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1592)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 8751)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.2ms | Allocations: 9171)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:01 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:01 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:01 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:00:02 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1590)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 8749)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.3ms | Allocations: 9169)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:02 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:02 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:02 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:02 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-28 19:00:02 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 39.4ms | Allocations: 68960)
+  Rendered layout layouts/application.html.erb (Duration: 59.0ms | Allocations: 76226)
+Completed 200 OK in 90ms (Views: 64.7ms | ActiveRecord: 5.0ms | Allocations: 81606)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:03 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:03 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:03 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:03 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:00:04 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1600)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 8759)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.1ms | Allocations: 9184)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:04 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:04 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:04 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:04 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:00:04 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1586)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 8745)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.1ms | Allocations: 9166)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:05 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:05 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:05 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/cargar_paseador" for ::1 at 2023-11-28 19:00:09 -0300
+Processing by ServiciosController#cargar_paseador as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cargar_paseador.html.erb within layouts/application
+  Rendered servicios/cargar_paseador.html.erb within layouts/application (Duration: 51.8ms | Allocations: 9578)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 17825)
+Completed 200 OK in 79ms (Views: 76.6ms | ActiveRecord: 0.1ms | Allocations: 18206)
+
+
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:09 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:09 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:09 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/guardar_paseador" for ::1 at 2023-11-28 19:00:15 -0300
+Processing by ServiciosController#guardar_paseador as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nombre"=>"123123", "apellido"=>"123123", "dni"=>"123123", "zona"=>"Plaza San Martín", "mail"=>"asdasdasd@asdasd", "horarios"=>"123", "habilitado"=>"0", "commit"=>"Guardar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/servicios_controller.rb:69:in `guardar_paseador'
+  [1m[36mServicio Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "servicios" WHERE "servicios"."dni" = ? AND "servicios"."tipo" = ? AND "servicios"."habilitado" = ? LIMIT ?[0m  [["dni", 123123], ["tipo", "2"], ["habilitado", 0], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:69:in `guardar_paseador'
+  [1m[36mServicio Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "servicios" WHERE "servicios"."mail" = ? AND "servicios"."tipo" = ? AND "servicios"."habilitado" = ? LIMIT ?[0m  [["mail", "asdasdasd@asdasd"], ["tipo", "2"], ["habilitado", 0], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:69:in `guardar_paseador'
+  [1m[36mServicio Create (0.2ms)[0m  [1m[32mINSERT INTO "servicios" ("nombre", "apellido", "dni", "zona", "mail", "tipo", "horarios", "created_at", "updated_at", "habilitado") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["nombre", "123123"], ["apellido", "123123"], ["dni", 123123], ["zona", "Plaza San Martín"], ["mail", "asdasdasd@asdasd"], ["tipo", "2"], ["horarios", "123"], ["created_at", "2023-11-28 22:00:15.957726"], ["updated_at", "2023-11-28 22:00:15.957726"], ["habilitado", 0]]
+  ↳ app/controllers/servicios_controller.rb:69:in `guardar_paseador'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/servicios_controller.rb:69:in `guardar_paseador'
+Redirected to http://localhost:3000/paseadores
+Completed 302 Found in 32ms (ActiveRecord: 2.2ms | Allocations: 45093)
+
+
+Started GET "/paseadores" for ::1 at 2023-11-28 19:00:15 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 71.6ms | Allocations: 73309)
+  Rendered layout layouts/application.html.erb (Duration: 91.5ms | Allocations: 80615)
+Completed 200 OK in 95ms (Views: 92.1ms | ActiveRecord: 0.1ms | Allocations: 81071)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:16 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:16 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:16 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:00:20 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 8848)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.1ms | Allocations: 9316)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:20 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:20 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:20 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/cargar_cuidador" for ::1 at 2023-11-28 19:00:21 -0300
+Processing by ServiciosController#cargar_cuidador as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cargar_cuidador.html.erb within layouts/application
+  Rendered servicios/cargar_cuidador.html.erb within layouts/application (Duration: 4.3ms | Allocations: 6913)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 14833)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.1ms | Allocations: 15196)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:21 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:21 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:21 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/guardar_cuidador" for ::1 at 2023-11-28 19:00:28 -0300
+Processing by ServiciosController#guardar_cuidador as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nombre"=>"123123", "apellido"=>"123123", "dni"=>"123123", "zona"=>"Plaza San Martín", "mail"=>"123123@123", "horarios"=>"123123", "commit"=>"Guardar"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mServicio Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "servicios" WHERE "servicios"."dni" = ? AND "servicios"."tipo" = ? AND "servicios"."habilitado" = ? LIMIT ?[0m  [["dni", 123123], ["tipo", "1"], ["habilitado", 0], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mServicio Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "servicios" WHERE "servicios"."mail" = ? AND "servicios"."tipo" = ? AND "servicios"."habilitado" = ? LIMIT ?[0m  [["mail", "123123@123"], ["tipo", "1"], ["habilitado", 0], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mServicio Create (0.1ms)[0m  [1m[32mINSERT INTO "servicios" ("nombre", "apellido", "dni", "zona", "mail", "tipo", "horarios", "created_at", "updated_at", "habilitado") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["nombre", "123123"], ["apellido", "123123"], ["dni", 123123], ["zona", "Plaza San Martín"], ["mail", "123123@123"], ["tipo", "1"], ["horarios", "123123"], ["created_at", "2023-11-28 22:00:28.739025"], ["updated_at", "2023-11-28 22:00:28.739025"], ["habilitado", 0]]
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+Redirected to http://localhost:3000/cuidadores
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms | Allocations: 4029)
+
+
+Started GET "/cuidadores" for ::1 at 2023-11-28 19:00:28 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2050)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 9209)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.1ms | Allocations: 9629)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:28 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:28 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:28 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:00:30 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2022)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 9181)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.1ms | Allocations: 9602)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:30 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:30 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:30 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:30 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:00:31 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2016)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 9175)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.1ms | Allocations: 9596)
+
+
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:31 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:31 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:31 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:31 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/cargar_cuidador" for ::1 at 2023-11-28 19:00:33 -0300
+Processing by ServiciosController#cargar_cuidador as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cargar_cuidador.html.erb within layouts/application
+  Rendered servicios/cargar_cuidador.html.erb within layouts/application (Duration: 2.3ms | Allocations: 6213)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 14133)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.1ms | Allocations: 14496)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:34 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:34 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:34 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/guardar_cuidador" for ::1 at 2023-11-28 19:00:43 -0300
+Processing by ServiciosController#guardar_cuidador as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nombre"=>"asdas", "apellido"=>"dasdasd", "dni"=>"43982393", "zona"=>"Plaza Malvinas Argentinas", "mail"=>"pedrog2002@live.com.ar", "horarios"=>"asdasd", "commit"=>"Guardar"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mServicio Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "servicios" WHERE "servicios"."dni" = ? AND "servicios"."tipo" = ? AND "servicios"."habilitado" = ? LIMIT ?[0m  [["dni", 43982393], ["tipo", "1"], ["habilitado", 0], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mServicio Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "servicios" WHERE "servicios"."mail" = ? AND "servicios"."tipo" = ? AND "servicios"."habilitado" = ? LIMIT ?[0m  [["mail", "pedrog2002@live.com.ar"], ["tipo", "1"], ["habilitado", 0], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mServicio Create (0.1ms)[0m  [1m[32mINSERT INTO "servicios" ("nombre", "apellido", "dni", "zona", "mail", "tipo", "horarios", "created_at", "updated_at", "habilitado") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["nombre", "asdas"], ["apellido", "dasdasd"], ["dni", 43982393], ["zona", "Plaza Malvinas Argentinas"], ["mail", "pedrog2002@live.com.ar"], ["tipo", "1"], ["horarios", "asdasd"], ["created_at", "2023-11-28 22:00:43.575845"], ["updated_at", "2023-11-28 22:00:43.575845"], ["habilitado", 0]]
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/servicios_controller.rb:22:in `guardar_cuidador'
+Redirected to http://localhost:3000/cuidadores
+Completed 302 Found in 11ms (ActiveRecord: 1.6ms | Allocations: 3914)
+
+
+Started GET "/cuidadores" for ::1 at 2023-11-28 19:00:43 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2465)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 9626)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.2ms | Allocations: 10046)
+
+
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:00:43 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:00:43 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:00:43 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:00:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-28 19:01:04 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3577)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 10733)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.5ms | Allocations: 11188)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:04 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:04 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:04 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:04 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:07 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2014)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 9173)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.2ms | Allocations: 9593)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:07 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:07 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:07 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:01:08 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2445)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 9604)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.1ms | Allocations: 10024)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:08 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:08 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:08 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:09 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.2ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2036)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 9195)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.3ms | Allocations: 9615)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:09 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:09 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:09 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:01:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.2ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2445)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 9604)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.7ms | Allocations: 10024)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:10 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:10 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:10 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:10 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2039)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 9198)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.1ms | Allocations: 9622)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:10 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:10 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:11 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:01:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2450)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 9609)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.1ms | Allocations: 10029)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:11 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:11 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:11 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:12 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2024)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 9183)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.1ms | Allocations: 9603)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:12 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:12 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:12 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:01:13 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2453)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 9614)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.2ms | Allocations: 10034)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:13 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:13 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:13 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:13 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:13 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2026)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 9185)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.1ms | Allocations: 9605)
+
+
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:14 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:14 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:14 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:16 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2017)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 9176)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.1ms | Allocations: 9596)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/servicios/cuidadores.html" for ::1 at 2023-11-28 19:01:16 -0300
+Processing by ServiciosController#cuidadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/cuidadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/cuidadores.html.erb:168
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "1"], ["habilitado", 0]]
+  ↳ app/views/servicios/cuidadores.html.erb:197
+  Rendered servicios/cuidadores.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2431)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 9590)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.2ms | Allocations: 10010)
+
+
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:16 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:17 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-28 19:01:17 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:169
+  [1m[36mServicio Load (0.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."tipo" = ? AND "servicios"."habilitado" = ?[0m  [["tipo", "2"], ["habilitado", 0]]
+  ↳ app/views/servicios/paseadores.html.erb:198
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2019)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 9178)
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 0.1ms | Allocations: 9598)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-28 19:01:17 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-28 19:01:17 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-28 19:01:17 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-28 19:01:17 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  

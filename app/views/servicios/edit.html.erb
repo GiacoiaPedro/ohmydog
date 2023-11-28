@@ -1,0 +1,54 @@
+<% if @servicio.errors.any? %>
+  <div class="alert alert-danger">
+    <p>Hubo errores al guardar el Paseador:</p>
+    <ul>
+      <% @servicio.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">Editar Servicio</h2>
+
+          <%= form_with(model: @servicio, url: actualizar_servicio_servicio_path(@servicio), method: 'patch', class: 'servicio-form') do |form| %>
+            <div class="field">
+              <%= form.label :nombre, class: "form-label" %>
+              <%= form.text_field :nombre, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :apellido, class: "form-label" %>
+              <%= form.text_field :apellido, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :mail, class: "form-label" %>
+              <%= form.email_field :mail, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :zona, class: "form-label" %>
+              <%= form.select :zona, options_for_select(['Plaza San Martín', 'Plaza Moreno', 'Plaza Azcuénaga', 'Plaza Belgrano', 'Parque Saavedra', 'Parque Castelli', 'Plaza Malvinas Argentinas', 'Plaza Rivadavia', 'Parque Vucetich', 'Plaza Rocha', 'Plaza Italia', 'Plaza Matheu', 'Plaza España', 'Plaza Sarmiento','Plaza Paso']), { prompt: 'Seleccione una zona' }, { class: 'form-control' } %>
+            </div>
+
+            <div class="field">
+              <%= form.label :horarios, class: "form-label" %>
+              <%= form.text_area :horarios, class: 'form-control' %>
+            </div>
+
+            <div class="text-center">
+              <%= form.submit 'Guardar', class: 'btn btn-primary btn-block' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
