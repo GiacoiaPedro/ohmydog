@@ -35889,3 +35889,2289 @@ ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.mi
   
 ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
   
+Started GET "/campaigns/search?query=kjoscks&commit=Buscar" for ::1 at 2023-11-27 19:30:02 -0300
+Processing by CampaignsController#search as HTML
+  Parameters: {"query"=>"kjoscks", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (nombre LIKE '%kjoscks%' AND activa = 1 AND fecha >= '2023-11-27') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1931)
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 9098)
+Completed 200 OK in 58ms (Views: 46.9ms | ActiveRecord: 3.6ms | Allocations: 9556)
+
+
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:30:02 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:30:02 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:30:02 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:30:02 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+Started GET "/campaigns/search?query=&commit=Buscar" for ::1 at 2023-11-27 19:34:47 -0300
+Processing by CampaignsController#search as HTML
+  Parameters: {"query"=>"", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (nombre LIKE '%%' AND activa = 1 AND fecha >= '2023-11-27') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (nombre LIKE '%%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (nombre LIKE '%%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3520)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 10674)
+Completed 200 OK in 53ms (Views: 47.0ms | ActiveRecord: 0.6ms | Allocations: 11071)
+
+
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:34:48 -0300
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:34:48 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:34:48 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:34:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/campaigns/1/edit" for ::1 at 2023-11-27 19:35:40 -0300
+Processing by CampaignsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2233)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 10134)
+Completed 200 OK in 108ms (Views: 48.2ms | ActiveRecord: 0.2ms | Allocations: 11059)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:35:40 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:35:40 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:35:41 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:35:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started PATCH "/campaigns/1" for ::1 at 2023-11-27 19:35:47 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Hola!", "descripcion"=>"lslxkxmxn", "monto"=>"0", "fecha"=>"2025-01-01"}, "commit"=>"Actualizar Campaña", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Hola!') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Update (0.1ms)[0m  [1m[33mUPDATE "campaigns" SET "monto" = ?, "updated_at" = ? WHERE "campaigns"."id" = ?[0m  [["monto", 0], ["updated_at", "2023-11-27 22:35:47.974385"], ["id", 1]]
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 22ms (ActiveRecord: 2.1ms | Allocations: 3572)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 19:35:47 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3556)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 10713)
+Completed 200 OK in 47ms (Views: 41.8ms | ActiveRecord: 0.4ms | Allocations: 11141)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:35:48 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:35:48 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:35:48 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:35:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 19:35:53 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"AnTdvdN9jsksGKp2tXSWsgcTUobiNTDBBoykQTcV9WwUQy3i3kbsHmJ73HAgcnarbkhX5a0dAIKiR5cbhgNOow", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1584)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 9475)
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 0.2ms | Allocations: 10602)
+
+
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:35:53 -0300
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:35:53 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:35:53 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:35:53 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/campaigns/1/edit" for ::1 at 2023-11-27 19:36:01 -0300
+Processing by CampaignsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1429)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 9330)
+Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 0.2ms | Allocations: 10156)
+
+
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:36:01 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:36:01 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:36:01 -0300
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:36:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started PATCH "/campaigns/1" for ::1 at 2023-11-27 19:36:05 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Hola!", "descripcion"=>"lslxkxmxn", "monto"=>"-1", "fecha"=>"2025-01-01"}, "commit"=>"Actualizar Campaña", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Hola!') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1752)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 9728)
+Completed 200 OK in 59ms (Views: 41.1ms | ActiveRecord: 2.1ms | Allocations: 13426)
+
+
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:36:06 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:36:06 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:36:06 -0300
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:36:06 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started PATCH "/campaigns/1" for ::1 at 2023-11-27 19:36:51 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Hola!", "descripcion"=>"lslxkxmxn", "monto"=>"0", "fecha"=>"2025-01-01"}, "commit"=>"Actualizar Campaña", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Hola!') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2597)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 97.0ms | Allocations: 36564)
+Completed 200 OK in 180ms (Views: 111.8ms | ActiveRecord: 5.9ms | Allocations: 52971)
+
+
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:36:52 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:36:52 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:36:52 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:36:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+Started PATCH "/campaigns/1" for ::1 at 2023-11-27 19:36:58 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Hola!", "descripcion"=>"lslxkxmxn", "monto"=>"1", "fecha"=>"2025-01-01"}, "commit"=>"Actualizar Campaña", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Hola!') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Update (0.1ms)[0m  [1m[33mUPDATE "campaigns" SET "monto" = ?, "updated_at" = ? WHERE "campaigns"."id" = ?[0m  [["monto", 1], ["updated_at", "2023-11-27 22:36:58.241574"], ["id", 1]]
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 20ms (ActiveRecord: 2.0ms | Allocations: 3845)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 19:36:58 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4423)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 11640)
+Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 0.5ms | Allocations: 12166)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:36:58 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:36:58 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:36:58 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:36:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 19:37:40 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"-wzV_5hyQiw-o37z3LQwccg5z2MVPQAg79aK0rCDDfftOyWglUkg-3DACPVJstBooWLKAFoVMGNLHbmIAZW2OA", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1582)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 9473)
+Completed 200 OK in 53ms (Views: 44.5ms | ActiveRecord: 0.3ms | Allocations: 10612)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:37:41 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:37:41 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:37:41 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:37:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started GET "/campaigns/1/edit" for ::1 at 2023-11-27 19:37:49 -0300
+Processing by CampaignsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1445)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 9346)
+Completed 200 OK in 52ms (Views: 45.3ms | ActiveRecord: 0.2ms | Allocations: 10172)
+
+
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:37:49 -0300
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:37:49 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:37:49 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:37:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 19:44:51 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCampaign Load (1.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"-wzV_5hyQiw-o37z3LQwccg5z2MVPQAg79aK0rCDDfftOyWglUkg-3DACPVJstBooWLKAFoVMGNLHbmIAZW2OA", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 1.8ms | Allocations: 799)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 8783)
+Completed 200 OK in 55ms (Views: 44.4ms | ActiveRecord: 3.3ms | Allocations: 10185)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:44:51 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:44:52 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:44:52 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:44:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/campaigns/1/edit" for ::1 at 2023-11-27 19:44:57 -0300
+Processing by CampaignsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1446)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 9347)
+Completed 200 OK in 53ms (Views: 46.0ms | ActiveRecord: 0.2ms | Allocations: 10172)
+
+
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:44:58 -0300
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:44:58 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:44:58 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:44:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started PATCH "/campaigns/1" for ::1 at 2023-11-27 19:45:05 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Holanda", "descripcion"=>"lslxkxmxn", "monto"=>"1", "fecha"=>"2025-01-01"}, "commit"=>"Actualizar Campaña", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:102:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Holanda') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:77:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1337)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 9313)
+Completed 200 OK in 57ms (Views: 39.6ms | ActiveRecord: 2.2ms | Allocations: 12995)
+
+
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:45:05 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:45:05 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:45:05 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:45:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 19:58:11 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 3853)
+  Rendered layout layouts/application.html.erb (Duration: 54.5ms | Allocations: 11009)
+Completed 200 OK in 63ms (Views: 52.0ms | ActiveRecord: 3.8ms | Allocations: 11469)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:58:11 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:58:12 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:58:12 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:58:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 19:58:14 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"P5RKgBA3uGYS4cPY2anydyjIqlaOAdyhb4PRQotTNZEpo7rfHQzasVyCtd5MrxJuQZOvNcEp7OLLSOIYOkWOXg", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 1.5ms | Allocations: 799)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 8690)
+Completed 200 OK in 51ms (Views: 42.6ms | ActiveRecord: 0.3ms | Allocations: 9806)
+
+
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 19:58:15 -0300
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 19:58:15 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 19:58:15 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 19:58:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:03:24 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"100", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"GWu_N3vi4K1AkrTxh3ruJV_1FXwCeMXxQjp2bNwAAhIPXE9odtmCeg7xwvcSfA48Nq4QH01Q9bLm8UU2bRa53Q", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"100", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  [1m[36mTarjeta Load (0.2ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:51:in `pay'
+  [1m[36mTarjeta Update (1.7ms)[0m  [1m[33mUPDATE "tarjeta" SET "saldo" = ?, "updated_at" = ? WHERE "tarjeta"."id" = ?[0m  [["saldo", 9700], ["updated_at", "2023-11-27 23:03:24.481481"], ["id", 2]]
+  ↳ app/controllers/campaigns_controller.rb:51:in `pay'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:51:in `pay'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 221ms (ActiveRecord: 2.9ms | Allocations: 13715)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 20:03:24 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3732)
+  Rendered layout layouts/application.html.erb (Duration: 54.5ms | Allocations: 10995)
+Completed 200 OK in 63ms (Views: 56.1ms | ActiveRecord: 0.5ms | Allocations: 11508)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:03:24 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:03:24 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:03:24 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:03:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:18:50 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCampaign Load (2.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"kESiNVKEN5thCkKdfQmdf1gW0AAOKAc2SYcDrANHkKGGc1JqX79VTC9pNJvoD31mMU3VY0EAN3XtTDD2slErbg", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1777)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 89.1ms | Allocations: 34803)
+Completed 200 OK in 148ms (Views: 105.4ms | ActiveRecord: 3.4ms | Allocations: 47409)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:18:52 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:18:52 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:18:52 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:18:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:19:15 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"5", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"zugaesuqP-MvQCLMqqHNqq892aua4Crh_l77ZDvovmDY3-olxpFdNGEjVMo_py2zxmbcyNXIGqJalcg-iv4Frw", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"5", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  [1m[36mTarjeta Load (0.2ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1784)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 9817)
+Completed 200 OK in 65ms (Views: 42.6ms | ActiveRecord: 0.3ms | Allocations: 16467)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:19:15 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:19:16 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:19:16 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:19:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:19:24 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"900000000", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"1"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"NzK7BPpovVD8C66QJAFwB5xGCn7kwUXAWS26mo2_WvAhBUtb91Pfh7Jo2JaxB5Ae9R0PHavpdYP95onAPKnhPw", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"900000000", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  [1m[36mTarjeta Load (0.1ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 3.1ms | Allocations: 866)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 8757)
+Completed 200 OK in 49ms (Views: 39.7ms | ActiveRecord: 0.3ms | Allocations: 10487)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:19:25 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:19:25 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:19:25 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:19:25 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 20:19:29 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 4683)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 11839)
+Completed 200 OK in 57ms (Views: 48.9ms | ActiveRecord: 0.5ms | Allocations: 12366)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:19:29 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:19:29 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:19:29 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:19:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/campaigns/5/pay" for ::1 at 2023-11-27 20:19:32 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"1sG3gRO0cK4ttzD0ms1jMT29z-0tliyJQxBWH7E8hvrb0weBiXW3mN6QYhrfZE86YBEjrTihxy8wFCYLPLWxiA", "controller"=>"campaigns", "action"=>"pay", "id"=>"5"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 2.0ms | Allocations: 801)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 8692)
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 0.2ms | Allocations: 9753)
+
+
+Started GET "/campaigns/5/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:19:33 -0300
+Started GET "/campaigns/5/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:19:33 -0300
+Started GET "/campaigns/5/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:19:33 -0300
+Started GET "/campaigns/5/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:19:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/vendor/jquery/jquery.min.js"):
+  
+Started POST "/campaigns/5/pay" for ::1 at 2023-11-27 20:19:50 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"100", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"5"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"2nBWk_pw06wTS_jJwpy4QZ8YHf06fpjp9qRshbJVFxHXYuaTYLEUmuBsqieHNZRKwrTxvS9Jc0-FoByRP9wgYw", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"100", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"5"} permitted: false>
+  [1m[36mTarjeta Load (0.1ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:54:in `pay'
+  [1m[36mTarjeta Update (1.7ms)[0m  [1m[33mUPDATE "tarjeta" SET "saldo" = ?, "updated_at" = ? WHERE "tarjeta"."id" = ?[0m  [["saldo", 9600], ["updated_at", "2023-11-27 23:19:50.536388"], ["id", 2]]
+  ↳ app/controllers/campaigns_controller.rb:54:in `pay'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:54:in `pay'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 17ms (ActiveRecord: 2.1ms | Allocations: 3461)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 20:19:50 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 3578)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 10738)
+Completed 200 OK in 58ms (Views: 52.9ms | ActiveRecord: 0.5ms | Allocations: 11166)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:19:50 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:19:50 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:19:50 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:19:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  [1m[36mTarjeta Load (1.1ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/servicios/paseadores.html" for ::1 at 2023-11-27 20:53:57 -0300
+Processing by ServiciosController#paseadores as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering servicios/paseadores.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/servicios/paseadores.html.erb:76
+  [1m[36mServicio Load (0.2ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/views/servicios/paseadores.html.erb:85
+  Rendered servicios/paseadores.html.erb within layouts/application (Duration: 77.8ms | Allocations: 43634)
+  Rendered layout layouts/application.html.erb (Duration: 136.8ms | Allocations: 50962)
+Completed 200 OK in 197ms (Views: 152.7ms | ActiveRecord: 4.9ms | Allocations: 52118)
+
+
+Started GET "/servicios/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:53:58 -0300
+Started GET "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:53:58 -0300
+Started GET "/servicios/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:53:59 -0300
+Started GET "/servicios/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:53:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/servicios/js/sb-admin-2.min.js"):
+  
+Started GET "/users/sign_out" for ::1 at 2023-11-27 20:54:01 -0300
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 85ms (ActiveRecord: 0.1ms | Allocations: 3341)
+
+
+Started GET "/" for ::1 at 2023-11-27 20:54:01 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 3831)
+  Rendered layout layouts/application.html.erb (Duration: 139.7ms | Allocations: 7943)
+Completed 200 OK in 170ms (Views: 158.8ms | ActiveRecord: 0.0ms | Allocations: 8514)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:54:02 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:54:02 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:54:02 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:54:02 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 20:54:14 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (1.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2634)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 6873)
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 1.6ms | Allocations: 7369)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:54:14 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:54:15 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:54:15 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:54:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/campaigns/search?query=hola&commit=Buscar" for ::1 at 2023-11-27 20:54:33 -0300
+Processing by CampaignsController#search as HTML
+  Parameters: {"query"=>"hola", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (nombre LIKE '%hola%' AND activa = 1 AND fecha >= '2023-11-27') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (nombre LIKE '%hola%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (nombre LIKE '%hola%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2484)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 6733)
+Completed 200 OK in 55ms (Views: 45.6ms | ActiveRecord: 0.6ms | Allocations: 7137)
+
+
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:54:34 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:54:34 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:54:34 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:54:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+Started GET "/campaigns/search?query=holanda&commit=Buscar" for ::1 at 2023-11-27 20:54:40 -0300
+Processing by CampaignsController#search as HTML
+  Parameters: {"query"=>"holanda", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (nombre LIKE '%holanda%' AND activa = 1 AND fecha >= '2023-11-27') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (nombre LIKE '%holanda%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (nombre LIKE '%holanda%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2252)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 6501)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.4ms | Allocations: 6899)
+
+
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:54:40 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:54:40 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:54:40 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:54:40 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/campaigns/search?query=&commit=Buscar" for ::1 at 2023-11-27 20:54:44 -0300
+Processing by CampaignsController#search as HTML
+  Parameters: {"query"=>"", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (nombre LIKE '%%' AND activa = 1 AND fecha >= '2023-11-27') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (nombre LIKE '%%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (nombre LIKE '%%' AND activa = 1 AND fecha >= '2023-11-27')[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2479)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 6728)
+Completed 200 OK in 55ms (Views: 47.1ms | ActiveRecord: 0.5ms | Allocations: 7125)
+
+
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:54:45 -0300
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:54:45 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:54:45 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:54:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:54:59 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"G4BDyPTNc70TYInPTDyVf-NLBuxB0Nj6cKHsaTpBqszn8doFOrZeTReT-ewU9g0T2wFEPHvuomEgyTCpsW5bTw", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 1.6ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 5111)
+Completed 200 OK in 46ms (Views: 34.8ms | ActiveRecord: 0.2ms | Allocations: 6227)
+
+
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:54:59 -0300
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:54:59 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:54:59 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:54:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:56:19 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"95959595", "nombre"=>"Franco Cazala", "codigo"=>"548", "monto_temporal"=>"1", "vencimiento"=>"2024-12-18", "dni"=>"4384994941"}, "commit"=>"Realizar Donación", "id"=>"1"}
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"RIXKUzwrDLwgJ0INiynetBAbnnQoypC1YY1FEB9dUCS49FOe8lAhTCTUMi7T40bYKFHcpBL06i4x5ZnQlHKhpw", "tarjeta"=>{"numero"=>"95959595", "nombre"=>"Franco Cazala", "codigo"=>"548", "monto_temporal"=>"1", "vencimiento"=>"2024-12-18", "dni"=>"4384994941"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  [1m[36mTarjeta Load (0.2ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 95959595], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 2.2ms | Allocations: 868)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 5155)
+Completed 200 OK in 63ms (Views: 44.8ms | ActiveRecord: 0.4ms | Allocations: 6827)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:56:20 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:56:20 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:56:20 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:56:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:57:11 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"95959595", "nombre"=>"Franco Cazala", "codigo"=>"548", "monto_temporal"=>"20000", "vencimiento"=>"2024-12-18", "dni"=>"4384994941"}, "commit"=>"Realizar Donación", "id"=>"1"}
+  [1m[36mCampaign Load (0.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"GGmcz-Yc_ga1J4xzggwSw01o_ghaL1hB_bK4jEl8AQLkGAUCKGfT9rHU_FDaxoqvdSK82GARItqt2mRMwlPwgQ", "tarjeta"=>{"numero"=>"95959595", "nombre"=>"Franco Cazala", "codigo"=>"548", "monto_temporal"=>"20000", "vencimiento"=>"2024-12-18", "dni"=>"4384994941"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  [1m[36mTarjeta Load (0.1ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 95959595], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 2.1ms | Allocations: 864)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 5151)
+Completed 200 OK in 45ms (Views: 32.4ms | ActiveRecord: 0.6ms | Allocations: 6768)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:57:11 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:57:11 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:57:11 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:57:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/1/pay" for ::1 at 2023-11-27 20:57:29 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"20000", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"1"}
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"P4E97__3tdvxOerGr-x9I_Tl4JtMGy84NEHdMJ75ieDD8KQiMYyYK_XKmuX3JuVPzK-iS3YlVaNkKQHwFdZ4Yw", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"20000", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"1"} permitted: false>
+  [1m[36mTarjeta Load (0.1ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 1.4ms | Allocations: 870)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 5158)
+Completed 200 OK in 48ms (Views: 29.4ms | ActiveRecord: 0.3ms | Allocations: 6837)
+
+
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:57:30 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:57:30 -0300
+Started GET "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:57:30 -0300
+Started GET "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:57:30 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/campaigns/1/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:57:49 -0300
+Started GET "/campaigns/1/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:57:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/1/js/sb-admin-2.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 20:57:52 -0300
+Started GET "/campaigns" for ::1 at 2023-11-27 20:57:52 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+Processing by CampaignsController#index as HTML
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 2695)
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (1.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 3902)
+  Rendered layout layouts/application.html.erb (Duration: 77.8ms | Allocations: 12173)
+Completed 200 OK in 86ms (Views: 78.2ms | ActiveRecord: 0.8ms | Allocations: 12655)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 75.9ms | Allocations: 11137)
+Completed 200 OK in 164ms (Views: 150.6ms | ActiveRecord: 5.3ms | Allocations: 12231)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:57:52 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:57:52 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:57:52 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:57:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/campaigns/5/pay" for ::1 at 2023-11-27 20:57:54 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mCampaign Load (0.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"qfcLG_I8IoLKTPXlZAT88-4ysoPJGwdpIwoQnV7AsV-d7YiQB4HZrd9UhHvjVNnKWSKavTBkdmPlEhc_hALovg", "controller"=>"campaigns", "action"=>"pay", "id"=>"5"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 2.2ms | Allocations: 800)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 5108)
+Completed 200 OK in 57ms (Views: 43.3ms | ActiveRecord: 0.5ms | Allocations: 6205)
+
+
+Started GET "/campaigns/5/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:57:55 -0300
+Started GET "/campaigns/5/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:57:55 -0300
+Started GET "/campaigns/5/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:57:55 -0300
+Started GET "/campaigns/5/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:57:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/5/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:58:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-27 20:58:21 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 5646)
+Completed 200 OK in 180ms (Views: 173.1ms | ActiveRecord: 0.0ms | Allocations: 7402)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:58:22 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:58:22 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:58:22 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:58:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/users/sign_in" for ::1 at 2023-11-27 20:58:28 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"dni"=>"1234512345", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 24], ["current_sign_in_at", "2023-11-27 23:58:29.208704"], ["last_sign_in_at", "2023-11-27 18:01:04.750397"], ["updated_at", "2023-11-27 23:58:29.209099"], ["id", 83]]
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 607ms (ActiveRecord: 2.7ms | Allocations: 6339)
+
+
+Started GET "/" for ::1 at 2023-11-27 20:58:29 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 3156)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | Allocations: 9983)
+Completed 200 OK in 63ms (Views: 49.8ms | ActiveRecord: 0.3ms | Allocations: 10315)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:58:29 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:58:29 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:58:29 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:58:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 20:58:30 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 3590)
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 10783)
+Completed 200 OK in 72ms (Views: 65.3ms | ActiveRecord: 0.7ms | Allocations: 11239)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:58:31 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:58:32 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:58:32 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:58:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/campaigns/new" for ::1 at 2023-11-27 20:58:38 -0300
+Processing by CampaignsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/new.html.erb within layouts/application
+  Rendered campaigns/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2013)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 9919)
+Completed 200 OK in 130ms (Views: 66.6ms | ActiveRecord: 0.1ms | Allocations: 10396)
+
+
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:58:39 -0300
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:58:39 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:58:39 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:58:39 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns" for ::1 at 2023-11-27 20:59:04 -0300
+Processing by CampaignsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Hola!", "descripcion"=>"clscmlcsmsc", "monto"=>"900", "imagen"=>#<ActionDispatch::Http::UploadedFile:0x000002899b076968 @tempfile=#<Tempfile:C:/Users/Frank/AppData/Local/Temp/RackMultipart20231127-13548-5e8ljy.jpg>, @content_type="image/jpeg", @original_filename="boca.jpg", @headers="Content-Disposition: form-data; name=\"campaign[imagen]\"; filename=\"boca.jpg\"\r\nContent-Type: image/jpeg\r\n">, "fecha"=>"2025-10-10"}, "commit"=>"Publicar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Hola!') AND activa = 1) AND "campaigns"."id" IS NOT NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/new.html.erb within layouts/application
+  Rendered campaigns/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1300)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 53.9ms | Allocations: 9276)
+Completed 200 OK in 110ms (Views: 55.2ms | ActiveRecord: 2.3ms | Allocations: 12967)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:59:04 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:59:04 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:59:05 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:59:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns" for ::1 at 2023-11-27 20:59:20 -0300
+Processing by CampaignsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Bocaaa", "descripcion"=>"clscmlcsmsc", "monto"=>"900", "imagen"=>#<ActionDispatch::Http::UploadedFile:0x00000289a80c56f0 @tempfile=#<Tempfile:C:/Users/Frank/AppData/Local/Temp/RackMultipart20231127-13548-4vgk2h.jpg>, @content_type="image/jpeg", @original_filename="boca.jpg", @headers="Content-Disposition: form-data; name=\"campaign[imagen]\"; filename=\"boca.jpg\"\r\nContent-Type: image/jpeg\r\n">, "fecha"=>"2025-10-10"}, "commit"=>"Publicar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Bocaaa') AND activa = 1) AND "campaigns"."id" IS NOT NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Create (0.4ms)[0m  [1m[32mINSERT INTO "campaigns" ("nombre", "descripcion", "monto", "imagen", "fecha", "created_at", "updated_at", "activa") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["nombre", "Bocaaa"], ["descripcion", "clscmlcsmsc"], ["monto", 900], ["imagen", "boca.jpg"], ["fecha", "2025-10-10"], ["created_at", "2023-11-27 23:59:20.498572"], ["updated_at", "2023-11-27 23:59:20.498572"], ["activa", 1]]
+  ↳ app/controllers/campaigns_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:18:in `create'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 59ms (ActiveRecord: 2.6ms | Allocations: 3833)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 20:59:20 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-27' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 3949)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 11106)
+Completed 200 OK in 73ms (Views: 67.4ms | ActiveRecord: 0.4ms | Allocations: 11534)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:59:20 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:59:20 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:59:20 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:59:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/6/pay" for ::1 at 2023-11-27 20:59:27 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"sibihWoti7U2BBIdeY6SywQPaKWQLaLCrvEy1IxOWGjUKEdPuy6f7N3vOii1xkL62-QClKf3lQHtUhT5etzZ5A", "controller"=>"campaigns", "action"=>"pay", "id"=>"6"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 1.6ms | Allocations: 801)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 71.9ms | Allocations: 8692)
+Completed 200 OK in 84ms (Views: 72.9ms | ActiveRecord: 0.3ms | Allocations: 9767)
+
+
+Started GET "/campaigns/6/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:59:27 -0300
+Started GET "/campaigns/6/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:59:27 -0300
+Started GET "/campaigns/6/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:59:27 -0300
+Started GET "/campaigns/6/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:59:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/6/pay" for ::1 at 2023-11-27 20:59:50 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"1000", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"6"}
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"hBoA-CVnAM8XCThKOrdbaOwVCFDasidA-QonvAdPML_iFKUy9GQUlvziEH_2_4tZM_5iYe1oEIO6qQGR8d2xMw", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"1000", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"6"} permitted: false>
+  [1m[36mTarjeta Load (0.2ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/pay.html.erb within layouts/application
+  Rendered campaigns/pay.html.erb within layouts/application (Duration: 1.5ms | Allocations: 868)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 8757)
+Completed 200 OK in 64ms (Views: 49.8ms | ActiveRecord: 0.5ms | Allocations: 10497)
+
+
+Started GET "/campaigns/6/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 20:59:50 -0300
+Started GET "/campaigns/6/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 20:59:50 -0300
+Started GET "/campaigns/6/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 20:59:50 -0300
+Started GET "/campaigns/6/js/sb-admin-2.min.js" for ::1 at 2023-11-27 20:59:51 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/js/sb-admin-2.min.js"):
+  
+Started POST "/campaigns/6/pay" for ::1 at 2023-11-27 21:00:19 -0300
+Processing by CampaignsController#pay as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"600", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "id"=>"6"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:30:in `pay'
+#<ActionController::Parameters {"authenticity_token"=>"DIhCDlDgWTZf1P52WWRmJUIbRoKdRv8dIgICv2GN61FqhufEgeNNb7Q_1kOVLLYUnfAss6qcyN5hoSSSlx9q3Q", "tarjeta"=>{"numero"=>"1234567891234567", "nombre"=>"Franco Cazala", "codigo"=>"123", "monto_temporal"=>"600", "vencimiento"=>"2024-12-18", "dni"=>"43799099"}, "commit"=>"Realizar Donación", "controller"=>"campaigns", "action"=>"pay", "id"=>"6"} permitted: false>
+  [1m[36mTarjeta Load (0.1ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" WHERE "tarjeta"."numero" = ? LIMIT ?[0m  [["numero", 1234567891234567], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:36:in `pay'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:54:in `pay'
+  [1m[36mTarjeta Update (1.7ms)[0m  [1m[33mUPDATE "tarjeta" SET "saldo" = ?, "updated_at" = ? WHERE "tarjeta"."id" = ?[0m  [["saldo", 9000], ["updated_at", "2023-11-28 00:00:20.291261"], ["id", 2]]
+  ↳ app/controllers/campaigns_controller.rb:54:in `pay'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:54:in `pay'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 21ms (ActiveRecord: 2.2ms | Allocations: 3359)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 21:00:20 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 3952)
+  Rendered layout layouts/application.html.erb (Duration: 68.9ms | Allocations: 11110)
+Completed 200 OK in 77ms (Views: 70.9ms | ActiveRecord: 0.7ms | Allocations: 11538)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:00:20 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:00:20 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:00:20 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:00:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  [1m[36mTarjeta Load (0.2ms)[0m  [1m[34mSELECT "tarjeta".* FROM "tarjeta" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/campaigns/6/edit" for ::1 at 2023-11-27 21:00:45 -0300
+Processing by CampaignsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:106:in `set_campaign'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2132)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 78.8ms | Allocations: 10033)
+Completed 200 OK in 99ms (Views: 79.9ms | ActiveRecord: 0.2ms | Allocations: 10917)
+
+
+Started GET "/campaigns/6/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:00:46 -0300
+Started GET "/campaigns/6/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:00:46 -0300
+Started GET "/campaigns/6/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:00:46 -0300
+Started GET "/campaigns/6/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:00:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/6/js/sb-admin-2.min.js"):
+  
+Started PATCH "/campaigns/6" for ::1 at 2023-11-27 21:00:52 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Hola!", "descripcion"=>"clscmlcsmsc", "monto"=>"900", "fecha"=>"2025-10-10"}, "commit"=>"Actualizar Campaña", "id"=>"6"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:106:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Hola!') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:81:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/edit.html.erb within layouts/application
+  Rendered campaigns/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1336)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 9311)
+Completed 200 OK in 81ms (Views: 58.9ms | ActiveRecord: 1.5ms | Allocations: 12979)
+
+
+Started GET "/campaigns/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:00:53 -0300
+Started GET "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:00:53 -0300
+Started GET "/campaigns/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:00:53 -0300
+Started GET "/campaigns/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:00:53 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/campaigns/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started PATCH "/campaigns/6" for ::1 at 2023-11-27 21:00:58 -0300
+Processing by CampaignsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "campaign"=>{"nombre"=>"Boca", "descripcion"=>"clscmlcsmsc", "monto"=>"900", "fecha"=>"2025-10-10"}, "commit"=>"Actualizar Campaña", "id"=>"6"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:106:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (LOWER(nombre) = LOWER('Boca') AND activa = 1) AND "campaigns"."id" != ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/campaign.rb:12:in `nombre_unico_si_activa'
+  [1m[36mCampaign Update (0.1ms)[0m  [1m[33mUPDATE "campaigns" SET "nombre" = ?, "updated_at" = ? WHERE "campaigns"."id" = ?[0m  [["nombre", "Boca"], ["updated_at", "2023-11-28 00:00:58.842558"], ["id", 6]]
+  ↳ app/controllers/campaigns_controller.rb:81:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:81:in `update'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 78ms (ActiveRecord: 3.6ms | Allocations: 3560)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 21:00:58 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 3935)
+  Rendered layout layouts/application.html.erb (Duration: 65.8ms | Allocations: 11094)
+Completed 200 OK in 79ms (Views: 66.6ms | ActiveRecord: 0.5ms | Allocations: 11518)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:00:59 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:00:59 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:00:59 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:00:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started DELETE "/campaigns/6" for ::1 at 2023-11-27 21:01:08 -0300
+Processing by CampaignsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Eliminar", "id"=>"6"}
+  [1m[36mCampaign Load (0.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/campaigns_controller.rb:106:in `set_campaign'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:89:in `destroy'
+  [1m[36mCampaign Update (1.3ms)[0m  [1m[33mUPDATE "campaigns" SET "updated_at" = ?, "activa" = ? WHERE "campaigns"."id" = ?[0m  [["updated_at", "2023-11-28 00:01:08.654553"], ["activa", 0], ["id", 6]]
+  ↳ app/controllers/campaigns_controller.rb:89:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campaigns_controller.rb:89:in `destroy'
+Redirected to http://localhost:3000/campaigns
+Completed 302 Found in 24ms (ActiveRecord: 1.7ms | Allocations: 2982)
+
+
+Started GET "/campaigns" for ::1 at 2023-11-27 21:01:08 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 3549)
+  Rendered layout layouts/application.html.erb (Duration: 67.0ms | Allocations: 10709)
+Completed 200 OK in 77ms (Views: 70.1ms | ActiveRecord: 0.7ms | Allocations: 11137)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:01:09 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:01:09 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:01:09 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:01:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/users/sign_up" for ::1 at 2023-11-27 21:01:43 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 5.0ms | Allocations: 246)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 113.3ms | Allocations: 4257)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 166.2ms | Allocations: 12485)
+Completed 200 OK in 225ms (Views: 212.1ms | ActiveRecord: 0.1ms | Allocations: 13616)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:01:44 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:01:44 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:01:44 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:01:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/users" for ::1 at 2023-11-27 21:02:07 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nombre"=>"Mario", "apellido"=>"Lopez", "email"=>"mario@gmail.com", "fecha_nacimiento"=>"2000-10-10", "telefono"=>"1111", "dni"=>"5432154321", "rol_id"=>"2"}, "commit"=>"Registrar Usuario"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 5432154321], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:41:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 14ms (ActiveRecord: 0.1ms | Allocations: 1131)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-11-27 21:02:07 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1876)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 9791)
+Completed 200 OK in 79ms (Views: 70.4ms | ActiveRecord: 0.1ms | Allocations: 10343)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:02:08 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:02:08 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:02:08 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:02:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+Started GET "/users/sign_out" for ::1 at 2023-11-27 21:02:15 -0300
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 10ms (ActiveRecord: 0.1ms | Allocations: 1871)
+
+
+Started GET "/" for ::1 at 2023-11-27 21:02:15 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 3157)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 7116)
+Completed 200 OK in 55ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 7448)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:02:16 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:02:16 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:02:16 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:02:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-27 21:02:17 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 4858)
+Completed 200 OK in 51ms (Views: 44.5ms | ActiveRecord: 0.0ms | Allocations: 5654)
+
+
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:02:17 -0300
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:02:17 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:02:17 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:02:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 21:02:19 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 2537)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 6807)
+Completed 200 OK in 43ms (Views: 36.8ms | ActiveRecord: 0.9ms | Allocations: 7267)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:02:19 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:02:19 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:02:20 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:02:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started GET "/campaigns" for ::1 at 2023-11-27 21:03:40 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2485)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 6734)
+Completed 200 OK in 55ms (Views: 48.7ms | ActiveRecord: 0.7ms | Allocations: 7162)
+
+
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:03:41 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:03:41 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:03:41 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:03:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/" for ::1 at 2023-11-27 21:04:21 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 25.9ms | Allocations: 3157)
+  Rendered layout layouts/application.html.erb (Duration: 48.7ms | Allocations: 7085)
+Completed 200 OK in 62ms (Views: 50.0ms | ActiveRecord: 0.0ms | Allocations: 7417)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:04:21 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:04:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:04:22 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:04:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-27 21:04:43 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 4857)
+Completed 200 OK in 45ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 5630)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:04:44 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:04:44 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:04:44 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:04:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-27 21:04:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 4878)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 5664)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:04:46 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:04:46 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:04:46 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:04:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+Started POST "/users/sign_in" for ::1 at 2023-11-27 21:04:53 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"dni"=>"5432154321", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 5432154321], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:5:in `create'
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 350ms (ActiveRecord: 0.2ms | Allocations: 1058)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-27 21:04:54 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 4860)
+Completed 200 OK in 41ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 5657)
+
+
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:04:54 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:04:54 -0300
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:04:54 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:04:54 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-27 21:05:00 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 4857)
+Completed 200 OK in 42ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 5642)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:05:01 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:05:01 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:05:01 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:05:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-11-27 21:05:02 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 80.6ms | Allocations: 4857)
+Completed 200 OK in 89ms (Views: 82.2ms | ActiveRecord: 0.0ms | Allocations: 5644)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:05:03 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:05:03 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:05:03 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:05:03 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+Started POST "/users/sign_in" for ::1 at 2023-11-27 21:05:12 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"dni"=>"1234512345", "password"=>"[FILTERED]"}, "commit"=>"Ingresar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["dni", 1234512345], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 25], ["current_sign_in_at", "2023-11-28 00:05:13.045253"], ["last_sign_in_at", "2023-11-27 23:58:29.208704"], ["updated_at", "2023-11-28 00:05:13.045535"], ["id", 83]]
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 563ms (ActiveRecord: 2.1ms | Allocations: 4937)
+
+
+Started GET "/" for ::1 at 2023-11-27 21:05:13 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 3157)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 49.2ms | Allocations: 9877)
+Completed 200 OK in 59ms (Views: 50.3ms | ActiveRecord: 0.1ms | Allocations: 10208)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:05:13 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:05:13 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:05:13 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:05:13 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/users/sign_up" for ::1 at 2023-11-27 21:05:22 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1790)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 9682)
+Completed 200 OK in 66ms (Views: 58.6ms | ActiveRecord: 0.1ms | Allocations: 10207)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:05:22 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:05:22 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:05:22 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:05:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/users" for ::1 at 2023-11-27 21:05:37 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nombre"=>"Mario", "apellido"=>"Lopez", "email"=>"mario@gmail.com", "fecha_nacimiento"=>"2000-01-01", "telefono"=>"11111", "dni"=>"654321", "rol_id"=>"2"}, "commit"=>"Registrar Usuario"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? LIMIT ?[0m  [["dni", 654321], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:41:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:53:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mario@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:53:in `create'
+  [1m[36mRol Load (0.1ms)[0m  [1m[34mSELECT "rols".* FROM "rols" WHERE "rols"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:53:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "permission_level", "dni", "nombre", "apellido", "fecha_nacimiento", "mail", "telefono", "rol_id", "created_at", "updated_at", "habilitado") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "mario@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["permission_level", nil], ["dni", 654321], ["nombre", "Mario"], ["apellido", "Lopez"], ["fecha_nacimiento", "2000-01-01"], ["mail", nil], ["telefono", "11111"], ["rol_id", 2], ["created_at", "2023-11-28 00:05:38.371149"], ["updated_at", "2023-11-28 00:05:38.371149"], ["habilitado", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:53:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:53:in `create'
+Redirected to http://localhost:3000/
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 375d2d09-68ff-4688-ae9b-bd0f47d103f6) to Async(default) with arguments: "UserMailer", "bienvenida", "deliver_now", {:params=>{:user=>#<GlobalID:0x00000289a4f31030 @uri=#<URI::GID gid://ohmydog/User/92>>, :password=>"nURNe8WnPiH2DYe6"}, :args=>[]}
+[ActiveJob] ↳ app/controllers/users/registrations_controller.rb:62:in `create'
+Completed 302 Found in 3685ms (ActiveRecord: 3.5ms | Allocations: 86054)
+
+
+Started GET "/" for ::1 at 2023-11-27 21:05:41 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6] Performing ActionMailer::MailDeliveryJob (Job ID: 375d2d09-68ff-4688-ae9b-bd0f47d103f6) from Async(default) enqueued at 2023-11-28T00:05:41.202456900Z with arguments: "UserMailer", "bienvenida", "deliver_now", {:params=>{:user=>#<GlobalID:0x00000289a5061590 @uri=#<URI::GID gid://ohmydog/User/92>>, :password=>"nURNe8WnPiH2DYe6"}, :args=>[]}
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 96.6ms | Allocations: 5279)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6]   Rendering user_mailer/bienvenida.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6]   Rendered user_mailer/bienvenida.html.erb (Duration: 6.9ms | Allocations: 493)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6]   Rendering user_mailer/bienvenida.text.erb
+  Rendered layout layouts/application.html.erb (Duration: 175.8ms | Allocations: 13696)
+Completed 200 OK in 233ms (Views: 172.7ms | ActiveRecord: 4.4ms | Allocations: 14773)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6]   Rendered user_mailer/bienvenida.text.erb (Duration: 3.6ms | Allocations: 669)
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:05:42 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:05:42 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:05:42 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:05:42 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6] UserMailer#bienvenida: processed outbound mail in 778.6ms
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6] Delivered mail 65652ed68786c_34ec96e88388e9@LAPTOP-IMMJP9QF.mail (2288.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6] Date: Mon, 27 Nov 2023 21:05:42 -0300
+From: no-reply@ohmydog.com
+To: mario@gmail.com
+Message-ID: <65652ed68786c_34ec96e88388e9@LAPTOP-IMMJP9QF.mail>
+Subject: =?UTF-8?Q?=C2=A1Bienvenido_a_OhMyDog!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_65652ed65c71d_34ec96e88387f0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_65652ed65c71d_34ec96e88387f0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#bienvenida
+
+, find me in app/views/user_mailer/bienvenida.text.erb
+
+----==_mimepart_65652ed65c71d_34ec96e88387f0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola!</h1>
+
+    <p>
+      Bienvenido a la plataforma de OhMyDog!<br>
+      Tu cuenta ya ha sido creada.<br>
+      Puedes iniciar sesi=C3=B3n con tu DNI y la siguiente contrase=C3=B1=
+a: <strong>nURNe8WnPiH2DYe6</strong><br>
+      Una vez que hayas iniciado sesi=C3=B3n, podr=C3=A1s cambiarla a tu =
+gusto.<br>
+      No compartas tu contrase=C3=B1a con nadie.
+    </p>
+  </div>
+</body>
+</html>
+
+
+----==_mimepart_65652ed65c71d_34ec96e88387f0--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [375d2d09-68ff-4688-ae9b-bd0f47d103f6] Performed ActionMailer::MailDeliveryJob (Job ID: 375d2d09-68ff-4688-ae9b-bd0f47d103f6) from Async(default) in 3127.82ms
+Started GET "/campaigns" for ::1 at 2023-11-27 21:06:15 -0300
+Processing by CampaignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:4
+  [1m[36mCampaign Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/campaigns/index.html.erb:14
+  [1m[36mCampaign Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1)[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE (fecha >= '2023-11-28' AND activa = 1) ORDER BY "campaigns"."fecha" ASC[0m
+  ↳ app/views/campaigns/index.html.erb:16:in `each_slice'
+  Rendered campaigns/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3343)
+  Rendered layout layouts/application.html.erb (Duration: 60.3ms | Allocations: 9821)
+Completed 200 OK in 74ms (Views: 62.5ms | ActiveRecord: 0.6ms | Allocations: 10347)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-27 21:06:16 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-27 21:06:16 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-27 21:06:16 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-27 21:06:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  

@@ -40,9 +40,12 @@ class CampaignsController < ApplicationController
              @tarjeta.vencimiento.to_date == @tarjeta_params[:vencimiento].to_date &&
              @tarjeta.nombre == @tarjeta_params[:nombre] &&
              @tarjeta.dni == @tarjeta_params[:dni].to_i
-            # Verifica si el monto es menor o igual al saldo
+    
             if @tarjeta_params[:monto_temporal].to_i > @tarjeta.saldo
               flash.now[:error] = 'El monto de la donación excede el saldo de la tarjeta.'
+              render action: :pay, locals: { tarjeta: @tarjeta_params }
+            elsif @tarjeta_params[:monto_temporal].to_i > @campaign.monto
+              flash.now[:error] = 'El monto de la donación excede el monto total de la campaña.'
               render action: :pay, locals: { tarjeta: @tarjeta_params }
             else
               # Lógica para realizar la donación, actualizar el saldo, etc.
@@ -65,6 +68,7 @@ class CampaignsController < ApplicationController
         end
       end
     end
+    
      
     
     
