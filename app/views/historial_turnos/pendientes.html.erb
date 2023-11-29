@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Estilos y otros encabezados aquí -->
+  <style>
+    /* Agrega estilos según sea necesario */
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 10px;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .button-container {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cambiar-fecha-campos {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<h1>Turnos pendientes</h1>
+
+<% if @turnos_pendientes.present? %>
+  <div class="card-container">
+    <% @turnos_pendientes.order(fecha: :asc).each do |turno| %>
+      <div class="card">
+        <div class="card-content">
+          <h5 class="card-title">
+            <strong>Nombre:</strong> <%= turno.perro.nombre %>
+          </h5>
+          <p>
+            <strong>Fecha: </strong> <%= turno.fecha.strftime('%Y-%m-%d') %>
+          </p>
+          <p>
+            <strong>Franja horaria: </strong> <%= turno.franja %>
+          </p>
+        </div>
+
+        <% if turno.hora.nil? %>
+          <div class="button-container">
+
+            <!-- Botón "Agregar Horario" -->
+            <button class="btn btn-success mt-2" onclick="mostrarFormulario('<%= turno.id %>')">Agregar Horario</button>
+          
+
+            <!-- Botón "Agregar Texto" -->
+            <button class="btn btn-primary mt-2" onclick="mostrarTextoFormulario('<%= turno.id %>')">Cambiar fecha</button>
+          </div>
+      
+
+
+          <!-- Formulario para ingresar la hora -->
+          <div id="formulario_<%= turno.id %>" style="display: none;">
+          <%= form_for [:agregar_horario, turno], html: { method: :put } do |f| %>
+            <div class="form-group">
+  <%= f.label :hora, "Hora", class: "form-label" %>
+  <%= f.time_field :hora, { prompt: { hour: 'Elija la hora' }, class: "form-control", required: true, format: "%H:%M" } %>
+  <%= f.object.errors.full_messages_for(:hora).join(', ') if f.object.errors[:hora].any? %>
+</div>
+
+
+
+            <!-- Botón "Confirmar" -->
+            <button type="submit" class="btn btn-success mt-2">Confirmar</button>
+          <% end %>
+          </div>
+
+          <!-- Formulario para ingresar el texto -->
+          <div id="texto_formulario_<%= turno.id %>" style="display: none;">
+            <%= form_for [:agregar_texto, turno], html: { method: :put } do |f| %>
+              <div class="form-group">
+                <%= f.label :texto, "Texto", class: "form-label" %>
+                <%= f.text_field :texto, class: "form-control", required: true %>
+                <%= f.object.errors.full_messages_for(:texto).join(', ') if f.object.errors[:texto].any? %>
+              </div>
+              <!-- Botón "Confirmar Texto" -->
+              <button type="submit" class="btn btn-primary mt-2">Enviar mail</button>
+            <% end %>
+          </div>
+
+
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No hay turnos pendientes.</p>
+<% end %>
+
+<script>
+  function mostrarFormulario(turnoId) {
+    var formulario = document.getElementById('formulario_' + turnoId);
+    formulario.style.display = 'block';
+  }
+</script>
+<script>
+  function mostrarTextoFormulario(turnoId) {
+    var textoFormulario = document.getElementById('texto_formulario_' + turnoId);
+    textoFormulario.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

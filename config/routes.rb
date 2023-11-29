@@ -17,7 +17,37 @@ Rails.application.routes.draw do
   end
 
 
-    resources :historial_turnos
+
+
+  Rails.application.routes.draw do
+    
+
+
+    resources :historial_turnos do
+      collection do
+        get 'confirmados', to: 'historial_turnos#confirmados', as: :turnos_confirmados
+        get 'pendientes', to: 'historial_turnos#pendientes', as: :turnos_pendientes
+        get 'hoy', to: 'historial_turnos#hoy', as: :turnos_hoy
+        put 'cancelar_turno'
+      end
+      member do
+        put 'cancelar_turno'
+        put 'agregar_horario'
+        put 'agregar_texto'
+        put 'agregar_consulta'
+        post 'create_vaccine'
+      end
+    end
+
+    
+  end
+
+
+
+  
+
+  get '/users/:id/perros', to: 'user_search#perros', as: 'user_perros'    
+  resources :historial_turnos
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -38,8 +68,6 @@ Rails.application.routes.draw do
   get 'dashboard/registrar_usuario'
   get 'dashboard/modificar_usuario'
   get 'dashboard/eliminar_usuario'
-  get 'dashboard/turnos_confirmados'
-  get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
   get '/perros/mis_perros'
   get '/users/search', to: 'user_search#search'
@@ -82,3 +110,17 @@ resources :perros
 
   root "dashboard#index"
 end
+
+
+#get 'confirmados', to: 'dashboard#confirmados', as: :turnos_confirmados:
+
+#get: Indica que estás configurando una ruta para manejar solicitudes HTTP GET.
+#'confirmados': Es el segmento de la URL que se agregará a la ruta principal. Por ejemplo,
+#si la ruta principal es /historial_turnos, esta ruta sería /historial_turnos/confirmados.
+
+#to: 'dashboard#confirmados': Especifica el controlador y la acción que manejarán esta ruta. 
+#En este caso, cuando alguien accede a la URL /historial_turnos/confirmados, la acción confirmados 
+#en el controlador DashboardController se ejecutará.
+
+#as: :turnos_confirmados: Define un nombre de ruta, lo que permite que utilices turnos_confirmados_path 
+#o turnos_confirmados_url en lugar de la URL completa en tu código.

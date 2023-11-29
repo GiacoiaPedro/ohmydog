@@ -99,24 +99,26 @@
                 </a>
                 <div id="collapsePagesTurnos" class="collapse" aria-labelledby="headingPagesTurnos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/dashboard/turnos_pendientes.html">Turnos pendientes</a>
-                        <a class="collapse-item" href="/dashboard/turnos_confirmados.html">Turnos confirmados</a>
+                        <a class="collapse-item" href="/historial_turnos/pendientes.html">Turnos pendientes</a>
+                        <a class="collapse-item" href="/historial_turnos/confirmados.html">Turnos confirmados</a> 
+                        <a class="collapse-item" href="/historial_turnos/hoy.html">Turnos de hoy</a>                    
+                   
                     </div>
                 </div>         
-                 </li>
+                </li>
         <% end %>
         
 
-           <% if user_signed_in? %>
+        <% if user_signed_in? %>
             <li class="nav-item">
             <a class="nav-link" href="<%= new_historial_turno_path %>" style="display: flex; align-items: center;"> 
             <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
             <span>Solicitar Turno</span>
-          </a>     
-          <% end %>
+        </a>     
+        <% end %>
 
-            </li>
-           <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/dashboard/perros_perdidos.html" style="display: flex; align-items: center;">
             <img src="<%= asset_path('perro.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
             <span>Perros Perdidos</span>
@@ -132,11 +134,11 @@
                 </button>
             </li>
 
-            <li class="nav-item">
-              <%= link_to campaigns_path, class: 'nav-link', style: 'display: flex; align-items: center;', disabled: true do %>
-              <img src="<%= asset_path('donacion.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
-               <span>Campañas de Donación</span>
-                 <% end %>
+        <li class="nav-item">
+            <%= link_to campaigns_path, class: 'nav-link', style: 'display: flex; align-items: center;', disabled: true do %>
+            <img src="<%= asset_path('donacion.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+            <span>Campañas de Donación</span>
+            <% end %>
                 </li>
 
 
@@ -232,9 +234,14 @@
                         Mis Datos
                     </a>
 
+                    <a class="dropdown-item" href="/historial_turno/mis_turnos.html">
+                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Mis Turnos
+                    </a>
+
                     <a class="dropdown-item" href="/perros/mis_perros.html">
                     <i class="fas fa-dog fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Mis Perros
+                    Editar a mis Perros
                      </a>
 
                    <a class="dropdown-item" href="<%= edit_password_user_path %>">

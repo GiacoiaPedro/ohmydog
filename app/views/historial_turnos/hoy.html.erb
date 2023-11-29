@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Estilos y otros encabezados aquí -->
+    <style>
+    /* Agrega estilos según sea necesario */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        width: 200px; /* Ajusta el tamaño según sea necesario */
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Turnos de hoy</h1>
+    <% if @turnos_confirmados.present? %>
+        <div class="card-container">
+            <% @turnos_confirmados.order(fecha: :asc).each do |turno| %>
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="card-title">
+                            <strong>Nombre:</strong> <%= turno.perro.nombre %>
+                        </h5>
+                        <p>
+                            <strong>Fecha :</strong> <%= turno.fecha.strftime('%Y-%m-%d') %>
+                        </p>
+                        <p>
+                            <strong>Hora :</strong> <%= turno.hora.strftime('%H:%M') %>
+                        </p>
+
+                        <!-- Boton para consulta -->
+<% if turno.tipo_turno_id == 2 || turno.tipo_turno_id == 5 || turno.tipo_turno_id == 6 %>
+    <button class="btn btn-success mt-2" onclick="mostrarTexto('<%= turno.id %>')">Finalizar turno</button>
+
+    <!-- Formulario para ingresar la consulta -->
+    <div id="formulario_<%= turno.id %>" style="display: none;">
+        <%= form_for [:agregar_consulta, turno], html: { method: :put } do |f| %>
+            <div class="form-group">
+                <%= f.label :consulta, "Observaciones", class: "form-label" %>
+                <%= f.text_field :consulta, class: "form-control", required: true %>
+                <%= f.object.errors.full_messages_for(:consulta).join(', ') if f.object.errors[:consulta].any? %>
+            </div>
+
+            <!-- Botón "Confirmar" -->
+            <button type="submit" class="btn btn-success mt-2">Confirmar</button>
+        <% end %>
+    </div>
+<% end %>
+
+<!-- Formulario para ingresar la consulta y vacuna -->
+<% if turno.tipo_turno_id == 1 %>
+    <button class="btn btn-success mt-2" onclick="mostrarTextoYVacuna('<%= turno.id %>')">Finalizar turno</button>
+
+    <!-- Formulario para ingresar la consulta y vacuna -->
+    <div id="formulario_<%= turno.id %>" style="display: none;">
+        <%= form_for [:agregar_consulta, turno], html: { method: :put } do |f| %>
+            <!-- Campos para consulta -->
+            <div class="form-group">
+                <%= f.label :consulta, "Observaciones", class: "form-label" %>
+                <%= f.text_field :consulta, class: "form-control", required: true %>
+                <%= f.object.errors.full_messages_for(:consulta).join(', ') if f.object.errors[:consulta].any? %>
+            </div>
+          
+            <!-- Campos para vacuna (solo si el tipo_turno_id es 1) -->
+            <% if turno.tipo_turno_id == 1 %>
+                <%= f.fields_for :vaccine, Vaccine.new do |vaccine_form| %>
+                    <div class="form-group">
+                        <%= vaccine_form.label :peso, "Peso", class: "form-label" %>
+                        <%= vaccine_form.text_field :peso, class: "form-control", required: true %>
+                        <%= vaccine_form.object.errors.full_messages_for(:peso).join(', ') if vaccine_form.object.errors[:peso].any? %>
+                    </div>
+                    
+                    <div class="form-group">
+                        <%= vaccine_form.label :vacuna_id, "Vacuna", class: "form-label" %>
+                        <%= vaccine_form.collection_select :vacuna_id, Vacuna.all, :id, :tipo, { prompt: "Seleccionar vacuna" }, class: "form-control" %>
+                        <%= vaccine_form.object.errors.full_messages_for(:vacuna_id).join(', ') if vaccine_form.object.errors[:vacuna_id].any? %>
+                    </div>
+                <% end %>
+            <% end %>
+          
+            <!-- Botón "Confirmar" para ambos -->
+            <button type="submit" class="btn btn-success mt-2">Confirmar</button>
+        <% end %>
+    </div>
+<% end %>
+
+<!-- Formulario para ingresar la consulta y desparacitacion -->
+<% if turno.tipo_turno_id == 4 %>
+    <button class="btn btn-success mt-2" onclick="mostrarTextoYDeworms('<%= turno.id %>')">Finalizar turno</button>
+
+    <!-- Formulario para ingresar la consulta y vacuna -->
+    <div id="formulario_<%= turno.id %>" style="display: none;">
+        <%= form_for [:agregar_consulta, turno], html: { method: :put } do |f| %>
+            <!-- Campos para consulta -->
+            <div class="form-group">
+                <%= f.label :consulta, "Observaciones", class: "form-label" %>
+                <%= f.text_field :consulta, class: "form-control", required: true %>
+                <%= f.object.errors.full_messages_for(:consulta).join(', ') if f.object.errors[:consulta].any? %>
+            </div>
+          
+            <!-- Campos para desparasitación (solo si el tipo_turno_id es 4) -->
+            <% if turno.tipo_turno_id == 4 %>
+                <%= f.fields_for :deworm, Deworm.new do |deworm_form| %>
+                    <div class="form-group">
+                        <%= deworm_form.label :cantidad, "Cantidad", class: "form-label" %>
+                        <%= deworm_form.text_field :cantidad, class: "form-control", required: true %>
+                        <%= deworm_form.object.errors.full_messages_for(:cantidad).join(', ') if deworm_form.object.errors[:cantidad].any? %>
+                    </div>
+                <% end %>
+            <% end %>
+          
+            <!-- Botón "Confirmar" para ambos -->
+            <button type="submit" class="btn btn-success mt-2">Confirmar</button>
+        <% end %>
+    </div>
+<% end %>
+
+</div>
+<% end %>
+
+</div>
+<% else %>
+    <p>No hay turnos confirmados.</p>
+<% end %>
+
+<script>
+function mostrarTexto(turnoId) {
+    var formulario = document.getElementById('formulario_' + turnoId);
+    formulario.style.display = 'block';
+}
+
+function mostrarTextoYVacuna(turnoId) {
+    var formulario = document.getElementById('formulario_' + turnoId);
+    formulario.style.display = 'block';
+}
+
+function mostrarTextoYDeworms(turnoId) {
+    var formulario = document.getElementById('formulario_' + turnoId);
+    formulario.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

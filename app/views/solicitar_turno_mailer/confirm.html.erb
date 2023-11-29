@@ -1,0 +1,10 @@
+<p>
+  <%= t(".confirm_message", username: @username) %>
+</p>
+<p>
+  Tu turno para el perro <%= @turno.perro.nombre %> esta pendiente a asignarle un horario.
+</p>
+<p>
+  La fecha del turno es el dia  <%= @fecha.strftime('%d-%m-%Y') %> .
+</p>
+

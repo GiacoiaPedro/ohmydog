@@ -9,4 +9,13 @@ class UserSearchController < ApplicationController
     end
     render 'users/search'
   end
+
+  
+  def perros
+    @user = User.find(params[:id])
+    @perros = @user.perros
+    @vaccine = Vaccine.all
+    render 'user_search/perros'
+  end
+
 end

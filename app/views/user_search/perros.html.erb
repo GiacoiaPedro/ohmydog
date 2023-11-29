@@ -1,0 +1,80 @@
+<style>
+    /* Puedes agregar esto al encabezado o en tu hoja de estilos */
+    .vaccine-entry {
+        border: 1px solid black; /* Añade un borde negro alrededor de vaccine-entry */
+        margin-bottom: 10px; /* Añade un margen inferior para separar las entradas */
+        padding: 10px; /* Añade espacio interno para un aspecto más limpio */
+    }
+</style>
+
+<!-- app/views/user_search/perros.html.erb -->
+<h2>Perros del Usuario</h2>
+<% if @perros.any? %>
+  <div class="row">
+    <% @perros.each do |perro| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Nombre:</strong> <%= perro.nombre %></h5>
+            <p class="card-text"><strong>Edad:</strong> <%= perro.edad %> años</p>
+            <p class="card-text"><strong>Fecha de nacimiento:</strong> <%= perro.fecha_nacimiento %></p>
+            <p class="card-text"><strong>Sexo:</strong> <%= perro.sexo %></p>
+            <p class="card-text"><strong>Raza:</strong> <%= perro.raza.nombre %></p>
+            <p class="card-text"><strong>Historial anterior:</strong> <%= perro.historial_anterior.presence || 'N/A' %></p>
+
+            <!-- Sección para Consultas -->
+            <div class="consultas-section">
+              <h4>Consultas</h4>
+              <% perro.historial_turnos.each do |historial_turno| %>
+                <% if historial_turno.consulta.present? %>
+                  <div class="vaccine-entry">
+                  <p><strong>Fecha:</strong> <%= historial_turno.fecha %></p> 
+                  <p><strong>Observaciones:</strong> <%= historial_turno.consulta %></p>
+                  </div>
+                <% end %>
+                
+              <% end %>
+            </div>
+
+            <!-- Sección para Libreta Sanitaria -->
+            <div class="libreta-section">
+                <h4>Libreta Sanitaria</h4>
+            
+                <% perro.historial_turnos.each do |historial_turno| %>
+                    <% vaccines = Vaccine.where(historial_turno_id: historial_turno.id) %>
+                    
+                    <% vaccines.each do |vaccine| %>
+                        <div class="vaccine-entry">
+                            <div class="vaccine-box">
+                                <h4>Vacunacion</h4>
+                                <p><strong>Fecha:</strong> <%= historial_turno.fecha %> </p>
+                                <p><strong>Tipo de vacuna aplicada:</strong><%= vaccine.vacuna.tipo %></p>
+                                <p><strong>Peso:</strong>Peso: <%= vaccine.peso %></p>
+                            </div>
+                        </div>
+                    <% end %>
+
+                    <% deworm = Deworm.where(historial_turno_id: historial_turno.id) %>
+                    <% deworm.each do |deworm| %>
+                      <div class="vaccine-entry">
+                          <div class="vaccine-box">
+                              <h4>Desparacitacion</h4>
+                              <p><strong>Fecha:</strong> <%= historial_turno.fecha %> </p>
+                              <p><strong>Cantidad aplicada:</strong>Peso: <%= deworm.cantidad %></p>
+                          </div>
+                      </div>
+                  <% end %>
+                <% end %>
+            </div>
+            
+
+
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No hay perros registrados para este usuario.</p>
+<% end %>

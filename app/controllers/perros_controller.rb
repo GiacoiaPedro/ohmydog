@@ -52,9 +52,10 @@ def update
   if @perro.update(perro_params)
     redirect_to mis_perros_path, notice: 'Modificación exitosa.'
   else
-    render :edit
+    redirect_to mis_perros_path
   end
 end
+
 
 
   private
