@@ -8,7 +8,13 @@
     </h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <% if message.include?("taken") %>
+          <li>El correo electrónico ya está en uso</li>
+        <% elsif message.include?("password") %>
+          <li>La contraseña es incorrecta</li>
+        <% else %>
+          <li><%= message %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

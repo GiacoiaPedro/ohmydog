@@ -50,6 +50,7 @@ class CampaignsController < ApplicationController
             else
               # Lógica para realizar la donación, actualizar el saldo, etc.
               # ...
+              current_user.update(donante: true) if user_signed_in?
               @tarjeta.saldo -= @tarjeta_params[:monto_temporal].to_i
               @tarjeta.save
     

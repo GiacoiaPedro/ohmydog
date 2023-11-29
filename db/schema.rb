@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_28_215907) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_28_225835) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -149,6 +149,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_215907) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "habilitado", default: true
+    t.boolean "donante"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"
