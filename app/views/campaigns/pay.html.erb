@@ -1,0 +1,53 @@
+<!-- app/views/campaigns/pay.html.erb -->
+<div class="container mt-5">
+  <h1 class="text-center">Realizar donación para la campaña: <%= @campaign.nombre %></h1>
+
+  <% if flash[:success] %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:success] %>
+    </div>
+  <% elsif flash[:error] %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+  <%= form_tag pay_campaign_path(@campaign), method: :post, class: 'mb-4' do %>
+  <%= fields_for :tarjeta, OpenStruct.new(local_assigns[:tarjeta]) do |tarjeta_fields| %>
+      <div class="mb-3">
+        <%= tarjeta_fields.label 'numero', 'Número de tarjeta', class: 'form-label' %>
+        <%= tarjeta_fields.text_field 'numero', class: 'form-control', placeholder: 'Número de tarjeta', required: true, maxlength: 18 %>
+      </div>
+
+      <div class="mb-3">
+        <%= tarjeta_fields.label 'nombre', 'Nombre en la tarjeta', class: 'form-label' %>
+        <%= tarjeta_fields.text_field 'nombre', class: 'form-control', placeholder: 'Nombre en la tarjeta', required: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= tarjeta_fields.label 'codigo', 'Código de seguridad', class: 'form-label' %>
+        <%= tarjeta_fields.text_field 'codigo', class: 'form-control', placeholder: 'Código de seguridad', required: true, maxlength: 3 %>
+      </div>
+
+      <div class="mb-3">
+        <%= tarjeta_fields.label 'monto_temporal', 'Monto de la donación', class: 'form-label' %>
+        <%= tarjeta_fields.number_field 'monto_temporal', class: 'form-control', placeholder: 'Monto de la donación', required: true, min: 1 %>
+      </div>
+
+      <div class="mb-3">
+        <%= tarjeta_fields.label 'vencimiento', 'Fecha de vencimiento', class: 'form-label' %>
+        <%= tarjeta_fields.date_field 'vencimiento', class: 'form-control', placeholder: 'Fecha de vencimiento', required: true, min: Date.current + 1.day %>
+      </div>
+
+      <div class="mb-3">
+        <%= tarjeta_fields.label 'dni', 'DNI del titular de la tarjeta', class: 'form-label' %>
+        <%= tarjeta_fields.number_field 'dni', class: 'form-control', placeholder: 'DNI del titular de la tarjeta', required: true %>
+      </div>
+    <% end %>
+
+    <!-- ... otros campos ... -->
+
+    <%= submit_tag 'Realizar Donación', class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>
+

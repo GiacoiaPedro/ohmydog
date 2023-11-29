@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: 1
+  nombre: MyString
+  codigo: 1
+  monto: 1
+  vencimiento: 2023-11-26
+  dni: 1
+
+two:
+  numero: 1
+  nombre: MyString
+  codigo: 1
+  monto: 1
+  vencimiento: 2023-11-26
+  dni: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_28_050311) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_032701) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -43,11 +43,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_050311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "perro_id"
-    t.time "hora"
-    t.date "fecha"
+    t.datetime "fecha_y_hora"
     t.integer "condition_id"
-    t.string "texto"
-    t.string "consulta"
     t.index ["condition_id"], name: "index_historial_turnos_on_condition_id"
     t.index ["perro_id"], name: "index_historial_turnos_on_perro_id"
     t.index ["tipo_turno_id"], name: "index_historial_turnos_on_tipo_turno_id"
@@ -97,6 +94,28 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_050311) do
     t.string "mail"
     t.string "tipo"
     t.string "horarios"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tarjeta", force: :cascade do |t|
+    t.integer "numero"
+    t.string "nombre"
+    t.integer "codigo"
+    t.integer "saldo"
+    t.date "vencimiento"
+    t.integer "dni"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tarjetas", force: :cascade do |t|
+    t.integer "numero"
+    t.string "nombre"
+    t.integer "codigo"
+    t.integer "monto"
+    t.date "vencimiento"
+    t.integer "dni"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -46,16 +46,27 @@ def edit
   @perro = Perro.find(params[:id])
 end
 
-# en perros_controller.rb
+
 def update
   @perro = Perro.find(params[:id])
+  
+  # Aplicar downcase al nombre antes de actualizar el perro
+  params[:perro][:nombre] = params[:perro][:nombre].downcase if params[:perro][:nombre].present?
+
   if @perro.update(perro_params)
     redirect_to mis_perros_path, notice: 'Modificación exitosa.'
   else
-    redirect_to mis_perros_path
+    # Si la actualización falla debido a la validación del nombre único,
+    # redireccionar con el mensaje personalizado.
+    if @perro.errors[:nombre].include?('ya está en uso para este usuario')
+      redirect_to mis_perros_path, notice: 'Ya existe un perro con ese nombre.'
+    else
+      @mis_perros = Perro.where(user_id: current_user.id)
+      @razas = Raza.all
+      render 'mis_perros'
+    end
   end
 end
-
 
 
   private
