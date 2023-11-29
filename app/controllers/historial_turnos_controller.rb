@@ -65,6 +65,7 @@ class HistorialTurnosController < ApplicationController
     def cancelar_turno
         @turno = HistorialTurno.find(params[:id])
         @turno.update(condition_id: 3) # Actualiza el condition_id a 3 para "cancelado"
+        CancelarTurnoMailer.with(turno: @turno).cancelar.deliver_later
         redirect_to turnos_confirmados_historial_turnos_path, notice: 'Turno cancelado con éxito.'
     end
     

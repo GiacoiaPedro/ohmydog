@@ -69,3 +69,9 @@ en:
   cambiar_fecha_mailer:
     cambiar: 
       cambiar_message: 'Hey %{username} su turno no pudo ser confirmado!'
+
+
+      en: 
+  cancelar_turno_mailer:
+    cancelar: 
+      cancelar_message: 'Hey %{username} su turno ha sido cancelado!'
