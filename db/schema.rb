@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_031603) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_035224) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_031603) do
     t.string "consulta"
     t.date "fecha"
     t.time "hora"
+    t.integer "monto"
     t.index ["condition_id"], name: "index_historial_turnos_on_condition_id"
     t.index ["perro_id"], name: "index_historial_turnos_on_perro_id"
     t.index ["tipo_turno_id"], name: "index_historial_turnos_on_tipo_turno_id"

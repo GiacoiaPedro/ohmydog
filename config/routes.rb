@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mis_turnos/index'
   get 'perros/new'
   get 'perros/create'
   get 'user_search/search'
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
 
 
   Rails.application.routes.draw do
+  get 'mis_turnos/index'
     
 
 
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
 
 
   
+  get 'historial_turno/mis_turnos', to: 'mis_turnos#index', as: 'mis_turnos'
 
   get '/users/:id/perros', to: 'user_search#perros', as: 'user_perros'    
   resources :historial_turnos

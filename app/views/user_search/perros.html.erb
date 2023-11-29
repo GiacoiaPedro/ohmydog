@@ -30,6 +30,7 @@
                   <div class="vaccine-entry">
                   <p><strong>Fecha:</strong> <%= historial_turno.fecha %></p> 
                   <p><strong>Observaciones:</strong> <%= historial_turno.consulta %></p>
+                  <p><strong>Monto:</strong> <%= historial_turno.monto%></p>
                   </div>
                 <% end %>
                 
@@ -60,7 +61,7 @@
                           <div class="vaccine-box">
                               <h4>Desparacitacion</h4>
                               <p><strong>Fecha:</strong> <%= historial_turno.fecha %> </p>
-                              <p><strong>Cantidad aplicada:</strong>Peso: <%= deworm.cantidad %></p>
+                              <p><strong>Cantidad aplicada:</strong> <%= deworm.cantidad %></p>
                           </div>
                       </div>
                   <% end %>
