@@ -42,21 +42,28 @@ class CampaignsController < ApplicationController
              @tarjeta.dni == @tarjeta_params[:dni].to_i
     
             if @tarjeta_params[:monto_temporal].to_i > @tarjeta.saldo
-              flash.now[:error] = 'El monto de la donación excede el saldo de la tarjeta.'
+              flash.now[:error] = 'Fondos insufientes'
               render action: :pay, locals: { tarjeta: @tarjeta_params }
             elsif @tarjeta_params[:monto_temporal].to_i > @campaign.monto
               flash.now[:error] = 'El monto de la donación excede el monto total de la campaña.'
               render action: :pay, locals: { tarjeta: @tarjeta_params }
             else
-              # Lógica para realizar la donación, actualizar el saldo, etc.
-              # ...
+              if(@tarjeta_params[:monto_temporal].to_i>4999)
               current_user.update(donante: true) if user_signed_in?
               @tarjeta.saldo -= @tarjeta_params[:monto_temporal].to_i
               @tarjeta.save
-    
+                
+              flash[:success] = '¡Pago exitoso! Gracias por tu donación.'
+              redirect_to campaigns_path, notice: '¡Pago exitoso! Gracias por tu donación. has recibido un descuento del 20% en tu proximo turno.'
+              else
+              
+              @tarjeta.saldo -= @tarjeta_params[:monto_temporal].to_i
+              @tarjeta.save
+                
               # Configura un mensaje de éxito
               flash[:success] = '¡Pago exitoso! Gracias por tu donación.'
               redirect_to campaigns_path, notice: '¡Pago exitoso! Gracias por tu donación.'
+             end
             end
           else
             # Si hay errores en la tarjeta o el monto, configura un mensaje de error

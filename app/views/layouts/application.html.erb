@@ -114,16 +114,24 @@
             <a class="nav-link" href="<%= new_historial_turno_path %>" style="display: flex; align-items: center;"> 
             <img src="<%= asset_path('turno.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
             <span>Solicitar Turno</span>
-        </a>     
+             </a>     
+
+             <!--<li class="nav-item">
+                <a class="nav-link" href="/dashboard/cruza_de_perros.html" style="display: flex; align-items: center;">
+                    <img src="<%= asset_path('cruza.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
+                    <span>Cruza de Perros</span>
+                </a>
+            </li>-->
+
         <% end %>
 
-        </li>
-        <li class="nav-item">
+        <!--</li>
+            <li class="nav-item">
             <a class="nav-link" href="/dashboard/perros_perdidos.html" style="display: flex; align-items: center;">
             <img src="<%= asset_path('perro.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
             <span>Perros Perdidos</span>
             </a>
-            </li>
+        </li>
         
 
         <li class="nav-item">
@@ -132,7 +140,7 @@
                 <span>Perros Encontrados</span>
                 </a>
                 </button>
-            </li>
+            </li>-->
 
         <li class="nav-item">
             <%= link_to campaigns_path, class: 'nav-link', style: 'display: flex; align-items: center;', disabled: true do %>
@@ -142,13 +150,13 @@
                 </li>
 
 
-            <% if user_signed_in? %>
-            <li class="nav-item">
+            
+           <!-- <li class="nav-item">
                 <a class="nav-link" href="/dashboard/adopciones.html" style="display: flex; align-items: center;">
                     <img src="<%= asset_path('adopcion.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
                     <span>Adopciones</span>
                 </a>
-            </li>
+            </li> -->
         
         <li class="nav-item">
             <a class="nav-link" href="/servicios/paseadores.html" style="display: flex; align-items: center;">
@@ -165,15 +173,8 @@
         </li>
         
 
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboard/cruza_de_perros.html" style="display: flex; align-items: center;">
-                    <img src="<%= asset_path('cruza.png') %>" style="max-width: 20px; max-height: 20px; margin-right: 10px;">
-                    <span>Cruza de Perros</span>
-                </a>
-            </li>
+            
         
-        
-            <% end %>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">  
             
