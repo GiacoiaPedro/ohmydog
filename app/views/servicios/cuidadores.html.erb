@@ -1,76 +1,168 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <style>
-        .container {
-            text-align: center;
-        }
+  <%= csrf_meta_tags %>
+  <style>
+      body {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
 
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+      .container {
+          text-align: center;
+          padding-bottom: 60px; /* Ajuste para dejar espacio para el footer */
+      }
 
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 10px;
-            text-align: left;
-        }
+      .title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
 
-        .card {
-            flex: 0 0 calc(45% - 20px);
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 15px;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+      .card-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin-top: 10px;
+          text-align: left;
+      }
+      .card {
+          flex: 0 0 calc(45% - 20px);
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin: 10px;
+          padding: 15px;
+          min-height: 180px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative; /* Agregado para posicionar los botones */
+      }
 
-        .card-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column; /* Cambiado a columna para que el texto esté pegado a la izquierda */
-        }
+      .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          padding: 10px;
+      }
 
-        .card-title {
-            font-weight: bold;
-            font-size: 18px;
-        }
+      .card-title {
+          font-weight: bold;
+          font-size: 18px;
+      }
 
-        .card-description {
-            font-size: 14px;
-        }
+      .card-description {
+          font-size: 14px;
+      }
 
-        .button-container {
-            display: flex;
-            justify-content: flex-end; /* Alineado a la derecha */
-        }
+      .options-button,
+      .contact-button,
+      .become-caretaker-button,
+      .edit-button,
+      .delete-button {
+          padding: 10px;
+          margin: 5px;
+          border: 1px solid #333;
+          border-radius: 5px;
+          cursor: pointer;
+      }
 
-        .contact-button {
-            padding: 10px;
-            margin: 5px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+      .options-container {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          display: none;
+          flex-direction: column;
+          z-index: 1; /* Coloca el contenedor de opciones encima de las tarjetas */
+          animation: slideIn 0.3s ease-out; /* Animación de entrada */
+      }
 
-        .become-caretaker-button {
-            padding: 10px;
-            margin: 5px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+      .card-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+      }
+
+      .button-container {
+          display: flex;
+          justify-content: space-between; /* Cambiado a space-between para separar los botones */
+      }
+
+      .options-button,
+      .delete-button,
+      .edit-button {
+          padding: 10px;
+          margin: 5px;
+          border: 1px solid #333;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      .contact-button,
+      .become-caretaker-button {
+          padding: 10px;
+          margin: 5px;
+          border: 1px solid #333;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      .edit-button {
+          padding: 10px;
+          margin: 5px;
+          border: 1px solid #333;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      /* Footer styles */
+      .footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background-color: #f1f1f1;
+          padding: 10px 0;
+          text-align: center;
+      }
+
+      #filtro-form button {
+          background-color: #fc904f; /* Color de fondo verde */
+          color: white; /* Texto blanco */
+          padding: 10px 20px; /* Espaciado interno */
+          border: none; /* Sin borde */
+          border-radius: 5px; /* Bordes redondeados */
+          cursor: pointer; /* Cursor apuntador */
+      }
+
+      #filtro-form button:hover {
+          background-color: #bd622a; /* Cambio de color al pasar el ratón */
+      }
+
+
+      .button-group {
+              display: flex;
+          }
+
+      /* Animación de entrada */
+      @keyframes slideIn {
+          from {
+              opacity: 0;
+              transform: translateY(-10px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+  </style>
 </head>
 <body>
-    <div class="container">    
+    <div class="container">
         <div class="title">Listado de Cuidadores</div>
 
         <% if user_signed_in? && current_user.rol_id == 1 %>
@@ -79,23 +171,102 @@
             </div>
         <% end %>
 
+        <form id="filtro-form">
+            <label for="filtro-zona">Filtrar por Zona:</label>
+            <select id="filtro-zona" name="filtro-zona">
+                <option value="">Todos</option>
+                <option value="plaza-san-martin">Plaza San Martín</option>
+                <option value="plaza-moreno">Plaza Moreno</option>
+                <option value="plaza-azcuenaga">Plaza Azcuénaga</option>
+                <option value="plaza-belgrano">Plaza Belgrano</option>
+                <option value="parque-saavedra">Parque Saavedra</option>
+                <option value="parque-castelli">Parque Castelli</option>
+                <option value="Plaza-Malvinas-Argentinas">Plaza Malvinas Argentinas</option>
+                <option value="plaza-rivadavia">Plaza Rivadavia</option>
+                <option value="parque-vucetich">Parque Vucetich</option>
+                <option value="plaza-rocha">Plaza Rocha</option>
+                <option value="plaza-italia">Plaza Italia</option>
+                <option value="plaza-matheu">Plaza Matheu</option>
+                <option value="plaza-espana">Plaza España</option>
+                <option value="plaza-sarmiento">Plaza Sarmiento</option>
+                <option value="plaza-paso">Plaza Paso</option>
+            </select>
+            <button type="button" onclick="filtrarPorZona()">Filtrar</button>
+        </form>
+
+        <% if @servicios.present? %>
         <div class="card-container">
             <% @servicios.each do |servicio| %>
-                <% if servicio.tipo == "1" %>
-                    <div class="card">
+                <% if servicio.tipo == "1" && servicio.habilitado == 0 %>
+                    <div class="card <%= servicio.zona.present? ? servicio.zona.parameterize : '' %>">
                         <div class="card-content">
                             <div class="card-title">Nombre: <%= servicio.nombre %> <%= servicio.apellido %></div>
                             <div class="card-description">Zona: <%= servicio.zona %></div>
                             <div class="card-description">Disponibilidad: <%= servicio.horarios %></div>
                         </div>
-                        <div class="button-container">
-                            <button class="contact-button">Contactar</button>
+                        <div id="contact-form-<%= servicio.id %>" class="button-container">
+                            <form action="<%= enviar_correo_path %>" method="post">
+                                <%= csrf_meta_tags %>
+                                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                                <label for="user-email">Tu correo electrónico:</label>
+                                <% if user_signed_in? %>     
+                                    <input type="email" id="user-email-<%= servicio.id %>" name="user-email" value="<%= current_user.email %>" required>
+                                <% else %>
+                                    <input type="email" id="user-email-<%= servicio.id %>" name="user-email" required>
+                                <% end %>
+                                <input type="hidden" name="paseador-email" value="<%= servicio.mail %>">
+                                <input type="hidden" name="servicio-id" value="<%= servicio.id %>">
+                                <button type="submit" class="edit-button">Contactar</button>
+                            </form>
                         </div>
+                        <% if user_signed_in? && current_user.rol_id == 1 %>
+                            <div class="button-group">
+                                <button type="button" class="edit-button" onclick="window.location.href='<%= edit_servicio_path(servicio) %>'">Editar</button>
+                                <%= form_for(servicio, method: :delete, url: servicio_path(servicio)) do |f| %>
+                                    <%= csrf_meta_tags %>
+                                    <%= f.hidden_field :authenticity_token, value: form_authenticity_token %>
+                                    <%= f.submit "Eliminar", class: "delete-button" %>
+                                <% end %>
+                            </div>
+                        <% end %>
                     </div>
                 <% end %>
             <% end %>
         </div>
-    </div>
-</body>
+        <% else %>
+            <p>No hay cuidadores disponibles.</p>
+        <% end %>
+
+        <div id="mensaje-servicios" class="mensaje-servicios"></div>
+
+        <script>
+            function filtrarPorZona() {
+                var zonaSeleccionada = document.getElementById('filtro-zona').value;
+
+                // Lógica de filtrado
+                var cards = document.querySelectorAll('.card');
+                var serviciosEncontrados = false;
+
+                cards.forEach(function (card) {
+                    // Verifica si la tarjeta tiene la clase de la zona seleccionada
+                    if (zonaSeleccionada === '' || card.classList.contains(zonaSeleccionada)) {
+                        card.style.display = 'flex';
+                        serviciosEncontrados = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Muestra el mensaje si no se encuentran servicios
+                var mensajeServicios = document.getElementById('mensaje-servicios');
+                if (!serviciosEncontrados) {
+                    mensajeServicios.textContent = "No hay cuidadores en esa zona";
+                } else {
+                    mensajeServicios.textContent = ""; // Limpiar el mensaje si se encuentran servicios
+                }
+            }
+        </script>
+
+    </body>
 
 </html>

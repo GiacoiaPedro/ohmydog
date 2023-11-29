@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
 
 
-
   Rails.application.routes.draw do
     
 
@@ -82,10 +81,21 @@ Rails.application.routes.draw do
   post '/guardar_cuidador', to: 'servicios#guardar_cuidador'
   post '/guardar_paseador', to: 'servicios#guardar_paseador'
 
-# En config/routes.rb
+  match '/enviar_correo', to: 'servicios#enviar_correo', via: [:post, :delete]
+
+
+  get '/paseadores', to: 'servicios#paseadores', as: 'paseadores'
+  get '/cuidadores', to: 'servicios#cuidadores', as: 'cuidadores'
+
+
+  resources :servicios, except: [:show] do
+    member do
+      get 'edit'   # Página de edición
+      patch 'actualizar_servicio'   # Acción de actualización
+      delete 'destroy'  # Nueva acción para eliminar
+    end
+  end
 resources :perros
-
-
 
   get 'mis_perros', to: 'perros#mis_perros', as: 'mis_perros'
 
@@ -111,18 +121,6 @@ resources :perros
   end
 
   root "dashboard#index"
+
+
 end
-
-
-#get 'confirmados', to: 'dashboard#confirmados', as: :turnos_confirmados:
-
-#get: Indica que estás configurando una ruta para manejar solicitudes HTTP GET.
-#'confirmados': Es el segmento de la URL que se agregará a la ruta principal. Por ejemplo,
-#si la ruta principal es /historial_turnos, esta ruta sería /historial_turnos/confirmados.
-
-#to: 'dashboard#confirmados': Especifica el controlador y la acción que manejarán esta ruta. 
-#En este caso, cuando alguien accede a la URL /historial_turnos/confirmados, la acción confirmados 
-#en el controlador DashboardController se ejecutará.
-
-#as: :turnos_confirmados: Define un nombre de ruta, lo que permite que utilices turnos_confirmados_path 
-#o turnos_confirmados_url en lugar de la URL completa en tu código.
