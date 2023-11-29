@@ -77,30 +77,32 @@ class HistorialTurnosController < ApplicationController
     def agregar_consulta
         @turno = HistorialTurno.find(params[:id])
         new_texto = params[:historial_turno][:consulta]
-        
+      
         if new_texto.present?
-            @turno.update(consulta: new_texto, condition_id: 4)
-
-            # Si el tipo de turno es 1, también maneja la creación de Vaccine
-            if @turno.tipo_turno_id == 1
+          # Actualizar los atributos del turno
+          @turno.update(consulta: new_texto, condition_id: 4, monto: params[:historial_turno][:monto])
+      
+          # Si el tipo de turno es 1, también maneja la creación de Vaccine
+          if @turno.tipo_turno_id == 1
             vaccine_params = params.require(:historial_turno).require(:vaccine).permit(:peso, :vacuna_id)
             @vaccine = Vaccine.new(vaccine_params)
             @vaccine.historial_turno = @turno
             @vaccine.save
-            end
-
-            if @turno.tipo_turno_id == 4
-                deworm_params = params.require(:historial_turno).require(:deworm).permit(:cantidad)
-                @deworm = Deworm.new(deworm_params)
-                @deworm.historial_turno = @turno
-                @deworm.save
-            end
-
-            redirect_to turnos_hoy_historial_turnos_path, notice: 'Turno finalizado con éxito'
+          end
+      
+          if @turno.tipo_turno_id == 4
+            deworm_params = params.require(:historial_turno).require(:deworm).permit(:cantidad)
+            @deworm = Deworm.new(deworm_params)
+            @deworm.historial_turno = @turno
+            @deworm.save
+          end
+      
+          redirect_to turnos_hoy_historial_turnos_path, notice: 'Turno finalizado con éxito'
         else
-            render 'hoy', notice: 'No se pudo finalizar el turno'
+          render 'hoy', notice: 'No se pudo finalizar el turno'
         end
-    end
+      end
+      
 
 
       def create_vaccine
@@ -117,11 +119,11 @@ class HistorialTurnosController < ApplicationController
     
     private
     def vaccine_params
-        params.require(:vaccine).permit(:vacuna_id, :peso, :texto)
+        params.require(:vaccine).permit(:vacuna_id, :peso, :texto, :monto)
       end
 
       def deworm_params
-        params.require(:deworm).permit(:cantidad, :texto)
+        params.require(:deworm).permit(:cantidad, :texto, :monto)
       end
 
     def turno_hora_parametros
