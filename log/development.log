@@ -57079,3 +57079,2710 @@ ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor
   
 ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
   
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:37:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231129031603_anadir_donante_to_users.rb
+
+
+):
+  
+activerecord (7.1.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.1.1) lib/active_record/migration.rb:642:in `block (2 levels) in call'
+activesupport (7.1.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.1) lib/active_record/migration.rb:647:in `block in call'
+activerecord (7.1.1) lib/active_record/migration.rb:639:in `synchronize'
+activerecord (7.1.1) lib/active_record/migration.rb:639:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.1) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.1) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.1) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.1) lib/active_support/broadcast_logger.rb:232:in `method_missing'
+railties (7.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.1) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.1) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.1) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AnadirDonanteToUsers (20231129031603)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "donante" boolean DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231129031603') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at C:/Users/Pedro/ohmydog/config/environment.rb:5)
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:37:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.2ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 52.7ms | Allocations: 88199)
+  Rendered layout layouts/application.html.erb (Duration: 181.0ms | Allocations: 140379)
+Completed 200 OK in 447ms (Views: 210.9ms | ActiveRecord: 1.9ms | Allocations: 582464)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:37:42 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:37:42 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:37:42 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:37:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turno/mis_turnos" for ::1 at 2023-11-29 01:37:45 -0300
+Processing by MisTurnosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/mis_turnos_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering mis_turnos/index.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" IN (SELECT "perros"."id" FROM "perros" WHERE "perros"."user_id" = ?)[0m  [["user_id", 83]]
+  ↳ app/views/mis_turnos/index.html.erb:30
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.2ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  Rendered mis_turnos/index.html.erb within layouts/application (Duration: 30.4ms | Allocations: 17564)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 24942)
+Completed 200 OK in 64ms (Views: 56.1ms | ActiveRecord: 1.4ms | Allocations: 27042)
+
+
+Started GET "/historial_turno/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:37:46 -0300
+Started GET "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:37:46 -0300
+Started GET "/historial_turno/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:37:46 -0300
+Started GET "/historial_turno/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:37:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/pendientes.html" for ::1 at 2023-11-29 01:38:00 -0300
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1565)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 9721)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 0.2ms | Allocations: 10221)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:38:00 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:38:00 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:38:00 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:38:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/users/search" for ::1 at 2023-11-29 01:38:09 -0300
+Processing by UserSearchController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/search.html.erb within layouts/application
+  Rendered users/search.html.erb within layouts/application (Duration: 1.2ms | Allocations: 666)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 9152)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.1ms | Allocations: 9722)
+
+
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:38:09 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:38:09 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:38:09 -0300
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:38:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/user_search/search?dni=1234512345&commit=Buscar" for ::1 at 2023-11-29 01:38:18 -0300
+Processing by UserSearchController#search as HTML
+  Parameters: {"dni"=>"1234512345", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/search.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? AND "users"."habilitado" = ?[0m  [["dni", 1234512345], ["habilitado", 1]]
+  ↳ app/views/users/search.html.erb:18
+  Rendered users/search.html.erb within layouts/application (Duration: 3.0ms | Allocations: 883)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 9007)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.2ms | Allocations: 9388)
+
+
+Started GET "/user_search/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:38:18 -0300
+Started GET "/user_search/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:38:18 -0300
+Started GET "/user_search/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:38:18 -0300
+Started GET "/user_search/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:38:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/users/83/perros" for ::1 at 2023-11-29 01:38:20 -0300
+Processing by UserSearchController#perros as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/user_search_controller.rb:15:in `perros'
+  Rendering layout layouts/application.html.erb
+  Rendering user_search/perros.html.erb within layouts/application
+  [1m[36mPerro Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "perros" WHERE "perros"."user_id" = ? LIMIT ?[0m  [["user_id", 83], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:12
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/user_search/perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 7]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 17]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mVacuna Load (0.1ms)[0m  [1m[34mSELECT "vacunas".* FROM "vacunas" WHERE "vacunas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:52
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 17]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 8]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 18]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 18]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 11]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 19]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 19]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 12]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.0ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 20]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.0ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 20]]
+  ↳ app/views/user_search/perros.html.erb:59
+  Rendered user_search/perros.html.erb within layouts/application (Duration: 71.4ms | Allocations: 80862)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 94.8ms | Allocations: 89263)
+Completed 200 OK in 105ms (Views: 94.4ms | ActiveRecord: 2.9ms | Allocations: 93950)
+
+
+Started GET "/users/83/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:38:20 -0300
+Started GET "/users/83/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:38:20 -0300
+Started GET "/users/83/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:38:20 -0300
+Started GET "/users/83/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:38:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/vendor/jquery/jquery.min.js"):
+  
+Started GET "/dashboard/eliminar_usuario.html" for ::1 at 2023-11-29 01:38:42 -0300
+Processing by DashboardController#eliminar_usuario as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/eliminar_usuario.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."habilitado" = ?[0m  [["habilitado", 1]]
+  ↳ app/views/dashboard/eliminar_usuario.html.erb:23
+  Rendered dashboard/eliminar_usuario.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2349)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 10422)
+Completed 200 OK in 47ms (Views: 32.1ms | ActiveRecord: 0.3ms | Allocations: 11068)
+
+
+Started GET "/dashboard/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:38:43 -0300
+Started GET "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:38:43 -0300
+Started GET "/dashboard/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:38:43 -0300
+Started GET "/dashboard/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:38:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/js/sb-admin-2.min.js"):
+  
+Started GET "/dashboard/index.html" for ::1 at 2023-11-29 01:38:54 -0300
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3725)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 10463)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.1ms | Allocations: 10852)
+
+
+Started GET "/dashboard/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:38:55 -0300
+Started GET "/dashboard/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:38:55 -0300
+Started GET "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:38:55 -0300
+Started GET "/dashboard/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:38:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dashboard/vendor/jquery/jquery.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:43:20 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2418)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 9596)
+Completed 200 OK in 38ms (Views: 31.5ms | ActiveRecord: 0.2ms | Allocations: 10895)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:43:20 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:43:20 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:43:20 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:43:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/pendientes.html" for ::1 at 2023-11-29 01:44:31 -0300
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 1.3ms | Allocations: 546)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 8696)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.1ms | Allocations: 9110)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:44:31 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:44:31 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:44:31 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:44:31 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:44:32 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2325)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 9503)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 0.2ms | Allocations: 10778)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:44:32 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:44:32 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:44:32 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:44:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+Started GET "/historial_turno/mis_turnos" for ::1 at 2023-11-29 01:44:35 -0300
+Processing by MisTurnosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/mis_turnos_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering mis_turnos/index.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.3ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" IN (SELECT "perros"."id" FROM "perros" WHERE "perros"."user_id" = ?)[0m  [["user_id", 83]]
+  ↳ app/views/mis_turnos/index.html.erb:30
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.2ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.2ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  Rendered mis_turnos/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 8513)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 15721)
+Completed 200 OK in 65ms (Views: 57.8ms | ActiveRecord: 1.4ms | Allocations: 17164)
+
+
+Started GET "/historial_turno/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:44:35 -0300
+Started GET "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:44:35 -0300
+Started GET "/historial_turno/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:44:35 -0300
+Started GET "/historial_turno/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:44:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:44:39 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2325)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 9503)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.2ms | Allocations: 10782)
+
+
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:44:39 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:44:39 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:44:39 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:44:39 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started POST "/historial_turnos" for ::1 at 2023-11-29 01:44:55 -0300
+Processing by HistorialTurnosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"fecha"=>"2022-12-11", "franja"=>"Mañana", "tipo_turno_id"=>"1", "perro_id"=>"7"}, "commit"=>"Solicitar turno"}
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTipoTurno Load (0.9ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mHistorialTurno Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ? AND "historial_turnos"."condition_id" IN (?, ?) AND "historial_turnos"."id" IS NOT NULL LIMIT ?[0m  [["perro_id", 7], ["condition_id", 1], ["condition_id", 2], ["LIMIT", 1]]
+  ↳ app/models/historial_turno.rb:25:in `uniqueness_of_turnos'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3340)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 10703)
+Completed 200 OK in 46ms (Views: 32.6ms | ActiveRecord: 1.4ms | Allocations: 17589)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:44:55 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:44:55 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:44:55 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:44:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started POST "/historial_turnos" for ::1 at 2023-11-29 01:45:02 -0300
+Processing by HistorialTurnosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"fecha"=>"2022-11-12", "franja"=>"Mañana", "tipo_turno_id"=>"1", "perro_id"=>"7"}, "commit"=>"Solicitar turno"}
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTipoTurno Load (1.3ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mHistorialTurno Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ? AND "historial_turnos"."condition_id" IN (?, ?) AND "historial_turnos"."id" IS NOT NULL LIMIT ?[0m  [["perro_id", 7], ["condition_id", 1], ["condition_id", 2], ["LIMIT", 1]]
+  ↳ app/models/historial_turno.rb:25:in `uniqueness_of_turnos'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3226)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 10475)
+Completed 200 OK in 41ms (Views: 26.1ms | ActiveRecord: 1.8ms | Allocations: 15573)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:45:02 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:45:02 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:45:02 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:45:02 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started POST "/historial_turnos" for ::1 at 2023-11-29 01:45:09 -0300
+Processing by HistorialTurnosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"fecha"=>"2023-11-12", "franja"=>"Mañana", "tipo_turno_id"=>"1", "perro_id"=>"7"}, "commit"=>"Solicitar turno"}
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTipoTurno Load (1.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mHistorialTurno Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ? AND "historial_turnos"."condition_id" IN (?, ?) AND "historial_turnos"."id" IS NOT NULL LIMIT ?[0m  [["perro_id", 7], ["condition_id", 1], ["condition_id", 2], ["LIMIT", 1]]
+  ↳ app/models/historial_turno.rb:25:in `uniqueness_of_turnos'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3226)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 10475)
+Completed 200 OK in 40ms (Views: 29.2ms | ActiveRecord: 1.5ms | Allocations: 15527)
+
+
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:45:09 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:45:09 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:45:09 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:45:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+Started POST "/historial_turnos" for ::1 at 2023-11-29 01:45:13 -0300
+Processing by HistorialTurnosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"fecha"=>"2023-12-11", "franja"=>"Mañana", "tipo_turno_id"=>"1", "perro_id"=>"7"}, "commit"=>"Solicitar turno"}
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTipoTurno Load (1.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mHistorialTurno Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ? AND "historial_turnos"."condition_id" IN (?, ?) AND "historial_turnos"."id" IS NOT NULL LIMIT ?[0m  [["perro_id", 7], ["condition_id", 1], ["condition_id", 2], ["LIMIT", 1]]
+  ↳ app/models/historial_turno.rb:25:in `uniqueness_of_turnos'
+  [1m[36mHistorialTurno Create (0.2ms)[0m  [1m[32mINSERT INTO "historial_turnos" ("franja", "tipo_turno_id", "created_at", "updated_at", "perro_id", "condition_id", "texto", "consulta", "fecha", "hora", "monto") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["franja", "Mañana"], ["tipo_turno_id", 1], ["created_at", "2023-11-29 04:45:13.422026"], ["updated_at", "2023-11-29 04:45:13.422026"], ["perro_id", 7], ["condition_id", 1], ["texto", nil], ["consulta", nil], ["fecha", "2023-12-11"], ["hora", nil], ["monto", nil]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: ec888262-5aea-41c3-b83e-1faaaaf438cd) to Async(default) with arguments: "SolicitarTurnoMailer", "confirm", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e40fc809e8 @uri=#<URI::GID gid://ohmydog/HistorialTurno/21>>}, :args=>[]}
+[ActiveJob] ↳ app/controllers/historial_turnos_controller.rb:19:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 115ms (ActiveRecord: 1.7ms | Allocations: 62825)
+
+
+Started GET "/" for ::1 at 2023-11-29 01:45:13 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd] Performing ActionMailer::MailDeliveryJob (Job ID: ec888262-5aea-41c3-b83e-1faaaaf438cd) from Async(default) enqueued at 2023-11-29T04:45:13.523579200Z with arguments: "SolicitarTurnoMailer", "confirm", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e40fcf3d80 @uri=#<URI::GID gid://ohmydog/HistorialTurno/21>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   ↳ app/mailers/solicitar_turno_mailer.rb:6:in `confirm'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   ↳ app/mailers/solicitar_turno_mailer.rb:6:in `confirm'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendering solicitar_turno_mailer/confirm.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendered solicitar_turno_mailer/confirm.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 375)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendered layout layouts/mailer.html.erb (Duration: 2.7ms | Allocations: 633)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendering solicitar_turno_mailer/confirm.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendered solicitar_turno_mailer/confirm.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 130)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd]   Rendered layout layouts/mailer.text.erb (Duration: 2.2ms | Allocations: 332)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd] SolicitarTurnoMailer#confirm: processed outbound mail in 26.9ms
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 7560)
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 14986)
+Completed 200 OK in 62ms (Views: 36.6ms | ActiveRecord: 11.1ms | Allocations: 20450)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:45:13 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:45:13 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:45:13 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:45:13 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd] Delivered mail 6566c1d9a907c_328cf07869d2@DESKTOP-FGDUKJ4.mail (238.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd] Date: Wed, 29 Nov 2023 01:45:13 -0300
+From: no-reply@ohmydog.com
+To: ingsoft@gmail.com
+Message-ID: <6566c1d9a907c_328cf07869d2@DESKTOP-FGDUKJ4.mail>
+Subject: Confirm
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6566c1d9a7d29_328cf078685e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6566c1d9a7d29_328cf078685e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+SolicitarTurno#confirm
+
+, find me in app/views/solicitar_turno_mailer/confirm.text.erb
+
+
+----==_mimepart_6566c1d9a7d29_328cf078685e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola Pedro! </h1>
+
+    <div class=3D"confirmation-message">
+    <p>Tu turno para el perro lolo est=C3=A1 pendiente de asignarle un ho=
+rario.</p>
+    <p>La fecha del turno es el d=C3=ADa 11-12-2023 .</p>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+  </body>
+</html>
+
+----==_mimepart_6566c1d9a7d29_328cf078685e--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ec888262-5aea-41c3-b83e-1faaaaf438cd] Performed ActionMailer::MailDeliveryJob (Job ID: ec888262-5aea-41c3-b83e-1faaaaf438cd) from Async(default) in 275.75ms
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/pendientes.html" for ::1 at 2023-11-29 01:45:34 -0300
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL ORDER BY "historial_turnos"."fecha" ASC[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:37
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:41
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 163.6ms | Allocations: 10314)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 186.5ms | Allocations: 18702)
+Completed 200 OK in 190ms (Views: 186.8ms | ActiveRecord: 0.4ms | Allocations: 19138)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:45:34 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:45:34 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:45:34 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:45:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started PUT "/historial_turnos/21/agregar_horario" for ::1 at 2023-11-29 01:45:57 -0300
+Processing by HistorialTurnosController#agregar_horario as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"hora"=>"11:11"}, "id"=>"21"}
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:34:in `agregar_horario'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+  [1m[36mCondition Load (2.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+  [1m[36mHistorialTurno Update (0.4ms)[0m  [1m[33mUPDATE "historial_turnos" SET "updated_at" = ?, "condition_id" = ?, "hora" = ? WHERE "historial_turnos"."id" = ?[0m  [["updated_at", "2023-11-29 04:45:57.506080"], ["condition_id", 2], ["hora", "2000-01-01 11:11:00"], ["id", 21]]
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: ecdee6b5-a077-4c6a-bcd0-55e01807ab01) to Async(default) with arguments: "AgregarHorarioMailer", "agregar", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e411fb7a10 @uri=#<URI::GID gid://ohmydog/HistorialTurno/21>>}, :args=>[]}
+[ActiveJob] ↳ app/controllers/historial_turnos_controller.rb:40:in `agregar_horario'
+Redirected to http://localhost:3000/historial_turnos/pendientes
+Completed 302 Found in 21ms (ActiveRecord: 2.9ms | Allocations: 7360)
+
+
+Started GET "/historial_turnos/pendientes" for ::1 at 2023-11-29 01:45:57 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01] Performing ActionMailer::MailDeliveryJob (Job ID: ecdee6b5-a077-4c6a-bcd0-55e01807ab01) from Async(default) enqueued at 2023-11-29T04:45:57.514197900Z with arguments: "AgregarHorarioMailer", "agregar", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e41265fa70 @uri=#<URI::GID gid://ohmydog/HistorialTurno/21>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   ↳ app/mailers/agregar_horario_mailer.rb:10:in `agregar'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   ↳ app/mailers/agregar_horario_mailer.rb:10:in `agregar'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendering agregar_horario_mailer/agregar.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendered agregar_horario_mailer/agregar.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 408)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendered layout layouts/mailer.html.erb (Duration: 1.5ms | Allocations: 501)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendering agregar_horario_mailer/agregar.text.erb within layouts/mailer
+Processing by HistorialTurnosController#pendientes as HTML
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendered agregar_horario_mailer/agregar.text.erb within layouts/mailer (Duration: 2.3ms | Allocations: 165)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01]   Rendered layout layouts/mailer.text.erb (Duration: 4.1ms | Allocations: 254)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01] AgregarHorarioMailer#agregar: processed outbound mail in 20.4ms
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1423)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 18165)
+Completed 200 OK in 53ms (Views: 41.9ms | ActiveRecord: 0.2ms | Allocations: 33037)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:45:57 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:45:57 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:45:57 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:45:57 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01] Delivered mail 6566c205a4854_328cf07871ed@DESKTOP-FGDUKJ4.mail (173.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01] Date: Wed, 29 Nov 2023 01:45:57 -0300
+From: no-reply@ohmydog.com
+To: ingsoft@gmail.com
+Message-ID: <6566c205a4854_328cf07871ed@DESKTOP-FGDUKJ4.mail>
+Subject: Agregar
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6566c205a402c_328cf0787069";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6566c205a402c_328cf0787069
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+AgregarHorario#agregar
+
+, find me in app/views/agregar_horario_mailer/agregar.text.erb
+
+
+----==_mimepart_6566c205a402c_328cf0787069
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola! Pedro</h1>
+
+    <div class=3D"confirmation-message">
+      <p>
+        Tu turno para el perro lolo est=C3=A1 confirmado.
+      </p>
+      <p>
+        La fecha del turno es el d=C3=ADa 11-12-2023.
+      </p>
+      <p>
+        El horario del turno es 11:11.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
+
+  </body>
+</html>
+
+----==_mimepart_6566c205a402c_328cf0787069--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ecdee6b5-a077-4c6a-bcd0-55e01807ab01] Performed ActionMailer::MailDeliveryJob (Job ID: ecdee6b5-a077-4c6a-bcd0-55e01807ab01) from Async(default) in 202.25ms
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/historial_turnos/confirmados.html" for ::1 at 2023-11-29 01:46:12 -0300
+Processing by HistorialTurnosController#confirmados as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/confirmados.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ?[0m  [["condition_id", 2]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:27
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? ORDER BY "historial_turnos"."fecha" ASC[0m  [["condition_id", 2]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:29
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:36
+  Rendered historial_turnos/confirmados.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2843)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 10763)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 0.5ms | Allocations: 11197)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:46:13 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:46:13 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:46:13 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:46:13 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:46:42 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2374)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 9552)
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.2ms | Allocations: 10844)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:46:42 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:46:42 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:46:42 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:46:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+Started POST "/historial_turnos" for ::1 at 2023-11-29 01:46:53 -0300
+Processing by HistorialTurnosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"fecha"=>"2023-12-12", "franja"=>"Mañana", "tipo_turno_id"=>"2", "perro_id"=>"8"}, "commit"=>"Solicitar turno"}
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTipoTurno Load (0.9ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mHistorialTurno Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ? AND "historial_turnos"."condition_id" IN (?, ?) AND "historial_turnos"."id" IS NOT NULL LIMIT ?[0m  [["perro_id", 8], ["condition_id", 1], ["condition_id", 2], ["LIMIT", 1]]
+  ↳ app/models/historial_turno.rb:25:in `uniqueness_of_turnos'
+  [1m[36mHistorialTurno Create (0.2ms)[0m  [1m[32mINSERT INTO "historial_turnos" ("franja", "tipo_turno_id", "created_at", "updated_at", "perro_id", "condition_id", "texto", "consulta", "fecha", "hora", "monto") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["franja", "Mañana"], ["tipo_turno_id", 2], ["created_at", "2023-11-29 04:46:53.317290"], ["updated_at", "2023-11-29 04:46:53.317290"], ["perro_id", 8], ["condition_id", 1], ["texto", nil], ["consulta", nil], ["fecha", "2023-12-12"], ["hora", nil], ["monto", nil]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fb379adc-6bb5-45b8-8bb9-69ea2d4a9219) to Async(default) with arguments: "SolicitarTurnoMailer", "confirm", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e4116629d8 @uri=#<URI::GID gid://ohmydog/HistorialTurno/22>>}, :args=>[]}
+[ActiveJob] ↳ app/controllers/historial_turnos_controller.rb:19:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 1.5ms | Allocations: 6111)
+
+
+Started GET "/" for ::1 at 2023-11-29 01:46:53 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219] Performing ActionMailer::MailDeliveryJob (Job ID: fb379adc-6bb5-45b8-8bb9-69ea2d4a9219) from Async(default) enqueued at 2023-11-29T04:46:53.321296300Z with arguments: "SolicitarTurnoMailer", "confirm", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e411698308 @uri=#<URI::GID gid://ohmydog/HistorialTurno/22>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   ↳ app/mailers/solicitar_turno_mailer.rb:6:in `confirm'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   ↳ app/mailers/solicitar_turno_mailer.rb:6:in `confirm'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendering solicitar_turno_mailer/confirm.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendered solicitar_turno_mailer/confirm.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 13)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendered layout layouts/mailer.html.erb (Duration: 1.5ms | Allocations: 104)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendering solicitar_turno_mailer/confirm.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendered solicitar_turno_mailer/confirm.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 6)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219]   Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 97)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219] SolicitarTurnoMailer#confirm: processed outbound mail in 10.1ms
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3162)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 9889)
+Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 0.1ms | Allocations: 10221)
+
+
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:46:53 -0300
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:46:53 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:46:53 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:46:53 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219] Delivered mail 6566c23d730c2_328cf0787363@DESKTOP-FGDUKJ4.mail (203.8ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219] Date: Wed, 29 Nov 2023 01:46:53 -0300
+From: no-reply@ohmydog.com
+To: ingsoft@gmail.com
+Message-ID: <6566c23d730c2_328cf0787363@DESKTOP-FGDUKJ4.mail>
+Subject: Confirm
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6566c23d7244a_328cf078729c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6566c23d7244a_328cf078729c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+SolicitarTurno#confirm
+
+, find me in app/views/solicitar_turno_mailer/confirm.text.erb
+
+
+----==_mimepart_6566c23d7244a_328cf078729c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola Pedro! </h1>
+
+    <div class=3D"confirmation-message">
+    <p>Tu turno para el perro perro de prueba 2 est=C3=A1 pendiente de as=
+ignarle un horario.</p>
+    <p>La fecha del turno es el d=C3=ADa 12-12-2023 .</p>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+  </body>
+</html>
+
+----==_mimepart_6566c23d7244a_328cf078729c--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb379adc-6bb5-45b8-8bb9-69ea2d4a9219] Performed ActionMailer::MailDeliveryJob (Job ID: fb379adc-6bb5-45b8-8bb9-69ea2d4a9219) from Async(default) in 242.2ms
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:47:01 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2325)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 9503)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 0.2ms | Allocations: 10777)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:47:01 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:47:01 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:47:01 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:47:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/pendientes.html" for ::1 at 2023-11-29 01:47:02 -0300
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL ORDER BY "historial_turnos"."fecha" ASC[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:37
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:41
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2597)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 10519)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms | Allocations: 10931)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:47:02 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:47:02 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:47:02 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:47:02 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+Started PUT "/historial_turnos/22/agregar_texto" for ::1 at 2023-11-29 01:47:29 -0300
+Processing by HistorialTurnosController#agregar_texto as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"texto"=>"hola. me gustaria que el turno sea el dia 121212"}, "id"=>"22"}
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:49:in `agregar_texto'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:53:in `agregar_texto'
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:53:in `agregar_texto'
+  [1m[36mHistorialTurno Update (0.1ms)[0m  [1m[33mUPDATE "historial_turnos" SET "updated_at" = ?, "condition_id" = ?, "texto" = ? WHERE "historial_turnos"."id" = ?[0m  [["updated_at", "2023-11-29 04:47:29.711697"], ["condition_id", 3], ["texto", "hola. me gustaria que el turno sea el dia 121212"], ["id", 22]]
+  ↳ app/controllers/historial_turnos_controller.rb:53:in `agregar_texto'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:53:in `agregar_texto'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 0b4a612d-98cb-446f-98a5-d1ec328484f4) to Async(default) with arguments: "CambiarFechaMailer", "cambiar", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e410c1aa20 @uri=#<URI::GID gid://ohmydog/HistorialTurno/22>>}, :args=>[]}
+[ActiveJob] ↳ app/controllers/historial_turnos_controller.rb:54:in `agregar_texto'
+Redirected to http://localhost:3000/historial_turnos/pendientes
+Completed 302 Found in 119ms (ActiveRecord: 1.5ms | Allocations: 11854)
+
+
+Started GET "/historial_turnos/pendientes" for ::1 at 2023-11-29 01:47:29 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4] Performing ActionMailer::MailDeliveryJob (Job ID: 0b4a612d-98cb-446f-98a5-d1ec328484f4) from Async(default) enqueued at 2023-11-29T04:47:29.813317300Z with arguments: "CambiarFechaMailer", "cambiar", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e410d47628 @uri=#<URI::GID gid://ohmydog/HistorialTurno/22>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   ↳ app/mailers/cambiar_fecha_mailer.rb:10:in `cambiar'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   ↳ app/mailers/cambiar_fecha_mailer.rb:10:in `cambiar'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendering cambiar_fecha_mailer/cambiar.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendered cambiar_fecha_mailer/cambiar.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 450)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendered layout layouts/mailer.html.erb (Duration: 1.6ms | Allocations: 543)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendering cambiar_fecha_mailer/cambiar.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendered cambiar_fecha_mailer/cambiar.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 127)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4]   Rendered layout layouts/mailer.text.erb (Duration: 1.7ms | Allocations: 218)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4] CambiarFechaMailer#cambiar: processed outbound mail in 19.2ms
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 2.3ms | Allocations: 547)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 8922)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.2ms | Allocations: 9353)
+
+
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:47:30 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:47:30 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:47:30 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:47:30 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4] Delivered mail 6566c261eebce_328cf078759e@DESKTOP-FGDUKJ4.mail (169.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4] Date: Wed, 29 Nov 2023 01:47:29 -0300
+From: no-reply@ohmydog.com
+To: ingsoft@gmail.com
+Message-ID: <6566c261eebce_328cf078759e@DESKTOP-FGDUKJ4.mail>
+Subject: Cambiar
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6566c261ee2da_328cf0787456";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6566c261ee2da_328cf0787456
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+CambiarFecha#cambiar
+
+, find me in app/views/cambiar_fecha_mailer/cambiar.text.erb
+
+
+----==_mimepart_6566c261ee2da_328cf0787456
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    =
+
+<p>
+  Tu turno para el perro perro de prueba 2 en la fecha: 12-12-2023 no pud=
+o ser confirmado.
+</p>
+<p>
+  Mensaje del veterinario acerca del turno: hola. me gustaria que el turn=
+o sea el dia 121212 .
+</p>
+
+
+
+<!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola! Pedro</h1>
+
+    <div class=3D"confirmation-message">
+    <p>
+    Tu turno para el perro perro de prueba 2 en la fecha: 12-12-2023 no p=
+udo ser confirmado.
+  </p>
+  <p>
+    Mensaje del veterinario acerca del turno: hola. me gustaria que el tu=
+rno sea el dia 121212 .
+  </p>
+  </div>
+</body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_6566c261ee2da_328cf0787456--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0b4a612d-98cb-446f-98a5-d1ec328484f4] Performed ActionMailer::MailDeliveryJob (Job ID: 0b4a612d-98cb-446f-98a5-d1ec328484f4) from Async(default) in 197.45ms
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/pendientes.html" for ::1 at 2023-11-29 01:48:21 -0300
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1701)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 36320)
+Completed 200 OK in 105ms (Views: 74.0ms | ActiveRecord: 4.7ms | Allocations: 49937)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:48:21 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:48:21 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:48:21 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:48:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:48:22 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.2ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 12.6ms | Allocations: 11177)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 18475)
+Completed 200 OK in 50ms (Views: 33.6ms | ActiveRecord: 1.1ms | Allocations: 29385)
+
+
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:48:22 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:48:22 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:48:22 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:48:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/confirmados.html" for ::1 at 2023-11-29 01:48:23 -0300
+Processing by HistorialTurnosController#confirmados as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/confirmados.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ?[0m  [["condition_id", 2]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:27
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? ORDER BY "historial_turnos"."fecha" ASC[0m  [["condition_id", 2]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:29
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:36
+  Rendered historial_turnos/confirmados.html.erb within layouts/application (Duration: 7.0ms | Allocations: 4277)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 12205)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.5ms | Allocations: 12643)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:48:23 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:48:23 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:48:23 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:48:23 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turno/mis_turnos" for ::1 at 2023-11-29 01:48:32 -0300
+Processing by MisTurnosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/mis_turnos_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering mis_turnos/index.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" IN (SELECT "perros"."id" FROM "perros" WHERE "perros"."user_id" = ?)[0m  [["user_id", 83]]
+  ↳ app/views/mis_turnos/index.html.erb:30
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  Rendered mis_turnos/index.html.erb within layouts/application (Duration: 56.1ms | Allocations: 19883)
+  Rendered layout layouts/application.html.erb (Duration: 83.8ms | Allocations: 27261)
+Completed 200 OK in 99ms (Views: 89.7ms | ActiveRecord: 1.8ms | Allocations: 29219)
+
+
+Started GET "/historial_turno/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:48:32 -0300
+Started GET "/historial_turno/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:48:32 -0300
+Started GET "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:48:32 -0300
+Started GET "/historial_turno/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:48:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery/jquery.min.js"):
+  
+Started GET "/perros/registrar_perro" for ::1 at 2023-11-29 01:48:52 -0300
+Processing by PerrosController#new as HTML
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/perros_controller.rb:6:in `new'
+#<ActiveRecord::Relation [#<Raza id: 1, nombre: "Caniche", created_at: "2023-11-07 23:56:41.284942000 +0000", updated_at: "2023-11-07 23:56:41.284942000 +0000">, #<Raza id: 2, nombre: "Pitbull", created_at: "2023-11-07 23:57:00.447219000 +0000", updated_at: "2023-11-07 23:57:00.447219000 +0000">, #<Raza id: 3, nombre: "Pastor Aleman", created_at: "2023-11-07 23:58:58.250942000 +0000", updated_at: "2023-11-07 23:58:58.250942000 +0000">, #<Raza id: 4, nombre: "Golden", created_at: "2023-11-07 23:59:16.114101000 +0000", updated_at: "2023-11-07 23:59:16.114101000 +0000">, #<Raza id: 5, nombre: "Labrador", created_at: "2023-11-08 00:00:24.516255000 +0000", updated_at: "2023-11-08 00:00:24.516255000 +0000">, #<Raza id: 6, nombre: "Bulldog", created_at: "2023-11-08 00:00:47.036023000 +0000", updated_at: "2023-11-08 00:00:47.036023000 +0000">, #<Raza id: 7, nombre: "Salchicha", created_at: "2023-11-15 14:49:38.193334000 +0000", updated_at: "2023-11-15 14:49:38.193334000 +0000">, #<Raza id: 8, nombre: "Beagle", created_at: "2023-11-15 14:49:51.746007000 +0000", updated_at: "2023-11-15 14:49:51.746007000 +0000">, #<Raza id: 9, nombre: "Rottweiler", created_at: "2023-11-15 14:50:00.898595000 +0000", updated_at: "2023-11-15 14:50:00.898595000 +0000">, #<Raza id: 10, nombre: "Dogo", created_at: "2023-11-15 14:50:21.961877000 +0000", updated_at: "2023-11-15 14:50:21.961877000 +0000">, ...]>
+  Rendering layout layouts/application.html.erb
+  Rendering perros/registrar_perro.html.erb within layouts/application
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/registrar_perro.html.erb:40
+  Rendered perros/registrar_perro.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3210)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 11313)
+Completed 200 OK in 47ms (Views: 36.3ms | ActiveRecord: 0.7ms | Allocations: 17806)
+
+
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:48:52 -0300
+Started GET "/perros/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:48:52 -0300
+Started GET "/perros/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:48:52 -0300
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:48:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/hoy.html" for ::1 at 2023-11-29 01:48:56 -0300
+Processing by HistorialTurnosController#hoy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/hoy.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."fecha" = ? AND "historial_turnos"."condition_id" = ?[0m  [["fecha", "2023-11-30"], ["condition_id", 2]]
+  ↳ app/views/historial_turnos/hoy.html.erb:35
+  Rendered historial_turnos/hoy.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2551)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 10705)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.2ms | Allocations: 11194)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:48:56 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:48:56 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:48:56 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:48:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+Started GET "/historial_turnos/new" for ::1 at 2023-11-29 01:49:04 -0300
+Processing by HistorialTurnosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/solicitar_turno.html.erb within layouts/application
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos"[0m
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:23
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/historial_turnos/solicitar_turno.html.erb:30
+  Rendered historial_turnos/solicitar_turno.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2347)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 9525)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.2ms | Allocations: 10834)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:04 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:04 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:04 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:04 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started POST "/historial_turnos" for ::1 at 2023-11-29 01:49:15 -0300
+Processing by HistorialTurnosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"fecha"=>"2023-11-30", "franja"=>"Mañana", "tipo_turno_id"=>"1", "perro_id"=>"11"}, "commit"=>"Solicitar turno"}
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTipoTurno Load (1.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mHistorialTurno Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ? AND "historial_turnos"."condition_id" IN (?, ?) AND "historial_turnos"."id" IS NOT NULL LIMIT ?[0m  [["perro_id", 11], ["condition_id", 1], ["condition_id", 2], ["LIMIT", 1]]
+  ↳ app/models/historial_turno.rb:25:in `uniqueness_of_turnos'
+  [1m[36mHistorialTurno Create (0.2ms)[0m  [1m[32mINSERT INTO "historial_turnos" ("franja", "tipo_turno_id", "created_at", "updated_at", "perro_id", "condition_id", "texto", "consulta", "fecha", "hora", "monto") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["franja", "Mañana"], ["tipo_turno_id", 1], ["created_at", "2023-11-29 04:49:15.981245"], ["updated_at", "2023-11-29 04:49:15.981245"], ["perro_id", 11], ["condition_id", 1], ["texto", nil], ["consulta", nil], ["fecha", "2023-11-30"], ["hora", nil], ["monto", nil]]
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:18:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fc8c4337-a970-4175-a84d-1c0b791e4748) to Async(default) with arguments: "SolicitarTurnoMailer", "confirm", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e41169b210 @uri=#<URI::GID gid://ohmydog/HistorialTurno/23>>}, :args=>[]}
+[ActiveJob] ↳ app/controllers/historial_turnos_controller.rb:19:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 3.4ms | Allocations: 10936)
+
+
+Started GET "/" for ::1 at 2023-11-29 01:49:16 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748] Performing ActionMailer::MailDeliveryJob (Job ID: fc8c4337-a970-4175-a84d-1c0b791e4748) from Async(default) enqueued at 2023-11-29T04:49:15.990485100Z with arguments: "SolicitarTurnoMailer", "confirm", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e412424710 @uri=#<URI::GID gid://ohmydog/HistorialTurno/23>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   ↳ app/mailers/solicitar_turno_mailer.rb:6:in `confirm'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   ↳ app/mailers/solicitar_turno_mailer.rb:6:in `confirm'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendering solicitar_turno_mailer/confirm.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendered solicitar_turno_mailer/confirm.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 362)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendered layout layouts/mailer.html.erb (Duration: 2.0ms | Allocations: 619)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendering solicitar_turno_mailer/confirm.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendered solicitar_turno_mailer/confirm.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 125)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748]   Rendered layout layouts/mailer.text.erb (Duration: 2.2ms | Allocations: 327)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748] SolicitarTurnoMailer#confirm: processed outbound mail in 16.5ms
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3835)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 11260)
+Completed 200 OK in 55ms (Views: 33.5ms | ActiveRecord: 11.1ms | Allocations: 12030)
+
+
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:16 -0300
+Started GET "/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:16 -0300
+Started GET "/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:16 -0300
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:16 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748] Delivered mail 6566c2cc23ea9_328cf078778b@DESKTOP-FGDUKJ4.mail (200.9ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748] Date: Wed, 29 Nov 2023 01:49:16 -0300
+From: no-reply@ohmydog.com
+To: ingsoft@gmail.com
+Message-ID: <6566c2cc23ea9_328cf078778b@DESKTOP-FGDUKJ4.mail>
+Subject: Confirm
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6566c2cc2338f_328cf078767a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6566c2cc2338f_328cf078767a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+SolicitarTurno#confirm
+
+, find me in app/views/solicitar_turno_mailer/confirm.text.erb
+
+
+----==_mimepart_6566c2cc2338f_328cf078767a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola Pedro! </h1>
+
+    <div class=3D"confirmation-message">
+    <p>Tu turno para el perro mandy est=C3=A1 pendiente de asignarle un h=
+orario.</p>
+    <p>La fecha del turno es el d=C3=ADa 30-11-2023 .</p>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+  </body>
+</html>
+
+----==_mimepart_6566c2cc2338f_328cf078767a--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc8c4337-a970-4175-a84d-1c0b791e4748] Performed ActionMailer::MailDeliveryJob (Job ID: fc8c4337-a970-4175-a84d-1c0b791e4748) from Async(default) in 243.52ms
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/sb-admin-2.min.js"):
+  
+Started GET "/historial_turnos/confirmados.html" for ::1 at 2023-11-29 01:49:22 -0300
+Processing by HistorialTurnosController#confirmados as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/confirmados.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ?[0m  [["condition_id", 2]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:27
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? ORDER BY "historial_turnos"."fecha" ASC[0m  [["condition_id", 2]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:29
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/confirmados.html.erb:36
+  Rendered historial_turnos/confirmados.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2276)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 10198)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.3ms | Allocations: 10572)
+
+
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:22 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:22 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:22 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/historial_turnos/pendientes.html" for ::1 at 2023-11-29 01:49:23 -0300
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL ORDER BY "historial_turnos"."fecha" ASC[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:37
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:41
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2673)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 10595)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.3ms | Allocations: 11012)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:24 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:24 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:24 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started PUT "/historial_turnos/23/agregar_horario" for ::1 at 2023-11-29 01:49:26 -0300
+Processing by HistorialTurnosController#agregar_horario as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"hora"=>"11:11"}, "id"=>"23"}
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:34:in `agregar_horario'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+  [1m[36mCondition Load (0.9ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+  [1m[36mHistorialTurno Update (0.2ms)[0m  [1m[33mUPDATE "historial_turnos" SET "updated_at" = ?, "condition_id" = ?, "hora" = ? WHERE "historial_turnos"."id" = ?[0m  [["updated_at", "2023-11-29 04:49:26.736613"], ["condition_id", 2], ["hora", "2000-01-01 11:11:00"], ["id", 23]]
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:39:in `agregar_horario'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 4ea61eea-00a1-4797-82bf-16f7e440938f) to Async(default) with arguments: "AgregarHorarioMailer", "agregar", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e416afa0e0 @uri=#<URI::GID gid://ohmydog/HistorialTurno/23>>}, :args=>[]}
+[ActiveJob] ↳ app/controllers/historial_turnos_controller.rb:40:in `agregar_horario'
+Redirected to http://localhost:3000/historial_turnos/pendientes
+Completed 302 Found in 114ms (ActiveRecord: 1.2ms | Allocations: 12553)
+
+
+Started GET "/historial_turnos/pendientes" for ::1 at 2023-11-29 01:49:26 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f] Performing ActionMailer::MailDeliveryJob (Job ID: 4ea61eea-00a1-4797-82bf-16f7e440938f) from Async(default) enqueued at 2023-11-29T04:49:26.840257000Z with arguments: "AgregarHorarioMailer", "agregar", "deliver_now", {:params=>{:turno=>#<GlobalID:0x000001e416b8b9f0 @uri=#<URI::GID gid://ohmydog/HistorialTurno/23>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   ↳ app/mailers/agregar_horario_mailer.rb:10:in `agregar'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   ↳ app/mailers/agregar_horario_mailer.rb:10:in `agregar'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendering agregar_horario_mailer/agregar.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendered agregar_horario_mailer/agregar.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 405)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendered layout layouts/mailer.html.erb (Duration: 1.6ms | Allocations: 498)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendering agregar_horario_mailer/agregar.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendered agregar_horario_mailer/agregar.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 127)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f]   Rendered layout layouts/mailer.text.erb (Duration: 1.6ms | Allocations: 218)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f] AgregarHorarioMailer#agregar: processed outbound mail in 12.3ms
+Processing by HistorialTurnosController#pendientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/pendientes.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."condition_id" = ? AND "historial_turnos"."hora" IS NULL[0m  [["condition_id", 1]]
+  ↳ app/views/historial_turnos/pendientes.html.erb:35
+  Rendered historial_turnos/pendientes.html.erb within layouts/application (Duration: 2.0ms | Allocations: 603)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 8988)
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 0.3ms | Allocations: 9419)
+
+
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:27 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:27 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:27 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:27 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f] Delivered mail 6566c2d6f159b_328cf078795c@DESKTOP-FGDUKJ4.mail (175.8ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f] Date: Wed, 29 Nov 2023 01:49:26 -0300
+From: no-reply@ohmydog.com
+To: ingsoft@gmail.com
+Message-ID: <6566c2d6f159b_328cf078795c@DESKTOP-FGDUKJ4.mail>
+Subject: Agregar
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6566c2d6f0ec0_328cf0787872";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6566c2d6f0ec0_328cf0787872
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+AgregarHorario#agregar
+
+, find me in app/views/agregar_horario_mailer/agregar.text.erb
+
+
+----==_mimepart_6566c2d6f0ec0_328cf0787872
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang=3D"es">
+<head>
+  <meta charset=3D"UTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #fc904f;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class=3D"container">
+    <h1>=C2=A1Hola! Pedro</h1>
+
+    <div class=3D"confirmation-message">
+      <p>
+        Tu turno para el perro mandy est=C3=A1 confirmado.
+      </p>
+      <p>
+        La fecha del turno es el d=C3=ADa 30-11-2023.
+      </p>
+      <p>
+        El horario del turno es 11:11.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
+
+  </body>
+</html>
+
+----==_mimepart_6566c2d6f0ec0_328cf0787872--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4ea61eea-00a1-4797-82bf-16f7e440938f] Performed ActionMailer::MailDeliveryJob (Job ID: 4ea61eea-00a1-4797-82bf-16f7e440938f) from Async(default) in 210.68ms
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turnos/hoy.html" for ::1 at 2023-11-29 01:49:30 -0300
+Processing by HistorialTurnosController#hoy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/hoy.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."fecha" = ? AND "historial_turnos"."condition_id" = ?[0m  [["fecha", "2023-11-30"], ["condition_id", 2]]
+  ↳ app/views/historial_turnos/hoy.html.erb:35
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."fecha" = ? AND "historial_turnos"."condition_id" = ? ORDER BY "historial_turnos"."fecha" ASC[0m  [["fecha", "2023-11-30"], ["condition_id", 2]]
+  ↳ app/views/historial_turnos/hoy.html.erb:37
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/historial_turnos/hoy.html.erb:41
+  [1m[36mVacuna Load (0.1ms)[0m  [1m[34mSELECT "vacunas".* FROM "vacunas"[0m
+  ↳ app/views/historial_turnos/hoy.html.erb:104
+  Rendered historial_turnos/hoy.html.erb within layouts/application (Duration: 20.1ms | Allocations: 12538)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 20670)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 1.1ms | Allocations: 21110)
+
+
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:30 -0300
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:30 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:30 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:30 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started PUT "/historial_turnos/23/agregar_consulta" for ::1 at 2023-11-29 01:49:46 -0300
+Processing by HistorialTurnosController#agregar_consulta as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "historial_turno"=>{"consulta"=>"asdasd", "monto"=>"123123", "vaccine"=>{"peso"=>"asd", "vacuna_id"=>"1"}}, "id"=>"23"}
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:78:in `agregar_consulta'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:83:in `agregar_consulta'
+  [1m[36mCondition Load (0.9ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:83:in `agregar_consulta'
+  [1m[36mHistorialTurno Update (0.1ms)[0m  [1m[33mUPDATE "historial_turnos" SET "updated_at" = ?, "condition_id" = ?, "consulta" = ?, "monto" = ? WHERE "historial_turnos"."id" = ?[0m  [["updated_at", "2023-11-29 04:49:46.394795"], ["condition_id", 4], ["consulta", "asdasd"], ["monto", 123123], ["id", 23]]
+  ↳ app/controllers/historial_turnos_controller.rb:83:in `agregar_consulta'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:83:in `agregar_consulta'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:90:in `agregar_consulta'
+  [1m[36mVacuna Load (1.0ms)[0m  [1m[34mSELECT "vacunas".* FROM "vacunas" WHERE "vacunas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/historial_turnos_controller.rb:90:in `agregar_consulta'
+  [1m[36mVaccine Create (0.2ms)[0m  [1m[32mINSERT INTO "vaccines" ("vacuna_id", "peso", "texto", "historial_turno_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vacuna_id", 1], ["peso", 0], ["texto", nil], ["historial_turno_id", 23], ["created_at", "2023-11-29 04:49:46.400725"], ["updated_at", "2023-11-29 04:49:46.400725"]]
+  ↳ app/controllers/historial_turnos_controller.rb:90:in `agregar_consulta'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/historial_turnos_controller.rb:90:in `agregar_consulta'
+Redirected to http://localhost:3000/historial_turnos/hoy
+Completed 302 Found in 17ms (ActiveRecord: 2.6ms | Allocations: 8688)
+
+
+Started GET "/historial_turnos/hoy" for ::1 at 2023-11-29 01:49:46 -0300
+Processing by HistorialTurnosController#hoy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering historial_turnos/hoy.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."fecha" = ? AND "historial_turnos"."condition_id" = ?[0m  [["fecha", "2023-11-30"], ["condition_id", 2]]
+  ↳ app/views/historial_turnos/hoy.html.erb:35
+  Rendered historial_turnos/hoy.html.erb within layouts/application (Duration: 1.2ms | Allocations: 553)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 8719)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.1ms | Allocations: 9146)
+
+
+Started GET "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:46 -0300
+Started GET "/historial_turnos/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:46 -0300
+Started GET "/historial_turnos/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:46 -0300
+Started GET "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turnos/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turno/mis_turnos" for ::1 at 2023-11-29 01:49:49 -0300
+Processing by MisTurnosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/mis_turnos_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering mis_turnos/index.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.4ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" IN (SELECT "perros"."id" FROM "perros" WHERE "perros"."user_id" = ?)[0m  [["user_id", 83]]
+  ↳ app/views/mis_turnos/index.html.erb:30
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  Rendered mis_turnos/index.html.erb within layouts/application (Duration: 44.0ms | Allocations: 14154)
+  Rendered layout layouts/application.html.erb (Duration: 78.3ms | Allocations: 21362)
+Completed 200 OK in 84ms (Views: 77.5ms | ActiveRecord: 1.6ms | Allocations: 22813)
+
+
+Started GET "/historial_turno/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:49:49 -0300
+Started GET "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:49:49 -0300
+Started GET "/historial_turno/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:49:49 -0300
+Started GET "/historial_turno/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:49:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/js/sb-admin-2.min.js"):
+  
+Started GET "/perros/mis_perros.html" for ::1 at 2023-11-29 01:50:03 -0300
+Processing by PerrosController#mis_perros as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:39:in `mis_perros'
+  Rendering layout layouts/application.html.erb
+  Rendering perros/mis_perros.html.erb within layouts/application
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/perros/mis_perros.html.erb:5
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/mis_perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  Rendered perros/mis_perros.html.erb within layouts/application (Duration: 16.0ms | Allocations: 11292)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 18465)
+Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 0.8ms | Allocations: 19833)
+
+
+Started GET "/perros/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:03 -0300
+Started GET "/perros/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:03 -0300
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:03 -0300
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:03 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/users/edit" for ::1 at 2023-11-29 01:50:18 -0300
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 324)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3726)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 11152)
+Completed 200 OK in 55ms (Views: 48.1ms | ActiveRecord: 0.1ms | Allocations: 14607)
+
+
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:18 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:18 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:18 -0300
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+Started GET "/perros/mis_perros.html" for ::1 at 2023-11-29 01:50:21 -0300
+Processing by PerrosController#mis_perros as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:39:in `mis_perros'
+  Rendering layout layouts/application.html.erb
+  Rendering perros/mis_perros.html.erb within layouts/application
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/perros/mis_perros.html.erb:5
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/mis_perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  Rendered perros/mis_perros.html.erb within layouts/application (Duration: 22.2ms | Allocations: 8862)
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 16041)
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 0.5ms | Allocations: 17481)
+
+
+Started GET "/perros/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:21 -0300
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:21 -0300
+Started GET "/perros/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:21 -0300
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/historial_turno/mis_turnos" for ::1 at 2023-11-29 01:50:25 -0300
+Processing by MisTurnosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/mis_turnos_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering mis_turnos/index.html.erb within layouts/application
+  [1m[36mHistorialTurno Load (0.2ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" IN (SELECT "perros"."id" FROM "perros" WHERE "perros"."user_id" = ?)[0m  [["user_id", 83]]
+  ↳ app/views/mis_turnos/index.html.erb:30
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCondition Load (0.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mCACHE TipoTurno Load (0.0ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mCACHE Perro Load (0.0ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  [1m[36mTipoTurno Load (0.1ms)[0m  [1m[34mSELECT "tipo_turnos".* FROM "tipo_turnos" WHERE "tipo_turnos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:42
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:55
+  [1m[36mCACHE Condition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/mis_turnos/index.html.erb:58
+  Rendered mis_turnos/index.html.erb within layouts/application (Duration: 32.9ms | Allocations: 14172)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 21380)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 1.0ms | Allocations: 22825)
+
+
+Started GET "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:25 -0300
+Started GET "/historial_turno/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:25 -0300
+Started GET "/historial_turno/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:25 -0300
+Started GET "/historial_turno/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:25 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/historial_turno/vendor/jquery/jquery.min.js"):
+  
+Started GET "/users/search" for ::1 at 2023-11-29 01:50:34 -0300
+Processing by UserSearchController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/search.html.erb within layouts/application
+  Rendered users/search.html.erb within layouts/application (Duration: 1.5ms | Allocations: 646)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 9119)
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 0.1ms | Allocations: 9688)
+
+
+Started GET "/users/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:34 -0300
+Started GET "/users/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:34 -0300
+Started GET "/users/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:34 -0300
+Started GET "/users/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/vendor/jquery/jquery.min.js"):
+  
+Started GET "/user_search/search?dni=1234512345&commit=Buscar" for ::1 at 2023-11-29 01:50:37 -0300
+Processing by UserSearchController#search as HTML
+  Parameters: {"dni"=>"1234512345", "commit"=>"Buscar"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/search.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."dni" = ? AND "users"."habilitado" = ?[0m  [["dni", 1234512345], ["habilitado", 1]]
+  ↳ app/views/users/search.html.erb:18
+  Rendered users/search.html.erb within layouts/application (Duration: 2.1ms | Allocations: 850)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 8964)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.2ms | Allocations: 9339)
+
+
+Started GET "/user_search/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:37 -0300
+Started GET "/user_search/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:37 -0300
+Started GET "/user_search/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:37 -0300
+Started GET "/user_search/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/vendor/jquery-easing/jquery.easing.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/user_search/js/sb-admin-2.min.js"):
+  
+Started GET "/users/83/perros" for ::1 at 2023-11-29 01:50:40 -0300
+Processing by UserSearchController#perros as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/user_search_controller.rb:15:in `perros'
+  Rendering layout layouts/application.html.erb
+  Rendering user_search/perros.html.erb within layouts/application
+  [1m[36mPerro Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "perros" WHERE "perros"."user_id" = ? LIMIT ?[0m  [["user_id", 83], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:12
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/user_search/perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 7]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 17]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mVacuna Load (0.1ms)[0m  [1m[34mSELECT "vacunas".* FROM "vacunas" WHERE "vacunas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:52
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 17]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 21]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 21]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 8]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 18]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 18]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 22]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 22]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 11]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.0ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 19]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 19]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mVaccine Load (0.1ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 23]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mVacuna Load (0.1ms)[0m  [1m[34mSELECT "vacunas".* FROM "vacunas" WHERE "vacunas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:52
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 23]]
+  ↳ app/views/user_search/perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/user_search/perros.html.erb:22
+  [1m[36mHistorialTurno Load (0.1ms)[0m  [1m[34mSELECT "historial_turnos".* FROM "historial_turnos" WHERE "historial_turnos"."perro_id" = ?[0m  [["perro_id", 12]]
+  ↳ app/views/user_search/perros.html.erb:28
+  [1m[36mVaccine Load (0.0ms)[0m  [1m[34mSELECT "vaccines".* FROM "vaccines" WHERE "vaccines"."historial_turno_id" = ?[0m  [["historial_turno_id", 20]]
+  ↳ app/views/user_search/perros.html.erb:47
+  [1m[36mDeworm Load (0.1ms)[0m  [1m[34mSELECT "deworms".* FROM "deworms" WHERE "deworms"."historial_turno_id" = ?[0m  [["historial_turno_id", 20]]
+  ↳ app/views/user_search/perros.html.erb:59
+  Rendered user_search/perros.html.erb within layouts/application (Duration: 46.4ms | Allocations: 23750)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:76
+  Rendered layout layouts/application.html.erb (Duration: 68.6ms | Allocations: 32144)
+Completed 200 OK in 75ms (Views: 68.3ms | ActiveRecord: 2.3ms | Allocations: 33703)
+
+
+Started GET "/users/83/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:50:40 -0300
+Started GET "/users/83/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:50:40 -0300
+Started GET "/users/83/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:50:40 -0300
+Started GET "/users/83/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:50:40 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/83/vendor/jquery-easing/jquery.easing.min.js"):
+  
+Started GET "/perros/mis_perros.html" for ::1 at 2023-11-29 01:51:11 -0300
+Processing by PerrosController#mis_perros as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/perros_controller.rb:39:in `mis_perros'
+  Rendering layout layouts/application.html.erb
+  Rendering perros/mis_perros.html.erb within layouts/application
+  [1m[36mPerro Load (0.1ms)[0m  [1m[34mSELECT "perros".* FROM "perros" WHERE "perros"."user_id" = ?[0m  [["user_id", 83]]
+  ↳ app/views/perros/mis_perros.html.erb:5
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas"[0m
+  ↳ app/views/perros/mis_perros.html.erb:59
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  [1m[36mRaza Load (0.1ms)[0m  [1m[34mSELECT "razas".* FROM "razas" WHERE "razas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/perros/mis_perros.html.erb:14
+  Rendered perros/mis_perros.html.erb within layouts/application (Duration: 16.5ms | Allocations: 8839)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 16018)
+Completed 200 OK in 47ms (Views: 40.2ms | ActiveRecord: 0.7ms | Allocations: 17331)
+
+
+Started GET "/perros/vendor/jquery/jquery.min.js" for ::1 at 2023-11-29 01:51:11 -0300
+Started GET "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2023-11-29 01:51:11 -0300
+Started GET "/perros/vendor/jquery-easing/jquery.easing.min.js" for ::1 at 2023-11-29 01:51:11 -0300
+Started GET "/perros/js/sb-admin-2.min.js" for ::1 at 2023-11-29 01:51:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/js/sb-admin-2.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros/vendor/jquery-easing/jquery.easing.min.js"):
+  
