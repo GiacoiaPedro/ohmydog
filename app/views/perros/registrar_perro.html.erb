@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-body p-4">
 
-          <h2 class="text-center mb-4">Editar Perro</h2>
+          <h2 class="text-center mb-4">Registrar un nuevo perro</h2>
 
           <%= form_for @perro, html: { class: "form" } do |f| %>
             <div class="form-group">
@@ -27,8 +27,6 @@
             <div class="form-group">
               <%= f.label :sexo, class: "form-label" %>
               <%= f.select :sexo, ["Macho", "Hembra"], { prompt: "Seleccionar Sexo" }, { class: "form-control", required: true } %>
-
-              <!-- Muestra los errores asociados a sexo -->
               <% if @perro.errors[:sexo].any? %>
                 <div class="alert alert-danger">
                   <%= @perro.errors[:sexo].join('<br>') %>
@@ -37,12 +35,23 @@
             </div>
 
             <%= f.label :raza_id, "Raza" %>
-            <%= f.collection_select :raza_id, Raza.all, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control" %>
+<%= f.collection_select :raza_id, Raza.all, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control" %>
 
-            <!-- Resto del formulario... -->
+
+            <div class="form-group">
+              <%= f.label :dueño_dni, "DNI del dueño", class: "form-label" %>
+              <%= f.text_field :dueño_dni, class: "form-control" %>
+
+              <!-- Muestra los errores asociados a dueño_dni -->
+              <% if @perro.errors[:dueño_dni].any? %>
+                <div class="alert alert-danger">
+                  <%= @perro.errors[:dueño_dni].join('<br>') %>
+                </div>
+              <% end %>
+            </div>
 
             <div class="text-center">
-              <%= f.submit "Guardar", class: "btn btn-primary" %>
+              <%= f.submit "Registrar Perro", class: "btn btn-primary" %>
             </div>
           <% end %>
 

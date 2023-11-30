@@ -47,6 +47,13 @@
                             <strong>Hora :</strong> <%= turno.hora.strftime('%H:%M') %>
                         </p>
 
+                        <% if turno.perro.user.donante == true %>
+                        <p>
+                            <strong>Donante</strong>
+                        </p>
+                        <%end %>
+
+
                         <!-- Boton para consulta -->
                         <% if turno.tipo_turno_id == 2 || turno.tipo_turno_id == 5 || turno.tipo_turno_id == 6 %>
                             <button class="btn btn-success mt-2" onclick="mostrarTexto('<%= turno.id %>')">Finalizar turno</button>
