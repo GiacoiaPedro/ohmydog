@@ -1,0 +1,18 @@
+<!-- app/views/cruza/cruza.html.erb -->
+<h1>Selecciona tus perros para cruza</h1>
+
+<% if @mis_perros_cruza.present? %>
+  <%= form_tag(publicar_cruza_index_path, method: :post) do %>
+    <div class="field">
+      <%= label_tag 'perro_id', 'Selecciona un perro:' %>
+      <%= select_tag 'perro_id', options_from_collection_for_select(@mis_perros_cruza, 'id', 'nombre'), prompt: 'Selecciona un perro' %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'Publicar Perro para Cruza' %>
+    </div>
+  <% end %>
+
+<% else %>
+  <p>No tienes perros asociados. Agrega perros para usar esta función.</p>
+<% end %>

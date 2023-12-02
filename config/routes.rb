@@ -76,8 +76,23 @@ Rails.application.routes.draw do
   get '/perros/mis_perros'
   get '/users/search', to: 'user_search#search'
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
+  get 'cruza/cruza'
+  get 'cruza/publicar'
+
+
+  Rails.application.routes.draw do
+    get 'cruza', to: 'cruza#cruza'
+    post 'verificar_disponibilidad', to: 'cruza#verificar_disponibilidad'
+    get 'mis_perros_cruza', to: 'cruza#mis_perros_cruza'
   
-  
+    resources :cruza do
+      collection do
+        post 'publicar', to: 'cruza#publicar', as: 'publicar'
+      end
+    end
+  end
+
+
   get 'perros/editar_perro'
   get 'cargar_cuidador', to: 'servicios#cargar_cuidador', as: :cargar_cuidador
   get 'cargar_paseador', to: 'servicios#cargar_paseador', as: :cargar_paseador
