@@ -92,6 +92,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :cruza do
+    post :comparar, on: :collection
+  end
+
 
   get 'perros/editar_perro'
   get 'cargar_cuidador', to: 'servicios#cargar_cuidador', as: :cargar_cuidador

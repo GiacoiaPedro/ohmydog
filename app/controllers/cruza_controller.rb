@@ -1,31 +1,25 @@
 # app/controllers/cruza_controller.rb
 class CruzaController < ApplicationController
     before_action :mis_perros_cruza, only: [:cruza]
-  
-    def verificar_disponibilidad
+    before_action :hay_perros_cruza, only: [:cruza]
+
+    def comparar   
+      @perros_compatibles = [] # Inicializa la variable de instancia
       perro_seleccionado = Perro.find_by(id: params[:perro_id])
   
       if perro_seleccionado.present?
-        perros_disponibles = Perro.where(
-          sexo: (perro_seleccionado.sexo == 'macho' ? 'hembra' : 'macho'),
-          raza_id: perro_seleccionado.raza_id,
-          cruza: true
-        ).where.not(user_id: current_user.id)
+        
+        # Obtén los perros compatibles (sexo opuesto y misma raza)
+        perros_compatibles = Perro.where("id != ? AND sexo != ? AND raza_id = ? AND castrado = false AND user_id != ?", perro_seleccionado.id, perro_seleccionado.sexo, perro_seleccionado.raza_id, perro_seleccionado.user_id)
   
-        @perros_disponibles_info = perros_disponibles.map do |perro|
-          {
-            nombre: perro.nombre,
-            fecha_nacimiento: perro.fecha_nacimiento,
-            sexo: perro.sexo,
-            raza: perro.raza.nombre,
-            nombre_dueno: perro.user.nombre
-          }
+        if perros_compatibles.present?
+          # Almacena los perros compatibles en la variable de instancia
+          @perros_compatibles = perros_compatibles
+        else
+          flash[:alert] = 'No hay perros compatibles para la cruza.'
         end
-  
-        render 'verificar_disponibilidad'
       else
         flash[:error] = 'Perro no encontrado'
-        redirect_to cruza_path
       end
     end
   
@@ -52,8 +46,13 @@ class CruzaController < ApplicationController
         end
       end
   
+      def hay_perros_cruza
+        @hay_perros_cruza = Perro.where(user_id: current_user.id)
+      end
+
+
       def mis_perros_cruza
-        @mis_perros_cruza = Perro.where(user_id: current_user.id, cruza: true)
+        @mis_perros_cruza = Perro.where(user_id: current_user.id, cruza: false)
       end
   end
   
