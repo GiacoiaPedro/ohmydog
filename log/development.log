@@ -60708,3 +60708,4 @@ ActionController::RoutingError (No route matches [GET] "/users/83/vendor/jquery-
   
 ActionController::RoutingError (No route matches [GET] "/users/83/js/sb-admin-2.min.js"):
   
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /home/tomas/Escritorio/ohmydog/config/environment.rb:5)
