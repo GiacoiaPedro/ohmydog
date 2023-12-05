@@ -1,0 +1,76 @@
+<!-- app/views/perros_perdidos/new.html.erb -->
+<div class="container mt-5">
+  <h1 class="text-center">Crear Publicación de Perro Encontrado</h1>
+
+  <%= form_with(model: @perro_perdido, url: perros_encontrados_path, local: true, html: { class: 'my-4' }) do |form| %>
+    <% if @perro_perdido.errors.any? %>
+      <div id="error_explanation" class="text-center">
+        <h2><%= pluralize(@perro_perdido.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+        <ul>
+          <% @perro_perdido.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :nombre, 'Nombre (solo si trae identificación)', class: 'form-label' %>
+      <%= form.text_field :nombre, class: 'form-control', placeholder: 'Nombre del perro' %>
+
+    </div>
+
+    <div class="form-group">
+      <%= form.label :sexo, class: "form-label" %>
+      <%= form.select :sexo, ["Macho", "Hembra"], { prompt: "Seleccionar Sexo" }, { class: "form-control", required: true } %>
+      <% if @perro_perdido.errors[:sexo].any? %>
+        <div class="alert alert-danger">
+          <%= @perro_perdido.errors[:sexo].join('<br>') %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :raza_id, "Raza" %>
+      <%= form.collection_select :raza_id, Raza.all, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :comportamiento,"Comportamiento del perro", class: 'form-label' %>
+      <%= form.text_area :comportamiento, class: 'form-control', placeholder: 'Comportamiento del perro', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :lugar, "Lugar donde se encontró", class: 'form-label' %>
+      <%= form.text_field :lugar, class: 'form-control', placeholder: 'Lugar donde se encontró el perro', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :fecha, "Día que se encontró: ", class: 'form-label' %>
+      <%= form.date_field :fecha, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :foto, "Imagen", class: 'form-label' %>
+      <%= form.file_field :foto, class: 'form-control', accept: 'image/*', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :edad, "Edad aproximada (en meses)", class: 'form-label' %>
+      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad aproximada (en meses)', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :mail, "Correo de contacto", class: 'form-label' %>
+      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true %>
+    </div>
+
+    <%= form.hidden_field :tipo, value: 2 %>
+
+
+    <div class="text-center">
+      <%= form.submit "Publicar", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

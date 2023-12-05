@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_035224) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_204127) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -62,6 +62,24 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_035224) do
     t.integer "perro_id"
     t.index ["perro_id"], name: "index_historial_vacunas_on_perro_id"
     t.index ["vacuna_id"], name: "index_historial_vacunas_on_vacuna_id"
+  end
+
+  create_table "perro_perdidos", force: :cascade do |t|
+    t.string "nombre", default: ""
+    t.string "sexo"
+    t.integer "raza_id"
+    t.string "comportamiento"
+    t.string "lugar"
+    t.date "fecha"
+    t.string "foto"
+    t.integer "edad"
+    t.boolean "activa", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mail"
+    t.integer "user_id"
+    t.boolean "encontrado", default: false
+    t.integer "tipo"
   end
 
   create_table "perros", force: :cascade do |t|

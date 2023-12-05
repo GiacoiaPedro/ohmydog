@@ -19,7 +19,31 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :perros_perdidos, except: [:show] do
+    collection do
+      get 'mis_publicaciones', to: 'perros_perdidos#mis_publicaciones'
+      get 'filtrar', to: 'perros_encontrados#filtrar'  
+    end
+    member do
+      patch 'mark_found', to: 'perros_perdidos#mark_found'
+    end
+  end
 
+  get 'contactar_propietario', to: 'perros_perdidos#contactar_propietario'
+
+
+  resources :perros_encontrados, except: [:show] do
+    collection do
+      get 'mis_publicaciones', to: 'perros_encontrados#mis_publicaciones'
+      get 'filtrar', to: 'perros_encontrados#filtrar'  
+    end
+    member do
+      patch 'mark_found', to: 'perros_encontrados#mark_found'
+    end
+  end
+
+  
+  
 
   Rails.application.routes.draw do
   get 'mis_turnos/index'

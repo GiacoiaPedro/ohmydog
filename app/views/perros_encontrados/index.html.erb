@@ -1,0 +1,80 @@
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Perros Encontrados</h1>
+
+  <% if current_user %>
+    <%= link_to "Crear Publicación", new_perros_encontrado_path, class: "btn btn-primary mb-4" %>
+    <%= link_to "Mis Publicaciones", mis_publicaciones_perros_encontrados_path, class: "btn btn-primary mb-4" %>
+  <% end %>
+
+   <!-- Agrega un formulario de filtrado -->
+<%= form_tag({ controller: 'perros_encontrados', action: 'filtrar' }, method: :get, class: "mb-3") do %>
+  <div class="form-group row">
+    <div class="col-sm-4 mx-auto"> <!-- Agregado mx-auto para centrar horizontalmente -->
+      <%= label_tag "filter_raza", "Filtrar por Raza:" %>
+      <%= select_tag "filter_raza", options_for_select(Raza.pluck(:nombre, :id), params[:filter_raza]), include_blank: true, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+  <%= submit_tag "Filtrar", class: "btn btn-primary" %>
+<% end %>
+
+  <% if @perros_perdido.any? %>
+    <div class="row">
+      <% @perros_perdido.each do |perro_perdido| %>
+        <div class="col-md-6 mb-4">
+          <div class="card position-relative">
+            <% if perro_perdido.foto? %>
+              <%= image_tag perro_perdido.foto.url, class: "card-img-top w-100" %>
+            <% else %>
+              <!-- Puedes agregar un marcador de posición aquí o dejarlo en blanco -->
+              <div class="placeholder-image"></div>
+            <% end %>
+           <% if (current_user && current_user.rol_id == 1) || (current_user && perro_perdido.user_id == current_user.id) %>
+            <div class="dropdown position-absolute" style="top: 5px; right: 5px;">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "Editar", edit_perros_encontrado_path(perro_perdido), class: "dropdown-item" %>
+                <%= form_tag(perros_encontrado_path(perro_perdido), method: :delete, class: 'perro-perdido-form') do %>
+                  <%= submit_tag 'Eliminar', class: 'dropdown-item', onclick: "return confirm('¿Estás seguro de eliminar esta publicación?');" %>
+                <% end %>
+
+                <% if !(perro_perdido.encontrado) %>
+                <%= form_for(perro_perdido, url: mark_found_perros_perdido_path(perro_perdido), method: :patch, class: 'perro-perdido-form') do |form| %>
+                  <%= form.hidden_field :encontrado, value: true %>
+                  <%= form.submit 'Marcar como encontrado', class: 'dropdown-item', onclick: "return confirm('¿Estás seguro de marcar esto como encontrado?');" %>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
+            <div class="card-body">
+              <% if !(perro_perdido.nombre == "") %>
+              <h5 class="card-title"><strong>Se encontró: </strong><%= perro_perdido.nombre %></h5>
+              <% else %>
+              <h5 class="card-title"><strong>Perro encontrado</strong></h5>
+              <% end %>
+              <p class="card-text"><strong>Sexo:</strong> <%= perro_perdido.sexo %></p>
+              <p class="card-text"><strong>Raza:</strong> <%= perro_perdido.raza.nombre %></p>
+              <p class="card-text"><strong>Comportamiento:</strong> <%= perro_perdido.comportamiento %></p>
+              <p class="card-text"><strong>Se encontró en:</strong> <%= perro_perdido.lugar %></p>
+              <p class="card-text"><strong>Se encontró el día:</strong> <%= perro_perdido.fecha.strftime("%d/%m/%Y") %></p>
+              <p class="card-text"><strong>Edad aproximada (en meses):</strong> <%= perro_perdido.edad %></p>
+              <% if (perro_perdido.encontrado) %>
+              <h4 class="card-text"><strong> ¡¡ Ya se encuentra con sus dueños !! </strong></h4>
+              <% end %>
+              <% if !(current_user && perro_perdido.user_id == current_user.id) && !(perro_perdido.encontrado) %>
+              <!-- Agrega un atributo data-toggle y data-target al botón para activar el modal -->
+             <%= button_to "Contactar", "#", class: 'btn btn-success btn-block' %>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No hay publicaciones de perros encontrados disponibles en este momento.</p>
+  <% end %>
+</div>
