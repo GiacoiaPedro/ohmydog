@@ -22,7 +22,6 @@
               <%= f.label :tipo_turno_id, "Tipo de turno" %>
               <%= f.collection_select :tipo_turno_id, TipoTurno.all, :id, :tipo, { prompt: "Tipo de turno" }, class: "form-control" %>
               <%= f.object.errors.full_messages_for(:tipo_turno_id).join(', ') if f.object.errors[:tipo_turno_id].any? %>
-              <p>Atención: Para sacar turno para una castración su perro debe ser mayor a 6 meses!</p>
             </div>
 
             <div class="form-group">
