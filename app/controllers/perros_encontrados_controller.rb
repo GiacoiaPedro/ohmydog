@@ -61,16 +61,20 @@ class PerrosEncontradosController < ApplicationController
         end
       end
     
-      def contactar_dueño
-        @perro_perdido = PerroPerdido.find(params[:perro_id])
+      def contactar_propietario_encontrado
+        @perro_perdido = PerroPerdido.find(params[:id])
+      
+        render 'contactar_propietario'
       end
+      
     
-      def enviar_correo_perro_encontrado
-        # Lógica para enviar el correo desde 'ohmydog' a la dirección almacenada en la base de datos
-        # Utiliza la gema de envío de correo que prefieras (por ejemplo, ActionMailer)
-        # ...
-    
-        redirect_to perros_encontrados_path, notice: 'Correo enviado con éxito'
+      def enviar_correo_encontrado
+        perro_perdido = PerroPerdido.find(params[:perro_id])
+        correo_contacto = params[:correo]
+      
+        UserMailer.contactar_propietario_encontrado(perro_perdido, correo_contacto).deliver_now
+      
+        redirect_to perros_encontrados_path, notice: 'Correo enviado con éxito. La persona se contactará contigo via mail.'
       end
 
       def filtrar
