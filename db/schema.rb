@@ -92,6 +92,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_204127) do
     t.datetime "updated_at", null: false
     t.integer "raza_id"
     t.string "historial_anterior"
+    t.boolean "cruza", default: false
+    t.boolean "castrado", default: false
     t.index ["raza_id"], name: "index_perros_on_raza_id"
     t.index ["user_id"], name: "index_perros_on_user_id"
   end

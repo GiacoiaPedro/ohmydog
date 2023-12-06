@@ -1,0 +1,50 @@
+<!-- app/views/cruza/cruza.html.erb -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card">
+        <div class="card-body p-4">
+          <h1 class="text-center mb-4">Publicar un Perro</h1>
+
+          <% if @mis_perros_cruza.present? %>
+            <%= form_with(url: publicar_cruza_index_path, method: :post, local: true, html: { class: "user-form" }) do |form| %>
+              <div class="mb-3">
+                <%= form.label :perro_id, 'Selecciona un perro:', class: "form-label" %>
+                <%= select_tag 'perro_id', options_from_collection_for_select(@mis_perros_cruza, 'id', 'nombre'), { prompt: 'Selecciona un perro', class: "form-control" } %>
+              </div>
+
+              <div class="text-center">
+                <%= form.submit 'Publicar Perro para Cruza', class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="text-center">No tienes perros compatibles para cruza</p>
+          <% end %>
+
+          <h1 class="text-center mt-4">Buscar Perros</h1>
+
+          <%= form_tag(comparar_cruza_index_path, method: :post, class: "user-form") do %>
+            <div class="mb-3">
+              <%= label_tag 'perro_id', 'Selecciona un perro para comparar compatibilidad:', class: "form-label" %>
+              <%= select_tag 'perro_id', options_from_collection_for_select(@hay_perros_cruza, 'id', 'nombre'), { prompt: 'Selecciona un perro', class: "form-control" } %>
+            </div>
+
+            <div class="text-center">
+              <%= submit_tag 'Buscar perro compatible', class: "btn btn-primary btn-block" %>
+            </div>
+          <% end %>
+
+          <% if @perros_compatibles.present? %>
+            <h2 class="text-center mt-4">Perros Compatibles:</h2>
+            <ul>
+              <% @perros_compatibles.each do |perro| %>
+                <li><%= perro.nombre %></li>
+                <li><%= perro.sexo %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
