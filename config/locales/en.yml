@@ -52,3 +52,26 @@ en:
             password:
               password_strength: "La contraseña es debil, recomendamos usar numeros, mayusculas y minusculas, y carácteres especiales."
               
+
+en:
+  solicitar_turno_mailer:
+    confirm: 
+      subject: "Turno OhMyDog"
+      confirm_message: "Hey %{username} su turno fue cargado!"
+
+en: 
+  agregar_horario_mailer:
+    agregar: 
+      agregar_message: 'Hey %{username} su turno fue confirmado!'
+
+
+en: 
+  cambiar_fecha_mailer:
+    cambiar: 
+      cambiar_message: 'Hey %{username} su turno no pudo ser confirmado!'
+
+
+      en: 
+  cancelar_turno_mailer:
+    cancelar: 
+      cancelar_message: 'Hey %{username} su turno ha sido cancelado!'

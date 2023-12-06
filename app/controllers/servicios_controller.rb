@@ -97,7 +97,11 @@ class ServiciosController < ApplicationController
   
     if @servicio.errors.empty? && @servicio.update(servicio_params)
       flash[:success] = "Servicio actualizado exitosamente"
-      redirect_to paseadores_path  # Ajusta la redirección según tus necesidades
+      if (@servicio.tipo == "2")
+        redirect_to paseadores_path
+      else
+        redirect_to cuidadores_path
+      end
     else
       flash[:error] = "Error al actualizar el servicio"
       render :edit

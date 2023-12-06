@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_28_225835) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_021555) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -43,8 +43,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_225835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "perro_id"
-    t.datetime "fecha_y_hora"
     t.integer "condition_id"
+    t.string "texto"
+    t.string "consulta"
+    t.date "fecha"
+    t.time "hora"
+    t.integer "monto"
     t.index ["condition_id"], name: "index_historial_turnos_on_condition_id"
     t.index ["perro_id"], name: "index_historial_turnos_on_perro_id"
     t.index ["tipo_turno_id"], name: "index_historial_turnos_on_tipo_turno_id"
@@ -70,6 +74,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_225835) do
     t.datetime "updated_at", null: false
     t.integer "raza_id"
     t.string "historial_anterior"
+    t.boolean "cruza", default: false
+    t.boolean "castrado", default: false
     t.index ["raza_id"], name: "index_perros_on_raza_id"
     t.index ["user_id"], name: "index_perros_on_user_id"
   end
@@ -149,7 +155,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_225835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "habilitado", default: true
-    t.boolean "donante"
+    t.boolean "donante", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"

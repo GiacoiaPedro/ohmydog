@@ -69,10 +69,6 @@ def update
 end
 
 
-
-
-
-
   private
 
   def perro_params

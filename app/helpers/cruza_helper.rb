@@ -1,0 +1,2 @@
+module CruzaHelper
+end

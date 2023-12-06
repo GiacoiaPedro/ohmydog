@@ -1,0 +1,71 @@
+<style>
+/* Agrega estilos según sea necesario */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Espaciado uniforme entre las tarjetas */
+}
+
+.card {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 15px; /* Aumenta el espacio interno para mayor separación */
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para destacar */
+}
+
+.card-content {
+  text-align: left; /* Alinea el contenido a la izquierda */
+}
+
+.button-container {
+  margin-top: 10px;
+}
+</style>
+
+
+<!-- mis_turnos/index.html.erb -->
+<h1>Mis Turnos</h1>
+
+<% if @mis_turnos.present? %>
+  <div class="card-container">
+    <% @mis_turnos.each do |historial_turno| %>
+      <div class="card">
+        <div class="card-content">
+          <h5 class="card-title">
+            <strong>Fecha:</strong> <%= historial_turno.fecha %>
+          </h5>
+          <p>
+            <strong>Franja horaria:</strong> <%= historial_turno.franja %>
+          </p>
+          <p>
+            <strong>Tipo:</strong> <%= historial_turno.tipo_turno.tipo %> 
+          </p>
+          <% if historial_turno.hora.present? %>
+            <p>
+              <strong>Hora:</strong> <%= historial_turno.hora.strftime('%H:%M') %>
+            </p>
+          <% end %>
+          <% if historial_turno.monto.present? %>
+            <p>
+              <strong>Monto:</strong> <%= historial_turno.monto %>
+            </p>
+          <% end %>
+          <p>
+            <strong>Perro:</strong> <%= historial_turno.perro.nombre %>
+          </p>
+          <p>
+            <strong>Condición:</strong> <%= historial_turno.condition.tipo %> 
+          </p>
+        </div>
+        <% if historial_turno.hora.present? %>
+          <div class="button-container">
+            <!-- Agrega aquí el código para tu botón si es necesario -->
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No hay turnos disponibles.</p>
+<% end %>

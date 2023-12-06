@@ -24,9 +24,7 @@
                 <%= "#{user.nombre} #{user.apellido}" %>                
                 <div>
                   <div class="btn-group">
-                    <%= link_to 'Perros', '#', class: 'btn btn-primary' %>
-                    <%= link_to 'Turnos', '#', class: 'btn btn-primary' %>
-                    <%= link_to 'Donaciones', '#', class: 'btn btn-primary' %>
+                  <%= link_to 'Perros', user_perros_path(user), class: 'btn btn-primary' %>
                   </div>
                 </div>
               </li>

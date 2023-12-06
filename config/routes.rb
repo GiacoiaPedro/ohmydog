@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mis_turnos/index'
   get 'perros/new'
   get 'perros/create'
   get 'user_search/search'
@@ -18,7 +19,39 @@ Rails.application.routes.draw do
     end
   end
 
-    resources :historial_turnos
+
+
+  Rails.application.routes.draw do
+  get 'mis_turnos/index'
+    
+
+
+    resources :historial_turnos do
+      collection do
+        get 'confirmados', to: 'historial_turnos#confirmados', as: :turnos_confirmados
+        get 'pendientes', to: 'historial_turnos#pendientes', as: :turnos_pendientes
+        get 'hoy', to: 'historial_turnos#hoy', as: :turnos_hoy
+        put 'cancelar_turno'
+      end
+      member do
+        put 'cancelar_turno'
+        put 'agregar_horario'
+        put 'agregar_texto'
+        put 'agregar_consulta'
+        post 'create_vaccine'
+      end
+    end
+
+    
+  end
+
+
+
+  
+  get 'historial_turno/mis_turnos', to: 'mis_turnos#index', as: 'mis_turnos'
+
+  get '/users/:id/perros', to: 'user_search#perros', as: 'user_perros'    
+  resources :historial_turnos
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -39,14 +72,31 @@ Rails.application.routes.draw do
   get 'dashboard/registrar_usuario'
   get 'dashboard/modificar_usuario'
   get 'dashboard/eliminar_usuario'
-  get 'dashboard/turnos_confirmados'
-  get 'dashboard/turnos_pendientes'
   get 'dashboard/index'
   get '/perros/mis_perros'
   get '/users/search', to: 'user_search#search'
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
+  get 'cruza/cruza'
+  get 'cruza/publicar'
+
+
+  Rails.application.routes.draw do
+    get 'cruza', to: 'cruza#cruza'
+    post 'verificar_disponibilidad', to: 'cruza#verificar_disponibilidad'
+    get 'mis_perros_cruza', to: 'cruza#mis_perros_cruza'
   
-  
+    resources :cruza do
+      collection do
+        post 'publicar', to: 'cruza#publicar', as: 'publicar'
+      end
+    end
+  end
+
+  resources :cruza do
+    post :comparar, on: :collection
+  end
+
+
   get 'perros/editar_perro'
   get 'cargar_cuidador', to: 'servicios#cargar_cuidador', as: :cargar_cuidador
   get 'cargar_paseador', to: 'servicios#cargar_paseador', as: :cargar_paseador
