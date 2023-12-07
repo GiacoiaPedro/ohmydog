@@ -38,6 +38,6 @@ class CruzaController < ApplicationController
   end
 
   def mis_perros_cruza
-    @mis_perros_cruza = Perro.where(user_id: current_user.id)
+    @mis_perros_cruza = Perro.where(user_id: current_user.id, castrado: false)
   end
 end
