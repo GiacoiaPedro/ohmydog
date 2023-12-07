@@ -106,9 +106,16 @@ Rails.application.routes.draw do
 
   Rails.application.routes.draw do
     get 'cruza', to: 'cruza#cruza'
+    get 'publicar', to: 'cruza#publicar'
     post 'verificar_disponibilidad', to: 'cruza#verificar_disponibilidad'
     get 'mis_perros_cruza', to: 'cruza#mis_perros_cruza'
   
+    resources :cruza do
+      member do
+        get 'contactar'
+      end
+    end
+
     resources :cruza do
       collection do
         post 'publicar', to: 'cruza#publicar', as: 'publicar'

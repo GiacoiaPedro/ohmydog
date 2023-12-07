@@ -1,1 +1,34 @@
-hola
+<!-- app/views/cruza/publicar.html.erb -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-12"> 
+      <div class="card">
+        <div class="card-body p-4">
+
+          <% if @perros_compatibles.present? %>
+            <h2 class="text-center mt-4">Perros Compatibles para Cruza</h2>
+            <div class="row justify-content-center">
+            <% @perros_compatibles.each do |perro| %>
+                <div class="col-md-6 col-lg-4"> 
+                  <div class="card mt-3" style="width: 100%;"> 
+                    <div class="card-body">
+                      <h5 class="card-title">Nombre: <%= perro.nombre %></h5>
+                      <p class="card-text">Fecha de Nacimiento: <%= perro.fecha_nacimiento %></p>
+                      <p class="card-text">Sexo: <%= perro.sexo %></p>
+                      <%= link_to "Contactar", contactar_cruza_path(perro, perro_id: @perro_id), class: "btn btn-primary" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              
+            </div>
+          <% else %>
+            <p class="text-center">No hay perros compatibles para cruza</p>
+            <p class="text-center">Tu perro ha sido publicado y puede que alguien se comunique contigo más adelante.</p>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
