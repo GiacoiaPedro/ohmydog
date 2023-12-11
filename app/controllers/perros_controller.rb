@@ -72,12 +72,12 @@ end
   private
 
   def perro_params
-    params.require(:perro).permit(:nombre, :fecha_nacimiento, :sexo, :raza_id)
+    params.require(:perro).permit(:nombre, :fecha_nacimiento, :sexo, :raza_id, :castrado)
   end
 
 
   def perro_parametros
-    params.require(:perro).permit(:nombre, :edad, :fecha_nacimiento, :sexo, :user_id, :raza_id, :dueño_dni)
+    params.require(:perro).permit(:nombre, :edad, :fecha_nacimiento, :sexo, :user_id, :raza_id, :dueño_dni, :castrado)
   end
   
 end
