@@ -8,6 +8,10 @@ class PerrosPerdidosController < ApplicationController
   end
 
   def new
+    @user_perros = current_user.perros
+    @perro_details = @user_perros.each_with_object({}) do |perro, details|
+      details[perro.id] = { nombre: perro.nombre, raza_id: perro.raza_id, sexo: perro.sexo }
+    end
     @perro_perdido = PerroPerdido.new
   end
 
@@ -17,7 +21,11 @@ class PerrosPerdidosController < ApplicationController
   end
 
   def filtrar
-    @perros_perdido = PerroPerdido.where(raza_id: params[:filter_raza], activa: true, tipo: 1) if params[:filter_raza].present?
+    if params[:filter_raza].present?
+    @perros_perdido = PerroPerdido.where(raza_id: params[:filter_raza], activa: true, tipo: 1)
+  else
+    @perros_perdido = PerroPerdido.where(activa: true, tipo: 1)
+  end
     render 'index'
   end
 
@@ -38,11 +46,12 @@ class PerrosPerdidosController < ApplicationController
     end
   end
   
-  def contactar_propietario
-    # Your logic for contacting the owner goes here
-    # You may render a separate view for contacting the owner
-    render 'contactar_propietario'
-  end
+def contactar_propietario
+  @perro_perdido = PerroPerdido.find(params[:id])
+
+  render 'contactar_propietario'
+end
+
 
 
   def edit
@@ -65,7 +74,7 @@ class PerrosPerdidosController < ApplicationController
   def create
     @perro_perdido = PerroPerdido.new(perro_perdido_params)
     @perro_perdido.user_id = current_user.id
-    puts "Tipo valor: #{params[:perro_perdido][:tipo]}" # Agrega esta línea
+    puts "Tipo valor: #{params[:perro_perdido][:tipo]}" 
 
 
     if @perro_perdido.save
@@ -76,13 +85,18 @@ class PerrosPerdidosController < ApplicationController
   end
 
 
-  def enviar_correo_perro_encontrado
-    # Lógica para enviar el correo desde 'ohmydog' a la dirección almacenada en la base de datos
-    # Utiliza la gema de envío de correo que prefieras (por ejemplo, ActionMailer)
-    # ...
+# app/controllers/perros_perdidos_controller.rb
+def enviar_correo
+  perro_perdido = PerroPerdido.find(params[:perro_id])
+  correo_contacto = params[:correo]
+  nombre = params[:nombre]  # Add this line
+  telefono = params[:telefono]  # Add this line
 
-    redirect_to perros_perdidos_path, notice: 'Correo enviado con éxito'
-  end
+  UserMailer.contactar_propietario_perdido(perro_perdido, correo_contacto, nombre, telefono).deliver_now
+
+  redirect_to perros_perdidos_path, notice: 'Correo enviado con éxito. El dueño se contactará contigo via mail.'
+end
+
   
   
   

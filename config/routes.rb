@@ -22,15 +22,19 @@ Rails.application.routes.draw do
   resources :perros_perdidos, except: [:show] do
     collection do
       get 'mis_publicaciones', to: 'perros_perdidos#mis_publicaciones'
-      get 'filtrar', to: 'perros_encontrados#filtrar'  
+      get 'filtrar', to: 'perros_perdidos#filtrar'  
     end
     member do
       patch 'mark_found', to: 'perros_perdidos#mark_found'
     end
   end
 
-  get 'contactar_propietario', to: 'perros_perdidos#contactar_propietario'
 
+get 'contactar_propietario', to: 'perros_perdidos#contactar_propietario'
+post 'enviar_correo', to: 'perros_perdidos#enviar_correo'
+
+get 'contactar_propietario_encontrado', to: 'perros_encontrados#contactar_propietario_encontrado'
+post 'enviar_correo_encontrado', to: 'perros_encontrados#enviar_correo_encontrado'
 
   resources :perros_encontrados, except: [:show] do
     collection do
@@ -38,7 +42,7 @@ Rails.application.routes.draw do
       get 'filtrar', to: 'perros_encontrados#filtrar'  
     end
     member do
-      patch 'mark_found', to: 'perros_encontrados#mark_found'
+      patch 'mark_found', to: 'perros_encontrados#mark_found', as: :mark_found
     end
   end
 

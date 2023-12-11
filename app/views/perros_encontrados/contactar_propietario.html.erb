@@ -1,0 +1,40 @@
+<!-- app/views/perros_encontrados/contactar_propietario.html.erb -->
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Contactar a la persona</h1>
+
+  <%= form_with(url: enviar_correo_encontrado_path, method: :post, class: 'contacto-form') do |form| %>
+    <% if user_signed_in? %>
+      <div class="form-group">
+        <%= form.label :nombre, "Tu nombre" %>
+        <%= form.text_field :nombre, class: 'form-control', required: true, value: current_user.nombre %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :correo, "Tu correo de contacto" %>
+        <%= form.email_field :correo, class: 'form-control', required: true, value: current_user.email%>
+      </div>
+    <% else %>
+      <div class="form-group">
+        <%= form.label :nombre, "Tu nombre" %>
+        <%= form.text_field :nombre, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :correo, "Tu correo de contacto" %>
+        <%= form.email_field :correo, class: 'form-control', required: true %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :telefono, "Tu número de teléfono" %>
+      <%= form.telephone_field :telefono, class: 'form-control', required: true %>
+    </div>
+
+    <%= form.hidden_field :perro_id, value: @perro_perdido.id %>
+
+    <div class="form-group">
+      <%= form.submit "Enviar Correo", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
+

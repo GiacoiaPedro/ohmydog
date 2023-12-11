@@ -26,8 +26,8 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :monto, class: 'form-label' %>
-      <%= form.number_field :monto, class: 'form-control', placeholder: 'Monto objetivo', required: true %>
+      <%= form.label :monto, "Monto objetivo a recaudar", class: 'form-label' %>
+      <%= form.number_field :monto, class: 'form-control', placeholder: 'Monto objetivo a recaudar', required: true %>
     </div>
 
     <div class="mb-3">
@@ -36,8 +36,8 @@
     </div>
 
       <div class="mb-3">
-      <%= form.label :fecha, class: 'form-label' %>
-      <%= form.date_field :fecha, class: 'form-control', required: true, min: Date.current + 1.day %>
+      <%= form.label :fecha, "Fecha límite", class: 'form-label' %>
+      <%= form.date_field :fecha, class: 'form-control', required: true, min: Date.current %>
     </div>
 
    <div class="text-center">

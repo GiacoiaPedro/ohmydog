@@ -40,7 +40,7 @@
                 <% end %>
 
                 <% if !(perro_perdido.encontrado) %>
-                <%= form_for(perro_perdido, url: mark_found_perros_perdido_path(perro_perdido), method: :patch, class: 'perro-perdido-form') do |form| %>
+                <%= form_for(perro_perdido, url: mark_found_perros_encontrado_path(perro_perdido), method: :patch, class: 'perro-perdido-form') do |form| %>
                   <%= form.hidden_field :encontrado, value: true %>
                   <%= form.submit 'Marcar como encontrado', class: 'dropdown-item', onclick: "return confirm('¿Estás seguro de marcar esto como encontrado?');" %>
                 <% end %>
@@ -65,9 +65,7 @@
               <h4 class="card-text"><strong> ¡¡ Ya se encuentra con sus dueños !! </strong></h4>
               <% end %>
               <% if !(current_user && perro_perdido.user_id == current_user.id) && !(perro_perdido.encontrado) %>
-              <!-- Agrega un atributo data-toggle y data-target al botón para activar el modal -->
-             <%= button_to "Contactar", "#", class: 'btn btn-success btn-block' %>
-
+              <%= link_to "Contactar", contactar_propietario_encontrado_path(id: perro_perdido.id), class: 'btn btn-success btn-block' %>
               <% end %>
             </div>
           </div>
