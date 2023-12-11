@@ -15,17 +15,21 @@
                       <h5 class="card-title">Nombre: <%= perro.nombre %></h5>
                       <p class="card-text">Fecha de Nacimiento: <%= perro.fecha_nacimiento %></p>
                       <p class="card-text">Sexo: <%= perro.sexo %></p>
-                      <p class="card-text">raza: <%= perro.raza.nombre %></p>
+                      <p class="card-text">Raza: <%= perro.raza.nombre %></p>
                       <%= link_to "Contactar", contactar_cruza_path(perro, perro_id: @perro_id), class: "btn btn-primary" %>
                     </div>
                   </div>
                 </div>
               <% end %>
-              
             </div>
+            <br></br>
+            <%= link_to 'Volver a la página de cruza', cruza_path, class: "btn btn-primary btn-block" %>
+            <br></br>
+            <p>Recuerda que tu perro quedará publicado en la página. Puedes darlo de baja en la sección de cruza.</p>
           <% else %>
             <p class="text-center">No hay perros compatibles para cruza</p>
-            <p class="text-center">Tu perro ha sido publicado y puede que alguien se comunique contigo más adelante.</p>
+            <p class="text-center">Tu perro seguirá publicado y puede que alguien se comunique contigo más adelante.</p>
+            <%= link_to 'Volver a la página de cruza', cruza_path, class: "btn btn-primary btn-block" %>
           <% end %>
 
         </div>

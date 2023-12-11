@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <div class="card-body p-4">
+            <h1 class="text-center mb-4">Eliminar un Perro</h1>
+            <p>Aquí se listan tus perros publicados para cruza.</p>
+  
+            <% if @mis_perros_cruzados.present? %>
+              <%= form_with(url: eliminar_perro_path, method: :delete, local: true, class: "user-form") do |form| %>
+                <div class="mb-3">
+                  <%= form.label :eliminar_perro, 'Selecciona un perro:', class: "form-label" %>
+                  <%= select_tag 'id', options_from_collection_for_select(@mis_perros_cruzados, 'id', 'nombre'), prompt: 'Selecciona un perro', class: "form-control"%>
+                </div>
+                <div class="text-center">
+                  <%= form.submit 'Eliminar Perro para Cruza', class: "btn btn-danger btn-block" %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="text-center">
+                <p>No hay perros para eliminar.</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

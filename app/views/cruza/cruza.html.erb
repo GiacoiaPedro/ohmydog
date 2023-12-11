@@ -14,10 +14,20 @@
               <div class="text-center">
                 <%= form.submit 'Publicar Perro para Cruza', class: "btn btn-primary btn-block" %>
               </div>
-              <p></p>
               <p>Advertencia: Usar esta plataforma implica que tu perro también sea visto por los demás</p>
             <% end %>
           <% end %>
+
+          
+              
+        <% if @mis_perros_cruzados.present? %>
+        <h1 class="text-center mb-4">Eliminar un Perro</h1>
+            <%= link_to 'Eliminar Perro para Cruza', eliminar_perro_path, class: 'btn btn-danger btn-block' %>
+        <% end %>
+
+        
+
+
         </div>
       </div>
     </div>
