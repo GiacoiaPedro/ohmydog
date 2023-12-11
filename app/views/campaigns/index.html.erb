@@ -38,9 +38,14 @@
               <% end %>
               <div class="card-body">
                 <h5 class="card-title"><%= campaign.nombre %></h5>
-                <p class="card-text"><%= campaign.descripcion %></p>
-                <p class="card-text"><strong>Monto: $<%= campaign.monto %></strong></p>
-                <%= button_to "Donar", pay_campaign_path(campaign), method: :post, class: "btn btn-success btn-block" %>
+                <p class="card-text"><%= campaign.descripcion %></p>    
+                <p class="card-text"><strong>Fecha Límite:</strong> <%= campaign.fecha.strftime('%d/%m/%Y') %></p>
+                <p class="card-text"><strong>Monto objetivo: $<%= campaign.monto %></strong></p>
+                <p class="card-text"><strong>Recaudado hasta el momento: $<%= campaign.recaudado %></strong></p>
+                <% if (campaign.recaudado >= campaign.monto) %>
+                <p class="card-text"><strong>La campaña ha logrado su objetivo! Muchas gracias por colaborar!</strong></p> 
+                <% end %>
+                <%= button_to "Donar", pay_campaign_path(campaign), method: :post, class: "btn btn-success btn-block" %>   
               </div>
             </div>
           </div>

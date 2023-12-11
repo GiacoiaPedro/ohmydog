@@ -33,11 +33,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>¡Hola!</h1>
 
-    <p>Una persona se comunico con nosotros para comunicarnos que el perro que encontraste es suyo.</p>
-    <p>Aquí está el correo de la persona: <%= @correo_contacto %></p>
-    <p>¡Contactalá lo antes posible!</p>
+    <h1>¡Hola <%= @perro_perdido.user.nombre %>!</h1>
+      <p>Una persona llamada <%= @nombre %>  se comunico con nosotros para comunicarnos que el perro que encontraste es suyo.</p>
+      <p>Puedes ponerte en contacto con él/ella a través del correo <%= @correo_contacto %> o del teléfono <%= @telefono %>.</p>
+      <p>¡Contactalá lo antes posible!</p>
+
   </div>
 </body>
 </html>

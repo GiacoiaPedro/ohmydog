@@ -42,7 +42,7 @@
                 <% if !(perro_perdido.encontrado) %>
                 <%= form_for(perro_perdido, url: mark_found_perros_perdido_path(perro_perdido), method: :patch, class: 'perro-perdido-form') do |form| %>
                   <%= form.hidden_field :encontrado, value: true %>
-                  <%= form.submit 'Marcar como encontrado', class: 'dropdown-item', onclick: "return confirm('¿Estás seguro de marcar esto como encontrado?');" %>
+                  <%= form.submit 'Marcar como encontrado', class: 'dropdown-item', onclick: "return confirm('¿Estás seguro de marcar como encontrado?');" %>
                 <% end %>
                 <% end %>
               </div>

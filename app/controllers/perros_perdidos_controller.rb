@@ -8,6 +8,10 @@ class PerrosPerdidosController < ApplicationController
   end
 
   def new
+    @user_perros = current_user.perros
+    @perro_details = @user_perros.each_with_object({}) do |perro, details|
+      details[perro.id] = { nombre: perro.nombre, raza_id: perro.raza_id, sexo: perro.sexo }
+    end
     @perro_perdido = PerroPerdido.new
   end
 
@@ -81,11 +85,14 @@ end
   end
 
 
+# app/controllers/perros_perdidos_controller.rb
 def enviar_correo
   perro_perdido = PerroPerdido.find(params[:perro_id])
   correo_contacto = params[:correo]
+  nombre = params[:nombre]  # Add this line
+  telefono = params[:telefono]  # Add this line
 
-  UserMailer.contactar_propietario_perdido(perro_perdido, correo_contacto).deliver_now
+  UserMailer.contactar_propietario_perdido(perro_perdido, correo_contacto, nombre, telefono).deliver_now
 
   redirect_to perros_perdidos_path, notice: 'Correo enviado con éxito. El dueño se contactará contigo via mail.'
 end

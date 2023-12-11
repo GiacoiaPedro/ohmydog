@@ -15,24 +15,26 @@
       </div>
     <% end %>
 
+    <% if current_user.rol_id == 2 %>
+    <div class="mb-3">
+    <%= form.label :user_perro, "Seleccionar Tu Perro", class: 'form-label' %>
+    <%= form.select :user_perro, options_for_select(@user_perros.map { |perro| [perro.nombre, perro.id] }), { prompt: "Seleccionar Tu Perro" }, { class: "form-control", id: "user_perro" } %>
+    </div>
+    <% end %>
+
     <div class="mb-3">
       <%= form.label :nombre, class: 'form-label' %>
-      <%= form.text_field :nombre, class: 'form-control', placeholder: 'Nombre del perro', required: true %>
+      <%= form.text_field :nombre, class: 'form-control', placeholder: 'Nombre del perro', required: true, id: 'nombre_perro' %>
     </div>
 
     <div class="form-group">
       <%= form.label :sexo, class: "form-label" %>
-      <%= form.select :sexo, ["Macho", "Hembra"], { prompt: "Seleccionar Sexo" }, { class: "form-control", required: true } %>
-      <% if @perro_perdido.errors[:sexo].any? %>
-        <div class="alert alert-danger">
-          <%= @perro_perdido.errors[:sexo].join('<br>') %>
-        </div>
-      <% end %>
+      <%= form.select :sexo, ["Macho", "Hembra"], { prompt: "Seleccionar Sexo" }, { class: "form-control", id: "sexo_perro" } %>
     </div>
 
     <div class="mb-3">
       <%= form.label :raza_id, "Raza" %>
-      <%= form.collection_select :raza_id, Raza.all, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control" %>
+      <%= form.collection_select :raza_id, Raza.all, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control", id: "raza_perro" %>
     </div>
 
     <div class="mb-3">
@@ -47,7 +49,7 @@
 
     <div class="mb-3">
       <%= form.label :fecha, "Ultima vez que se vió", class: 'form-label' %>
-      <%= form.date_field :fecha, class: 'form-control', required: true %>
+      <%= form.date_field :fecha, class: 'form-control', required: true, max: Date.today.strftime('%d-%m-%Y') %>
     </div>
 
     <div class="mb-3">
@@ -57,13 +59,14 @@
 
     <div class="mb-3">
       <%= form.label :edad, "Edad (en meses)", class: 'form-label' %>
-      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad del perro', required: true %>
+      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad del perro', required: true, min: 1, value: @perro_perdido.edad %>
     </div>
 
     <div class="mb-3">
       <%= form.label :mail, "Correo de contacto", class: 'form-label' %>
-      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true %>
+      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true, id: 'mail_contacto' %>
     </div>
+
 
     <%= form.hidden_field :tipo, value: 1 %>
 
@@ -71,5 +74,52 @@
     <div class="text-center">
       <%= form.submit "Publicar", class: 'btn btn-primary' %>
     </div>
-  <% end %>
+   <% end %>
 </div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var perroSelect = document.getElementById('user_perro');
+  var nombrePerroInput = document.getElementById('nombre_perro');
+  var razaPerroInput = document.getElementById('raza_perro');
+  var sexoPerroSelect = document.getElementById('sexo_perro');
+  var perroDetails = <%= raw @perro_details.to_json %>;
+  var mailContactoInput = document.getElementById('mail_contacto'); 
+
+  if (perroSelect && nombrePerroInput && razaPerroInput && sexoPerroSelect) {
+    perroSelect.addEventListener('change', function() {
+      var selectedPerroId = perroSelect.value;
+
+      if (selectedPerroId === '') {
+        // Si se selecciona "Seleccionar Perro", desbloquear y limpiar los campos
+        nombrePerroInput.disabled = false;
+        razaPerroInput.disabled = false;
+        sexoPerroSelect.disabled = false;
+        mailContactoInput.disabled = false;
+
+        nombrePerroInput.value = '';
+        razaPerroInput.value = '';
+        sexoPerroSelect.value = '';
+        mailContactoInput.value = ''; 
+      } else {
+        // Llenar los campos con la información del perro seleccionado
+        var details = perroDetails[selectedPerroId];
+
+        if (details) {
+          nombrePerroInput.value = details.nombre;
+          razaPerroInput.value = details.raza_id;
+          sexoPerroSelect.value = details.sexo;
+          mailContactoInput.value = '<%= current_user.email %>'; 
+          mailContactoInput.disabled = true;
+          nombrePerroInput.disabled = true;
+          razaPerroInput.disabled = true;
+          sexoPerroSelect.disabled = true;
+        }
+      }
+    });
+  }
+});
+
+</script>

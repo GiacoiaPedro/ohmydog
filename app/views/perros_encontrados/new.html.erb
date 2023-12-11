@@ -48,8 +48,9 @@
 
     <div class="mb-3">
       <%= form.label :fecha, "Día que se encontró: ", class: 'form-label' %>
-      <%= form.date_field :fecha, class: 'form-control', required: true %>
+      <%= form.date_field :fecha, class: 'form-control', required: true, max: Date.today.strftime('%d-%m-%Y') %>
     </div>
+
 
     <div class="mb-3">
       <%= form.label :foto, "Imagen", class: 'form-label' %>
@@ -58,12 +59,13 @@
 
     <div class="mb-3">
       <%= form.label :edad, "Edad aproximada (en meses)", class: 'form-label' %>
-      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad aproximada (en meses)', required: true %>
+      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad aproximada (en meses)', required: true, min: 1 %>
     </div>
 
+
     <div class="mb-3">
-      <%= form.label :mail, "Correo de contacto", class: 'form-label' %>
-      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true %>
+      <%= form.label :mail, "Correo electrónico de contacto", class: 'form-label' %>
+      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo electrónico de contacto', required: true %>
     </div>
 
     <%= form.hidden_field :tipo, value: 2 %>

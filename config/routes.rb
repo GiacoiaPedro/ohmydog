@@ -42,7 +42,7 @@ post 'enviar_correo_encontrado', to: 'perros_encontrados#enviar_correo_encontrad
       get 'filtrar', to: 'perros_encontrados#filtrar'  
     end
     member do
-      patch 'mark_found', to: 'perros_encontrados#mark_found'
+      patch 'mark_found', to: 'perros_encontrados#mark_found', as: :mark_found
     end
   end
 

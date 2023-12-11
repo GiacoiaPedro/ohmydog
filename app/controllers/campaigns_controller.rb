@@ -14,6 +14,7 @@ class CampaignsController < ApplicationController
     
       def create
         @campaign = Campaign.new(campaign_params)
+        @campaign.recaudado = 0
     
         if @campaign.save
           redirect_to campaigns_path, notice: 'Campaña creada exitosamente.'
@@ -44,9 +45,6 @@ class CampaignsController < ApplicationController
             if @tarjeta_params[:monto_temporal].to_i > @tarjeta.saldo
               flash.now[:error] = 'Fondos insufientes'
               render action: :pay, locals: { tarjeta: @tarjeta_params }
-            elsif @tarjeta_params[:monto_temporal].to_i > @campaign.monto
-              flash.now[:error] = 'El monto de la donación excede el monto total de la campaña.'
-              render action: :pay, locals: { tarjeta: @tarjeta_params }
             else
               if(@tarjeta_params[:monto_temporal].to_i>4999)
               current_user.update(donante: true) if user_signed_in?
@@ -59,6 +57,9 @@ class CampaignsController < ApplicationController
               
               @tarjeta.saldo -= @tarjeta_params[:monto_temporal].to_i
               @tarjeta.save
+
+              @campaign.recaudado +=  @tarjeta_params[:monto_temporal].to_i
+              @campaign.save
                 
               # Configura un mensaje de éxito
               flash[:success] = '¡Pago exitoso! Gracias por tu donación.'

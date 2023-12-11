@@ -71,8 +71,10 @@ class PerrosEncontradosController < ApplicationController
       def enviar_correo_encontrado
         perro_perdido = PerroPerdido.find(params[:perro_id])
         correo_contacto = params[:correo]
+        nombre = params[:nombre] 
+        telefono = params[:telefono]  
       
-        UserMailer.contactar_propietario_encontrado(perro_perdido, correo_contacto).deliver_now
+        UserMailer.contactar_propietario_encontrado(perro_perdido, correo_contacto, nombre, telefono).deliver_now
       
         redirect_to perros_encontrados_path, notice: 'Correo enviado con éxito. La persona se contactará contigo via mail.'
       end
