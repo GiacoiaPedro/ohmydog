@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_035224) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_020046) do
   create_table "campaigns", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -153,20 +153,19 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_035224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "habilitado", default: true
+    t.integer "descuento"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"
   end
 
   create_table "vaccines", force: :cascade do |t|
-    t.integer "vacuna_id"
     t.integer "peso"
     t.string "texto"
     t.integer "historial_turno_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["historial_turno_id"], name: "index_vaccines_on_historial_turno_id"
-    t.index ["vacuna_id"], name: "index_vaccines_on_vacuna_id"
   end
 
   create_table "vacunas", force: :cascade do |t|
@@ -185,5 +184,4 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_035224) do
   add_foreign_key "perros", "users"
   add_foreign_key "users", "rols"
   add_foreign_key "vaccines", "historial_turnos"
-  add_foreign_key "vaccines", "vacunas"
 end

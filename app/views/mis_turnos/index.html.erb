@@ -1,28 +1,27 @@
 <style>
-/* Agrega estilos según sea necesario */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Espaciado uniforme entre las tarjetas */
-}
+  /* Agrega estilos según sea necesario */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Espaciado uniforme entre las tarjetas */
+  }
 
-.card {
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 15px; /* Aumenta el espacio interno para mayor separación */
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para destacar */
-}
+  .card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px; /* Aumenta el espacio interno para mayor separación */
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para destacar */
+  }
 
-.card-content {
-  text-align: left; /* Alinea el contenido a la izquierda */
-}
+  .card-content {
+    text-align: left; /* Alinea el contenido a la izquierda */
+  }
 
-.button-container {
-  margin-top: 10px;
-}
+  .button-container {
+    margin-top: 10px;
+  }
 </style>
-
 
 <!-- mis_turnos/index.html.erb -->
 <h1>Mis Turnos</h1>
@@ -39,13 +38,14 @@
             <strong>Franja horaria:</strong> <%= historial_turno.franja %>
           </p>
           <p>
-            <strong>Tipo:</strong> <%= historial_turno.tipo_turno.tipo %> 
+            <strong>Tipo:</strong> <%= historial_turno.tipo_turno.tipo %>
           </p>
           <% if historial_turno.hora.present? %>
             <p>
               <strong>Hora:</strong> <%= historial_turno.hora.strftime('%H:%M') %>
             </p>
           <% end %>
+
           <% if historial_turno.monto.present? %>
             <p>
               <strong>Monto:</strong> <%= historial_turno.monto %>
@@ -55,12 +55,16 @@
             <strong>Perro:</strong> <%= historial_turno.perro.nombre %>
           </p>
           <p>
-            <strong>Condición:</strong> <%= historial_turno.condition.tipo %> 
+            <strong>Condición:</strong> <%= historial_turno.condition.tipo %>
           </p>
         </div>
-        <% if historial_turno.hora.present? %>
+        <% if historial_turno.mostrar_boton_cancelar? && historial_turno.condition_id == 2 %> <!-- Agrega esta verificación -->
           <div class="button-container">
-            <!-- Agrega aquí el código para tu botón si es necesario -->
+            <% if historial_turno.mostrar_boton_cancelar? %> <!-- Agrega esta verificación -->
+          <%= form_with(model: historial_turno, url: cancelar_turno_historial_turno_path(historial_turno), method: :put) do |form| %>
+            <%= form.submit 'Cancelar Turno', class: 'btn btn-danger' %>
+          <% end %>
+        <% end %>
           </div>
         <% end %>
       </div>
