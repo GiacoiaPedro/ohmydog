@@ -73,9 +73,6 @@ post 'enviar_correo_encontrado', to: 'perros_encontrados#enviar_correo_encontrad
     
   end
 
-
-
-  
   get 'historial_turno/mis_turnos', to: 'mis_turnos#index', as: 'mis_turnos'
 
   get '/users/:id/perros', to: 'user_search#perros', as: 'user_perros'    
@@ -106,29 +103,26 @@ post 'enviar_correo_encontrado', to: 'perros_encontrados#enviar_correo_encontrad
   get '/perros/registrar_perro', to: 'perros#new', as: 'registrar_perro'
   get 'cruza/cruza'
   get 'cruza/publicar'
-
+  get 'cruza/eliminar_perro'
 
   Rails.application.routes.draw do
+    get 'eliminar_perro', to: 'cruza#eliminar_perro'
+    delete 'eliminar_perro', to: 'cruza#destroy_perro_cruza'
     get 'cruza', to: 'cruza#cruza'
     get 'publicar', to: 'cruza#publicar'
-    post 'verificar_disponibilidad', to: 'cruza#verificar_disponibilidad'
     get 'mis_perros_cruza', to: 'cruza#mis_perros_cruza'
+    get 'mis_perros_cruzados', to: 'cruza#mis_perros_cruzados'
   
-    resources :cruza do
+    resources :cruza, only: [:destroy] do
       member do
         get 'contactar'
+        delete 'destroy'
       end
-    end
-
-    resources :cruza do
+    
       collection do
         post 'publicar', to: 'cruza#publicar', as: 'publicar'
       end
     end
-  end
-
-  resources :cruza do
-    post :comparar, on: :collection
   end
 
 
