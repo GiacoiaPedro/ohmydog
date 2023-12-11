@@ -65,10 +65,14 @@
           <div id="formulario_<%= turno.id %>" style="display: none;">
           <%= form_for [:agregar_horario, turno], html: { method: :put } do |f| %>
             <div class="form-group">
-  <%= f.label :hora, "Hora", class: "form-label" %>
-  <%= f.time_field :hora, { prompt: { hour: 'Elija la hora' }, class: "form-control", required: true, format: "%H:%M" } %>
-  <%= f.object.errors.full_messages_for(:hora).join(', ') if f.object.errors[:hora].any? %>
-</div>
+            <%= f.label :hora, "Hora", class: "form-label" %>
+            <% if turno.franja == "Mañana" %>
+            <%= f.time_field :hora, { prompt: { hour: 'Elija la hora' }, class: "form-control", required: true, format: "%I:%M %p", min: '00:00', max: '11:59' } %>
+            <% elsif turno.franja == 'Tarde' %>
+            <%= f.time_field :hora, { prompt: { hour: 'Elija la hora' }, class: "form-control", required: true, format: "%I:%M %p", min: '12:00', max: '23:59' } %>
+          <% end %>
+          <%= f.object.errors.full_messages_for(:hora).join(', ') if f.object.errors[:hora].any? %>
+          </div>
 
 
 

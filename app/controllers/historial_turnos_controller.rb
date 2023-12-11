@@ -62,12 +62,24 @@ class HistorialTurnosController < ApplicationController
         @turnos_confirmados = HistorialTurno.where(condition_id: 2)
     end
 
-    def cancelar_turno
+      def cancelar_turno
         @turno = HistorialTurno.find(params[:id])
-        @turno.update(condition_id: 3) # Actualiza el condition_id a 3 para "cancelado"
-        CancelarTurnoMailer.with(turno: @turno).cancelar.deliver_later
-        redirect_to turnos_confirmados_historial_turnos_path, notice: 'Turno cancelado con éxito.'
-    end
+        
+        # Actualiza el condition_id a 3 para "cancelado"
+        if @turno.update(condition_id: 3)
+          # Envía el correo u otras acciones si es necesario
+          if current_user.rol_id == 1
+          CancelarTurnoMailer.with(turno: @turno).cancelar.deliver_later
+          end 
+
+          flash[:notice] = 'Turno cancelado con éxito.'
+        else
+          # Maneja el caso en que la actualización falla
+          flash[:notice] = 'No se pudo cancelar el turno'
+        end
+
+        redirect_back(fallback_location: root_path)
+      end
     
 
     def hoy
@@ -77,13 +89,48 @@ class HistorialTurnosController < ApplicationController
     def agregar_consulta
         @turno = HistorialTurno.find(params[:id])
         new_texto = params[:historial_turno][:consulta]
+        edad_en_meses = ((Date.current - @turno.perro.fecha_nacimiento) / 30).to_i
+
       
         if new_texto.present?
           # Actualizar los atributos del turno
           @turno.update(consulta: new_texto, condition_id: 4, monto: params[:historial_turno][:monto])
-      
-          # Si el tipo de turno es 1, también maneja la creación de Vaccine
-          if @turno.tipo_turno_id == 1
+
+
+          if @turno.tipo_turno_id == 1  && edad_en_meses < 4
+          # Lógica para crear el próximo turno 21 días después
+          proxima_fecha = fecha_proximo_turno_2_meses(@turno.fecha)
+          nuevo_turno = HistorialTurno.create(
+          perro_id: @turno.perro_id,
+          tipo_turno_id: 8,
+          fecha: proxima_fecha,
+          condition_id: 1  # O el condition_id adecuado para un nuevo turno pendiente
+          )
+          end
+
+          if @turno.tipo_turno_id == 1  && edad_en_meses > 3 
+            # Lógica para crear el próximo turno 21 días después
+            proxima_fecha = fecha_proximo_turno_4_meses(@turno.fecha)
+            nuevo_turno = HistorialTurno.create(
+            perro_id: @turno.perro_id,
+            tipo_turno_id: 8,
+            fecha: proxima_fecha,
+            condition_id: 1  # O el condition_id adecuado para un nuevo turno pendiente
+            )
+            end
+
+            if @turno.tipo_turno_id == 7
+              # Lógica para crear el próximo turno 21 días después
+              proxima_fecha = fecha_proximo_turno_4_meses(@turno.fecha)
+              nuevo_turno = HistorialTurno.create(
+              perro_id: @turno.perro_id,
+              tipo_turno_id: 9,
+              fecha: proxima_fecha,
+              condition_id: 1  # O el condition_id adecuado para un nuevo turno pendiente
+              )
+              end
+
+          if @turno.tipo_turno_id == 1 || @turno.tipo_turno_id == 7
             vaccine_params = params.require(:historial_turno).require(:vaccine).permit(:peso, :vacuna_id)
             @vaccine = Vaccine.new(vaccine_params)
             @vaccine.historial_turno = @turno
@@ -102,8 +149,6 @@ class HistorialTurnosController < ApplicationController
           render 'hoy', notice: 'No se pudo finalizar el turno'
         end
       end
-      
-
 
       def create_vaccine
         @turno = HistorialTurno.find(params[:id])
@@ -118,6 +163,7 @@ class HistorialTurnosController < ApplicationController
       end
     
     private
+
     def vaccine_params
         params.require(:vaccine).permit(:vacuna_id, :peso, :texto, :monto)
       end
@@ -134,6 +180,18 @@ class HistorialTurnosController < ApplicationController
     def turno_parametros
         params.require(:historial_turno).permit(:fecha, :franja, :tipo_turno_id, :perro_id)
     end
+
+    def fecha_proximo_turno_2_meses(fecha_actual)
+      fecha_actual + 21.days
+    end
+
+    def fecha_proximo_turno_4_meses(fecha_actual)
+      fecha_actual + 365.days
+    end
+
+
+
+
 
 
 

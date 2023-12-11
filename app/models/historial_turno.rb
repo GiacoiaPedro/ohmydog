@@ -6,7 +6,7 @@ class HistorialTurno < ApplicationRecord
   
   validates :perro_id, presence:{ message: "Debe seleccionar un perro"  }
   validates :tipo_turno_id, presence: { message: "Debe seleccionar un tipo de turno" }
-
+  
   validate :rango_fecha_valida
   validate :uniqueness_of_turnos, on: :create
   
@@ -16,9 +16,39 @@ class HistorialTurno < ApplicationRecord
   validate :validar_edad_perro_vacuna_b, if: -> { tipo_turno_id == 7 }
 
 
-  validate :rango_fecha_valida
+  def tiempo_restante_para_cancelar_en_horas
+    if fecha.present? && hora.present?
+    tiempo_restante = tiempo_restante_para_cancelar
+    horas_restantes = tiempo_restante / 1.hour.to_f
+    horas_restantes.round(2) # Redondea a dos decimales para mayor claridad
+  end
+end
+
+
+  def mostrar_boton_cancelar?
+    if fecha.present? && hora.present?
+    tiempo_restante_para_cancelar_en_horas > 24
+    end
+  end
+
 
   private
+
+
+  def tiempo_restante_para_cancelar
+    # Calcula la diferencia en tiempo entre la fecha y hora del turno y la fecha y hora actuales
+    if fecha.present? && hora.present?
+    fecha_y_hora_del_turno - Time.now
+    end
+  end
+
+  def fecha_y_hora_del_turno
+    # Combina la fecha y hora del turno para obtener un objeto Time
+    if fecha.present? && hora.present?
+    Time.new(fecha.year, fecha.month, fecha.day, hora.hour, hora.min, hora.sec)
+    end
+
+  end
 
   def validar_turno_existente
     existing_turnos = HistorialTurno.where(perro_id: perro_id, tipo_turno_id: 6).where.not(id: id)
@@ -42,7 +72,7 @@ class HistorialTurno < ApplicationRecord
     edad_en_meses = ((Date.current - perro.fecha_nacimiento) / 30).to_i
 
     if edad_en_meses <= 3
-      errors.add(:tipo_turno_id, "El perro debe tener más de 2 meses para solicitar una vacuna de tipo B")
+      errors.add(:tipo_turno_id, "El perro debe tener más de 4 meses para solicitar una vacuna de tipo B")
     end
   end
 

@@ -36,18 +36,22 @@
                       <strong>Nombre:</strong> <%= turno.perro.nombre %>
                   </h5>
                   <p>
-                      <strong>Fecha :</strong> <%= turno.fecha.strftime('%Y-%m-%d') %>
+                      <strong>Fecha :</strong> <%= turno.fecha.strftime('%d-%m-%Y') %>
                   </p>
                   <p>
-                      <strong>Hora :</strong> <%= turno.hora.strftime('%H:%M') %>
+                      <strong>Hora :</strong> <%= turno.hora.strftime('%H:%M %p') %>
                   </p>
-                  
-                  
-              </div>
+                  <p>
+                      <strong>Franja :</strong> <%= turno.franja %>
+                  </p>
             
+              </div>
+              <% if turno.mostrar_boton_cancelar? %> <!-- Agrega esta verificación -->
               <div class="button-container">
                   <%= form_with(model: turno, url: cancelar_turno_historial_turno_path(turno), method: :put) do |form| %>
                       <%= form.submit 'Cancelar Turno', class: 'btn btn-danger' %>
+             <% end %>
+
                 
               </div>
               <% end %>

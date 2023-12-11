@@ -41,10 +41,13 @@
                             <strong>Nombre:</strong> <%= turno.perro.nombre %>
                         </h5>
                         <p>
-                            <strong>Fecha :</strong> <%= turno.fecha.strftime('%Y-%m-%d') %>
+                            <strong>Fecha :</strong> <%= turno.fecha.strftime('%d-%m-%Y') %>
                         </p>
                         <p>
                             <strong>Hora :</strong> <%= turno.hora.strftime('%H:%M') %>
+                        </p>
+                        <p>
+                            <strong>Tipo de turno:</strong> <%= turno.tipo_turno.tipo %>
                         </p>
 
                         <% if turno.perro.user.donante == true %>
@@ -79,7 +82,7 @@
                         <% end %>
 
                         <!-- Formulario para ingresar la consulta y vacuna -->
-                        <% if turno.tipo_turno_id == 1 %>
+                        <% if turno.tipo_turno_id == 1  || turno.tipo_turno_id == 7 %>
                             <button class="btn btn-success mt-2" onclick="mostrarTextoYVacuna('<%= turno.id %>')">Finalizar turno</button>
 
                             <!-- Formulario para ingresar la consulta y vacuna -->
@@ -98,18 +101,12 @@
                                     </div>
 
                                     <!-- Campos para vacuna (solo si el tipo_turno_id es 1) -->
-                                    <% if turno.tipo_turno_id == 1 %>
+                                    <% if turno.tipo_turno_id == 1 || turno.tipo_turno_id == 7 %>
                                         <%= f.fields_for :vaccine, Vaccine.new do |vaccine_form| %>
                                             <div class="form-group">
                                                 <%= vaccine_form.label :peso, "Peso", class: "form-label" %>
                                                 <%= vaccine_form.text_field :peso, class: "form-control", required: true %>
                                                 <%= vaccine_form.object.errors.full_messages_for(:peso).join(', ') if vaccine_form.object.errors[:peso].any? %>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <%= vaccine_form.label :vacuna_id, "Vacuna", class: "form-label" %>
-                                                <%= vaccine_form.collection_select :vacuna_id, Vacuna.all, :id, :tipo, { prompt: "Seleccionar vacuna" }, class: "form-control" %>
-                                                <%= vaccine_form.object.errors.full_messages_for(:vacuna_id).join(', ') if vaccine_form.object.errors[:vacuna_id].any? %>
                                             </div>
                                         <% end %>
                                     <% end %>
