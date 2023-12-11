@@ -4,10 +4,8 @@ class CruzaController < ApplicationController
 
   def publicar
     @perro_id = params[:perro_id]
-    puts "perro_id: #{@perro_id}"
     if @perro_id.present?
       perro = Perro.find(@perro_id)
-      puts "perro: #{perro.inspect}"
       if perro.cruza == false
         Perro.skip_callback(:validation, :before, :nombre_unico_por_usuario)
         perro.update(cruza: true)
