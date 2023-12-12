@@ -10,7 +10,7 @@ class PerrosPerdidosController < ApplicationController
   def new
     @user_perros = current_user.perros
     @perro_details = @user_perros.each_with_object({}) do |perro, details|
-    details[perro.id] = { nombre: perro.nombre, raza_id: perro.raza_id, sexo: perro.sexo }
+      details[perro.id] = { nombre: perro.nombre, raza_id: perro.raza_id, sexo: perro.sexo }
     end
     @perro_perdido = PerroPerdido.new
   end
@@ -74,15 +74,17 @@ end
   def create
     @perro_perdido = PerroPerdido.new(perro_perdido_params)
     @perro_perdido.user_id = current_user.id
-    puts "Tipo valor: #{params[:perro_perdido][:tipo]}" 
-
-
+  
+    # Registro de depuración para imprimir los parámetros
+    puts "Parámetros recibidos del formulario: #{params.inspect}"
+  
     if @perro_perdido.save
       redirect_to perros_perdidos_path, notice: 'La publicación de perro perdido fue creada exitosamente.'
     else
       render :new
     end
   end
+  
 
 
 # app/controllers/perros_perdidos_controller.rb

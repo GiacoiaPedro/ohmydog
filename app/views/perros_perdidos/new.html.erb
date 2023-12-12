@@ -15,12 +15,18 @@
       </div>
     <% end %>
 
-    <% if current_user.rol_id == 2 %>
-    <div class="mb-3">
-    <%= form.label :user_perro, "Seleccionar Tu Perro", class: 'form-label' %>
-    <%= form.select :user_perro, options_for_select(@user_perros.map { |perro| [perro.nombre, perro.id] }), { prompt: "Seleccionar Tu Perro" }, { class: "form-control", id: "user_perro" } %>
-    </div>
+    <% if @user_perros.present? %>
+      <div class="mb-3">
+        <%= form.label :user_perro, "Seleccionar Tu Perro", class: 'form-label' %>
+        <%= form.select :user_perro, options_for_select(@user_perros.map { |perro| [perro.nombre, perro.id] }), { prompt: "Seleccionar Tu Perro" }, { class: "form-control", id: "user_perro", autocomplete: "off" } %>
+      </div>
     <% end %>
+
+    <!-- Campos ocultos para almacenar valores autocompletados -->
+    <%= form.hidden_field :nombre, id: 'hidden_nombre_perro' %>
+    <%= form.hidden_field :raza_id, id: 'hidden_raza_perro' %>
+    <%= form.hidden_field :sexo, id: 'hidden_sexo_perro' %>
+    <%= form.hidden_field :mail, id: 'hidden_mail_contacto' %>
 
     <div class="mb-3">
       <%= form.label :nombre, class: 'form-label' %>
@@ -67,59 +73,64 @@
       <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true, id: 'mail_contacto' %>
     </div>
 
-
     <%= form.hidden_field :tipo, value: 1 %>
-
 
     <div class="text-center">
       <%= form.submit "Publicar", class: 'btn btn-primary' %>
     </div>
-   <% end %>
+  <% end %>
 </div>
-
-
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-  var perroSelect = document.getElementById('user_perro');
-  var nombrePerroInput = document.getElementById('nombre_perro');
-  var razaPerroInput = document.getElementById('raza_perro');
-  var sexoPerroSelect = document.getElementById('sexo_perro');
-  var perroDetails = <%= raw @perro_details.to_json %>;
-  var mailContactoInput = document.getElementById('mail_contacto'); 
+    var perroSelect = document.getElementById('user_perro');
+    var nombrePerroInput = document.getElementById('nombre_perro');
+    var razaPerroInput = document.getElementById('raza_perro');
+    var sexoPerroSelect = document.getElementById('sexo_perro');
+    var perroDetails = <%= raw @perro_details.to_json %>;
+    var mailContactoInput = document.getElementById('mail_contacto');
+    var hiddenMailContactoInput = document.getElementById('hidden_mail_contacto'); 
 
-  if (perroSelect && nombrePerroInput && razaPerroInput && sexoPerroSelect) {
-    perroSelect.addEventListener('change', function() {
-      var selectedPerroId = perroSelect.value;
+    if (perroSelect && nombrePerroInput && razaPerroInput && sexoPerroSelect) {
+      perroSelect.addEventListener('change', function() {
+        var selectedPerroId = perroSelect.value;
 
-      if (selectedPerroId === '') {
-        // Si se selecciona "Seleccionar Perro", desbloquear y limpiar los campos
-        nombrePerroInput.disabled = false;
-        razaPerroInput.disabled = false;
-        sexoPerroSelect.disabled = false;
-        mailContactoInput.disabled = false;
+        if (selectedPerroId === '') {
+          // Si se selecciona "Seleccionar Perro", desbloquear y limpiar los campos
+          nombrePerroInput.disabled = false;
+          razaPerroInput.disabled = false;
+          sexoPerroSelect.disabled = false;
+          mailContactoInput.disabled = false;
 
-        nombrePerroInput.value = '';
-        razaPerroInput.value = '';
-        sexoPerroSelect.value = '';
-        mailContactoInput.value = ''; 
-      } else {
-        // Llenar los campos con la información del perro seleccionado
-        var details = perroDetails[selectedPerroId];
+          nombrePerroInput.value = '';
+          razaPerroInput.value = '';
+          sexoPerroSelect.value = '';
+          mailContactoInput.value = ''; 
+        } else {
+          // Llenar los campos con la información del perro seleccionado
+          var details = perroDetails[selectedPerroId];
 
-        if (details) {
-          nombrePerroInput.value = details.nombre;
-          razaPerroInput.value = details.raza_id;
-          sexoPerroSelect.value = details.sexo;
-          mailContactoInput.value = '<%= current_user.email %>'; 
-          mailContactoInput.disabled = true;
-          nombrePerroInput.disabled = true;
-          razaPerroInput.disabled = true;
-          sexoPerroSelect.disabled = true;
+          if (details) {
+            // Establecer valores en campos ocultos
+            hiddenMailContactoInput.value = '<%= current_user.email %>';
+            document.getElementById('hidden_nombre_perro').value = details.nombre;
+            document.getElementById('hidden_raza_perro').value = details.raza_id;
+            document.getElementById('hidden_sexo_perro').value = details.sexo;
+
+            // Deshabilitar los campos originales
+            nombrePerroInput.disabled = true;
+            razaPerroInput.disabled = true;
+            sexoPerroSelect.disabled = true;
+            mailContactoInput.disabled = true;
+
+            // Establecer valores en campos visibles
+            nombrePerroInput.value = details.nombre;
+            razaPerroInput.value = details.raza_id;
+            sexoPerroSelect.value = details.sexo;
+            mailContactoInput.value = '<%= current_user.email %>'; 
+          }
         }
-      }
-    });
-  }
-});
-
+      });
+    }
+  });
 </script>
