@@ -45,6 +45,10 @@ class PerrosPerdidosController < ApplicationController
     end
   end
 
+  def edit
+    @perro_perdido = PerroPerdido.find(params[:id])
+  end
+
   def contactar_propietario
     @perro_perdido = PerroPerdido.find(params[:id])
 

@@ -2,7 +2,7 @@
 <div class="container mt-5">
   <h1 class="text-center">Editar Perro Perdido</h1>
 
-  <%= form_with(model: @perro_perdido, url: perros_perdido_path(@perro_perdido), method: :patch, local: true, html: { class: 'my-4' }) do |form| %>
+<%= form_for @perro_perdido, url: perros_perdido_path(@perro_perdido), method: :patch, html: { class: 'my-4' } do |form| %>
     <% if @perro_perdido.errors.any? %>
       <div id="error_explanation" class="text-center">
         <h2><%= pluralize(@perro_perdido.errors.count, "error") %> prohibited this dog from being saved:</h2>
@@ -19,14 +19,14 @@
       <%= form.text_field :nombre, class: 'form-control', placeholder: 'Nombre del perro', required: true %>
     </div>
 
-    <div class="mb-3">
-      <%= form.label :sexo, class: 'form-label' %>
-      <%= form.text_field :sexo, class: 'form-control', placeholder: 'Sexo del perro' %>
+    <div class="form-group">
+      <%= form.label :sexo, class: "form-label" %>
+      <%= form.select :sexo, ["Macho", "Hembra"], { prompt: "Seleccionar Sexo" }, { class: "form-control", id: "sexo_perro" } %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :raza_id, class: 'form-label' %>
-      <%= form.number_field :raza_id, class: 'form-control', placeholder: 'ID de la raza' %>
+      <%= form.label :raza_id, "Raza" %>
+      <%= form.collection_select :raza_id, Raza.all, :id, :nombre, { prompt: "Seleccione una raza" }, class: "form-control", id: "raza_perro" %>
     </div>
 
     <div class="mb-3">
@@ -40,8 +40,8 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :fecha, class: 'form-label' %>
-      <%= form.date_field :fecha, class: 'form-control', required: true %>
+      <%= form.label :fecha, "Ultima vez que se vió", class: 'form-label' %>
+      <%= form.date_field :fecha, class: 'form-control', required: true, max: Date.today.strftime('%Y-%m-%d') %>
     </div>
 
     <!-- Campo de carga de imágenes -->
@@ -55,13 +55,13 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :edad, class: 'form-label' %>
-      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad del perro' %>
+      <%= form.label :edad, "Edad (en meses)", class: 'form-label' %>
+      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad del perro', required: true, min: 1, id: 'edad_perro' %>
     </div>
 
     <div class="mb-3">
       <%= form.label :mail, "Correo de contacto", class: 'form-label' %>
-      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true %>
+      <%= form.email_field :mail, class: 'form-control', placeholder: 'Correo de contacto', required: true, id: 'mail_contacto' %>
     </div>
 
     <div class="text-center">
