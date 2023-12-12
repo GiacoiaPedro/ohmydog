@@ -13,7 +13,14 @@ class UserMailer < ApplicationMailer
     @user_email = user_email
     @paseador_email = paseador_email
 
-    mail(to: @paseador_email, subject: '¡Un usuario está interesado en tus servicios!')
+    mail(to: @paseador_email, subject: '¡Un usuario está interesado en tus servicios de cuidador!')
+  end
+
+  def contacto_paseador(user_email, paseador_email)
+    @user_email = user_email
+    @paseador_email = paseador_email
+
+    mail(to: @paseador_email, subject: '¡Un usuario está interesado en tus servicios de paseador!')
   end
 
   def contactar_propietario_perdido(perro_perdido, correo_contacto, nombre, telefono)

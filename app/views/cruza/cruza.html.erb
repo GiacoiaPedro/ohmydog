@@ -12,7 +12,7 @@
                 <%= select_tag 'perro_id', options_from_collection_for_select(@mis_perros_cruza, 'id', 'nombre'), { prompt: 'Selecciona un perro', class: "form-control" } %>
               </div>
               <div class="text-center">
-                <%= form.submit 'Publicar Perro para Cruza', class: "btn btn-primary btn-block" %>
+              <%= form.submit 'Publicar Perro para Cruza', id: 'publicar-button', class: "btn btn-primary btn-block" %>
               </div>
               <p>Advertencia: Usar esta plataforma implica que tu perro también sea visto por los demás</p>
             <% end %>
@@ -33,3 +33,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the select element
+    var perroSelect = document.getElementById('perro_id');
+
+    // Get the submit button
+    var publicarButton = document.getElementById('publicar-button');
+
+    // Disable the button initially if no option is selected
+    publicarButton.disabled = !perroSelect.value;
+
+    // Add an event listener to the select element
+    perroSelect.addEventListener('change', function() {
+      // Enable/disable the button based on the selection
+      publicarButton.disabled = !perroSelect.value;
+    });
+  });
+</script>

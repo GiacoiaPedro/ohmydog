@@ -79,7 +79,15 @@ class ServiciosController < ApplicationController
   def enviar_correo
     @user_email = params['user-email']
     @paseador_email = params['paseador-email']
-    UserMailer.contacto(@user_email, @paseador_email).deliver_now
+    @servicio_tipo = params['servicio-tipo']
+
+    if @servicio_tipo == '1'
+      UserMailer.contacto(@user_email, @paseador_email).deliver_now
+    else @servicio_tipo == '2'
+      UserMailer.contacto_paseador(@user_email, @paseador_email).deliver_now
+    end
+
+    
     redirect_back(fallback_location: root_path)
   end
 
