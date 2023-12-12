@@ -8,9 +8,7 @@ class CruzaController < ApplicationController
     if @perro_id.present?
       perro = Perro.find(@perro_id)
       if perro.cruza == false
-        Perro.skip_callback(:validation, :before, :nombre_unico_por_usuario)
         perro.update(cruza: true)
-        Perro.set_callback(:validation, :before, :nombre_unico_por_usuario)
       end
     end
 
@@ -30,9 +28,7 @@ class CruzaController < ApplicationController
     @perro_id = params[:id]
     if @perro_id.present?
       perro = Perro.find(@perro_id)
-      Perro.skip_callback(:validation, :before, :nombre_unico_por_usuario)
       perro.update(cruza: false)
-      Perro.set_callback(:validation, :before, :nombre_unico_por_usuario)
     end
     redirect_to cruza_path
   end
@@ -41,9 +37,7 @@ class CruzaController < ApplicationController
     @perro_id = params[:id]
     if @perro_id.present?
       perro = Perro.find(@perro_id)
-      Perro.skip_callback(:validation, :before, :nombre_unico_por_usuario)
       perro.update(cruza: false)
-      Perro.set_callback(:validation, :before, :nombre_unico_por_usuario)
     end
     redirect_to cruza_path
   end
