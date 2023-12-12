@@ -27,6 +27,7 @@
     <%= form.hidden_field :raza_id, id: 'hidden_raza_perro' %>
     <%= form.hidden_field :sexo, id: 'hidden_sexo_perro' %>
     <%= form.hidden_field :mail, id: 'hidden_mail_contacto' %>
+    <%= form.hidden_field :edad, id: 'hidden_edad_perro' %>
 
     <div class="mb-3">
       <%= form.label :nombre, class: 'form-label' %>
@@ -55,7 +56,7 @@
 
     <div class="mb-3">
       <%= form.label :fecha, "Ultima vez que se vió", class: 'form-label' %>
-      <%= form.date_field :fecha, class: 'form-control', required: true, max: Date.today.strftime('%d-%m-%Y') %>
+      <%= form.date_field :fecha, class: 'form-control', required: true, max: Date.today.strftime('%Y-%m-%d') %>
     </div>
 
     <div class="mb-3">
@@ -65,7 +66,7 @@
 
     <div class="mb-3">
       <%= form.label :edad, "Edad (en meses)", class: 'form-label' %>
-      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad del perro', required: true, min: 1, value: @perro_perdido.edad %>
+      <%= form.number_field :edad, class: 'form-control', placeholder: 'Edad del perro', required: true, min: 1, id: 'edad_perro' %>
     </div>
 
     <div class="mb-3">
@@ -81,17 +82,20 @@
   <% end %>
 </div>
 
+<!-- app/views/perros_perdidos/new.html.erb -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var perroSelect = document.getElementById('user_perro');
     var nombrePerroInput = document.getElementById('nombre_perro');
     var razaPerroInput = document.getElementById('raza_perro');
     var sexoPerroSelect = document.getElementById('sexo_perro');
+    var edadPerroInput = document.getElementById('edad_perro');
     var perroDetails = <%= raw @perro_details.to_json %>;
     var mailContactoInput = document.getElementById('mail_contacto');
-    var hiddenMailContactoInput = document.getElementById('hidden_mail_contacto'); 
+    var hiddenMailContactoInput = document.getElementById('hidden_mail_contacto');
+    var hiddenEdadPerroInput = document.getElementById('hidden_edad_perro');
 
-    if (perroSelect && nombrePerroInput && razaPerroInput && sexoPerroSelect) {
+    if (perroSelect && nombrePerroInput && razaPerroInput && sexoPerroSelect && edadPerroInput && mailContactoInput && hiddenMailContactoInput && hiddenEdadPerroInput) {
       perroSelect.addEventListener('change', function() {
         var selectedPerroId = perroSelect.value;
 
@@ -100,12 +104,14 @@
           nombrePerroInput.disabled = false;
           razaPerroInput.disabled = false;
           sexoPerroSelect.disabled = false;
+          edadPerroInput.disabled = false;
           mailContactoInput.disabled = false;
 
           nombrePerroInput.value = '';
           razaPerroInput.value = '';
           sexoPerroSelect.value = '';
-          mailContactoInput.value = ''; 
+          edadPerroInput.value = '';
+          mailContactoInput.value = '';
         } else {
           // Llenar los campos con la información del perro seleccionado
           var details = perroDetails[selectedPerroId];
@@ -113,6 +119,7 @@
           if (details) {
             // Establecer valores en campos ocultos
             hiddenMailContactoInput.value = '<%= current_user.email %>';
+            hiddenEdadPerroInput.value = details.edad;
             document.getElementById('hidden_nombre_perro').value = details.nombre;
             document.getElementById('hidden_raza_perro').value = details.raza_id;
             document.getElementById('hidden_sexo_perro').value = details.sexo;
@@ -121,13 +128,17 @@
             nombrePerroInput.disabled = true;
             razaPerroInput.disabled = true;
             sexoPerroSelect.disabled = true;
+            edadPerroInput.disabled = true;
             mailContactoInput.disabled = true;
 
             // Establecer valores en campos visibles
             nombrePerroInput.value = details.nombre;
             razaPerroInput.value = details.raza_id;
             sexoPerroSelect.value = details.sexo;
-            mailContactoInput.value = '<%= current_user.email %>'; 
+            edadPerroInput.value = details.edad;
+            mailContactoInput.value = '<%= current_user.email %>';
+
+
           }
         }
       });
