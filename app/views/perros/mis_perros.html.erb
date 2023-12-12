@@ -9,9 +9,14 @@
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <h5 class="mb-1"><strong>Nombre:</strong> <%= perro.nombre %></h5>
-              <p class="mb-1"><strong>Fecha de nacimiento:</strong> <%= perro.fecha_nacimiento %></p>
+              <p class="mb-1"><strong>Fecha de nacimiento:</strong> <%= perro.fecha_nacimiento.strftime('%d/%m/%Y') %></p>
               <p class="mb-1"><strong>Sexo:</strong> <%= perro.sexo %></p>
               <p class="mb-1"><strong>Raza:</strong> <%= perro.raza.nombre %></p>
+              <% if perro.castrado %>
+              <p class="mb-1"><strong>Castrado:</strong> Si</p>
+            <% else %>
+            <p class="mb-1"><strong>Castrado:</strong> No </p>
+            <% end %>
             </div>
             <div>
               <button class="btn btn-primary" onclick="toggleEditar('<%= perro.id %>')">Modificar</button>
@@ -65,6 +70,13 @@
                       </div>
                     <% end %>
                   </div>
+
+                  <div class="form-group">
+                    <%= f.label :castrado, class: "form-label" %>
+                    <%= f.select :castrado, [['Sí', true], ['No', false]], {}, class: "form-control" %>
+                  </div>
+
+
 
                   <div class="text-center">
                     <button type="submit" class="btn btn-success">Guardar</button>

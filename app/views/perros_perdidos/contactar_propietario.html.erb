@@ -2,7 +2,7 @@
 <div class="container text-center mt-5">
   <h1 class="mb-4">Contactar al Dueño</h1>
 
-  <%= form_with(url: enviar_correo_path, method: :post, class: 'contacto-form') do |form| %>
+<%= form_with(url: enviar_correo_perdido_path, method: :post, class: 'contacto-form') do |form| %>
     <% if user_signed_in? %>
       <div class="form-group">
         <%= form.label :nombre, "Tu nombre" %>

@@ -55,26 +55,28 @@
                 <!-- Tarjeta: Perros Perdidos -->
                 <div class="col-md-2">
                     <div class="card">
-                        <a href="/perros_perdidos/index.html" >
+                        <%= link_to perros_perdidos_path, class: 'card-link' do %>
                             <img src="<%= asset_path('perro.png') %>" class="card-img-top" alt="Imagen de la opción">
                             <div class="card-body">
                                 <h6 class="card-title">Perros Perdidos</h6>
                             </div>
-                        </a>
+                        <% end %>
                     </div>
                 </div>
 
+
                 <!-- Tarjeta: Perros Encontrados -->
-                <div class="col-md-2">
+               <div class="col-md-2">
                     <div class="card">
-                        <a href="/perros_encontrados/index.html" >
+                        <%= link_to perros_encontrados_path, class: 'card-link' do %>
                             <img src="<%= asset_path('perro.png') %>" class="card-img-top" alt="Imagen de la opción">
                             <div class="card-body">
                                 <h6 class="card-title">Perros Encontrados</h6>
                             </div>
-                        </a>
+                        <% end %>
                     </div>
                 </div>
+
 
     
 

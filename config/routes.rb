@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
 get 'contactar_propietario', to: 'perros_perdidos#contactar_propietario'
 #post 'enviar_correo', to: 'perros_perdidos#enviar_correo'
+post 'enviar_correo_perdido', to: 'perros_perdidos#enviar_correo_perdido'
+
 
 get 'contactar_propietario_encontrado', to: 'perros_encontrados#contactar_propietario_encontrado'
 post 'enviar_correo_encontrado', to: 'perros_encontrados#enviar_correo_encontrado'

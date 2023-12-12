@@ -2,6 +2,8 @@ class PerroPerdido < ApplicationRecord
     belongs_to :raza
     mount_uploader :foto, ImagenUploader
     belongs_to :user
+    attr_accessor :fecha_nacimiento
+
 
   
     # Validaciones
