@@ -57,6 +57,15 @@ class CampaignsController < ApplicationController
               
               @tarjeta.saldo -= @tarjeta_params[:monto_temporal].to_i
               @tarjeta.save
+              
+              
+              if user_signed_in?
+                current_user.descuento ||= 0
+                current_user.descuento += (@tarjeta_params[:monto_temporal].to_i * 0.2)
+                current_user.save
+              end
+              
+
 
               @campaign.recaudado +=  @tarjeta_params[:monto_temporal].to_i
               @campaign.save
@@ -64,7 +73,7 @@ class CampaignsController < ApplicationController
               # Configura un mensaje de éxito
               flash[:success] = '¡Pago exitoso! Gracias por tu donación.'
               redirect_to campaigns_path, notice: '¡Pago exitoso! Gracias por tu donación.'
-             end
+            end
             end
           else
             # Si hay errores en la tarjeta o el monto, configura un mensaje de error
