@@ -50,7 +50,7 @@ class CruzaController < ApplicationController
     CruzaContactoMailer.contactar_duenio(@duenio, @perro, @user).deliver_now
   
     flash[:success] = 'Correo electrónico de contacto enviado al dueño del perro.'
-    redirect_to publicar_path(perro_id: params[:perro_id])
+    redirect_to publicar_path(perro_id: params[:perro_id]), notice: 'Correo electrónico de contacto enviado al dueño del perro.'
   end
 
   def mis_perros_cruzados
