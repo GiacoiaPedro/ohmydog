@@ -49,12 +49,12 @@
                         <p>
                             <strong>Tipo de turno:</strong> <%= turno.tipo_turno.tipo %>
                         </p>
-
-                        <% if turno.perro.user.donante == true %>
-                        <p>
-                            <strong>Donante</strong>
-                        </p>
-                        <%end %>
+                        
+                        <% if turno.perro.user.descuento.present? && turno.perro.user.descuento > 0 %>
+  <p>
+    <strong>Donante con descuento de: </strong><%= turno.perro.user.descuento %>
+  </p>
+<% end %>
 
 
                         <!-- Boton para consulta -->
