@@ -3,7 +3,7 @@
     <div class="col-md-6 col-lg-5">
       <div class="card">
         <div class="card-body p-4">
-          <h1 class="text-center mb-4">Publicar un Perro</h1>
+          <h1 class="text-center mb-4">Buscar compatibilidad</h1>
 
           <% if @mis_perros_cruza.present? %>
             <%= form_with(url: publicar_cruza_index_path, method: :post, local: true, class: "user-form") do |form| %>
@@ -12,7 +12,7 @@
                 <%= select_tag 'perro_id', options_from_collection_for_select(@mis_perros_cruza, 'id', 'nombre'), { prompt: 'Selecciona un perro', class: "form-control" } %>
               </div>
               <div class="text-center">
-              <%= form.submit 'Publicar Perro para Cruza', id: 'publicar-button', class: "btn btn-primary btn-block" %>
+              <%= form.submit 'Buscar Compatibilidad', id: 'publicar-button', class: "btn btn-primary btn-block" %>
               </div>
               <p>Advertencia: Usar esta plataforma implica que tu perro también sea visto por los demás</p>
             <% end %>
@@ -21,7 +21,7 @@
           
               
         <% if @mis_perros_cruzados.present? %>
-        <h1 class="text-center mb-4">Eliminar un Perro</h1>
+        <h3 class="text-center mb-4">Eliminar un Perro</h3>
             <%= link_to 'Eliminar Perro para Cruza', eliminar_perro_path, class: 'btn btn-danger btn-block' %>
         <% end %>
 

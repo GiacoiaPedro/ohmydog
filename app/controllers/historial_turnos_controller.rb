@@ -83,7 +83,7 @@ class HistorialTurnosController < ApplicationController
     
 
     def hoy
-        @turnos_confirmados = HistorialTurno.where(fecha: Date.tomorrow, condition_id: 2)
+        @turnos_confirmados = HistorialTurno.where(fecha: Date.today , condition_id: 2)
     end
 
     def agregar_consulta
