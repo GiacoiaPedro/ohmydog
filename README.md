@@ -1,17 +1,24 @@
-este servicio web esta diseñado especificamente para una veterinaria de perros. 
-se han implementado: Sistema de inicio de sesión de usuarios, con administradores, usuarios y no usuarios, contraseñas encriptadas que se envian automaticamente por mail.
-                     Sistema de turnos para administradores, con un sistema completo de vacunacion para perros.
-                     Sistema de publicaciones para publicitarse como cuidador y paseador. el mail de contacto se envia automaticamente a travez de la pagina.
-                     Sistema de campañas de donaciones. Sistema de cruzas de perros de misma raza.
-                     
+Dog Veterinary Clinic
+This web service is specifically designed for a dog veterinary clinic. The following features have been implemented:
 
+Features
+User Login System:
+With three types of users: administrators, regular users, and guests.
+Passwords are stored encrypted and sent automatically via email.
+Appointment System:
+Administrators can manage appointments.
+Includes a comprehensive vaccination system for dogs.
+Post System:
+Allows users to advertise as dog caregivers and walkers.
+The contact email is sent automatically through the website.
+Donation Campaign System:
+Enables the management of donation campaigns.
+Dog Breeding System:
+Facilitates the management of dog breed crosses.
+How to Run
+To execute the program:
 
-
-Pasos para ejecutar el programa:
-
-Descargar: ruby 3.0.2p107 y rails 7.1.1.
-Ejecutar "bundle install" en consola para descargar todas las gemas usadas en el proyecto, tales como sqlite3 y devise.
-con "rails s" se inicia el servidor en: http://localhost:3000/ 
-
-          
-El programa ya fue entregado en la materia. fallaron algunas cosas en la demo final que quedarian solucionar relacionadas al sistema de turnos. 
+Download: Ruby 3.0.2p107 and Rails 7.1.1.
+Run bundle install in the console to download all the gems used in the project, such as sqlite3 and devise.
+Start the server with rails s, it will run on: http://localhost:3000/.
+The program has been already submitted for the course. Some issues were encountered during the final demo, particularly related to the appointment system, which need to be resolved.
