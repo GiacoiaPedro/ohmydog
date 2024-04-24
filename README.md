@@ -1,4 +1,5 @@
-Dog Veterinary Clinic
+Dog Veterinary Clinic  
+
 This web service is specifically designed for a dog veterinary clinic. The following features have been implemented:
 
 Features
@@ -15,7 +16,9 @@ Donation Campaign System:
 Enables the management of donation campaigns.
 Dog Breeding System:
 Facilitates the management of dog breed crosses.
+
 How to Run
+
 To execute the program:
 
 Download: Ruby 3.0.2p107 and Rails 7.1.1.
